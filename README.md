@@ -77,3 +77,7 @@ Le site web vise à faciliter l'adoption des animaux abandonnés, en particulier
 
 - Rapports sur les adoptions mensuelles.
 - Suivi des utilisateurs actifs.
+
+## Contributeurs :
+[Lu Luc](https://github.com/CapriceSeum)
+[Yang Rosine](https://github.com/Myakii)
