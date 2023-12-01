@@ -1,9 +1,7 @@
 controllers:
-  resource: ../src/Controller/
+  resource: "../src/Controller/"
   type: attribute
 
-# config/routes.yaml
-
-home:
-  path: /
-  controller: App\Controller\HomeController::index
+show_pets:
+  path: /show
+  controller: 'App\Controller\PetsController::show'
