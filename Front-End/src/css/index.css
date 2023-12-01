@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-sizing: border-box;
+
+}
+
+h1 {
+
+
+    font-size: 4rem;
+
+}
