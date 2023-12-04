@@ -16,7 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $data['description'];
     $urgent = $data['urgent'];
 
-}
 
+    echo json_encode(['status' => 'success', 'message' => $data]);
+
+}
 ?>
 
