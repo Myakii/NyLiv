@@ -4,16 +4,16 @@ import './Header.css';
 
 export default function Navbar() {
   return (
-    <header className="header">
+    <header className="header centered-div">
         
         <nav className='navbar-left flex flex-row align-center'>
             <img id="navbar-nyliv-logo" src='./src/assets/NyLiv_Logo.png' alt="Logo de NyLiv" />
-            <h1>NyLiv</h1>
+
             <ul className='nav-items'>
 
                 <li className='nav-item'>
 
-                    <Link to="/">Oui</Link>
+                    <Link to="/">Home</Link>
 
                 </li>
 

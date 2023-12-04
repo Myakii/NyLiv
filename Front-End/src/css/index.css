@@ -6,7 +6,7 @@
 
     margin: 0;
     padding: 0;
-    background-color: white;
+
     box-sizing: border-box;
 
 }
@@ -15,5 +15,19 @@ h1 {
 
 
     font-size: 4rem;
+
+}
+
+input, textarea, button {
+
+    border: 1px solid red;
+
+
+}
+
+.centered-div {
+
+    padding: 0 10vw;
+
 
 }
