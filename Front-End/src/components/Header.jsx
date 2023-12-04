@@ -37,13 +37,13 @@ export default function Navbar() {
 
                 <li className='nav-item'>
 
-                    <Link to='/'>Je me connecte</Link>
+                    <Link to='/connexion'>Je me connecte</Link>
 
                 </li>
 
                 <li className='nav-item'>
 
-                    <Link to='/'>Je crée mon compte</Link>
+                    <Link to='/inscription'>Je crée mon compte</Link>
 
                 </li>
 
