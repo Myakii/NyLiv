@@ -1,9 +1,0 @@
-parameters:
-  # ...
-
-services:
-  App\Controller\NewPetsController:
-    autowire: true
-    autoconfigure: true
-    tags:
-      - { name: "controller.service_arguments" }

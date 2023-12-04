@@ -1,7 +1,0 @@
-controllers:
-  resource: "../src/Controller/"
-  type: attribute
-
-show_pets:
-  path: /show
-  controller: 'App\Controller\PetsController::show'
