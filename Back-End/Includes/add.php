@@ -28,7 +28,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     // Exécutez la requête préparée
     $stmt->execute();
 }
-
-// AFFICHAGE
-$sql = "SELECT * FROM pets";
-$result = $conn->query($sql);
