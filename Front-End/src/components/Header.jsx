@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import './Header.css';
+import { getAuth } from 'firebase/auth';
 
 export default function Navbar() {
+
+    const auth = getAuth();
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+
+        if ( auth.currentUser ) {
+            setIsLoggedIn(true);
+        }
+
+    }), [];
+    
+
   return (
     <header className="header centered-div">
         
@@ -31,26 +46,50 @@ export default function Navbar() {
             </ul>
         </nav>
 
-        <nav className='navbar-right flex flex-row'>
+        {isLoggedIn?
 
-            <ul className='nav-items'>
+            (<nav className='navbar-right flex flex-row'>
 
-                <li className='nav-item'>
+                <ul className='nav-items'>
 
-                    <Link to='/connexion'>Je me connecte</Link>
+                    <li className='nav-item'>
 
-                </li>
+                        <Link to='/connexion'>Je me connecte</Link>
 
-                <li className='nav-item'>
+                    </li>
 
-                    <Link to='/inscription'>Je crée mon compte</Link>
+                    <li className='nav-item'>
 
-                </li>
+                        <Link to='/inscription'>Je crée mon compte</Link>
 
-            </ul>
+                    </li>
 
-        </nav>
+                </ul>
 
+            </nav>)
+
+            : 
+            
+            (
+                <nav className='navbar-right flex flex-row'>
+
+                    <ul className='nav-items'>
+                        
+                        <li className='nav-item'>
+
+                            <p>Connecté</p>
+
+                        </li>
+
+
+                    </ul>
+
+                </nav>
+
+            )
+
+
+        }
     </header>
   )
 }

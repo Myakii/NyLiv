@@ -6,28 +6,33 @@ import AdoptForm from './pages/AdoptForm'
 import FunctionNavigation from './dev_tool/FunctionNavigation'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
+import Auth from './Auth'
 
 function App() {
 
   return (
-    <div className='App'>
 
-      <Navbar />
+    <Auth>
+      <div className='App'>
 
-      <Routes>
-        <Route path="/" element={<Home />} />   
-        <Route path='/inscription' element={<SignUp />} />
-        <Route path='/connexion' element={<Login />} />
-    
-        <Route path='/adoption-formulaire' element={<AdoptForm />} />
-        
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />   
+          <Route path='/inscription' element={<SignUp />} />
+          <Route path='/connexion' element={<Login />} />
+      
+          <Route path='/adoption-formulaire' element={<AdoptForm />} />
+          
 
 
 
-      </Routes>
-      <FunctionNavigation />
+        </Routes>
+        <FunctionNavigation />
 
-    </div>
+      </div>
+    </Auth>
+
   )
 }
 
