@@ -1,11 +1,13 @@
 import React from 'react'
+import '../css/Home.css'
 
 export default function Home() {
   return (
     <div className='Home'>
-        
-        <h1>Hello World !</h1>
 
+      <div className='banner_image w-full'>
+
+      </div>
 
     </div>
   )
