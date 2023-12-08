@@ -35,24 +35,70 @@ function add_pets($conn)
 }
 
 // MODIFY
-function modify_pets($conn) {
-    $pets_id = $_POST['id'];
-    $pets_name = $_POST['name'];
-    $pets_breed = $_POST['breed'];
-    $pets_age = $_POST['age'];
-    $pets_genre = $_POST['genre'];
-    $pets_type = $_POST['type'];
-    $pets_localisation = $_POST['localisation'];
-    $pets_urgent = $_POST['urgent'];
-    $pets_description = $_POST['description'];
+function modify_pets($conn, $pets_id)
+{
+    $query = "UPDATE pets SET name=?, breed=?, age=?, genre=?, type=?, localisation=?, urgent=?, description=? WHERE id=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $pets_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Vérifiez si une ligne est récupérée
+    if ($result->num_rows > 0) {
+        $pet = $result->fetch_assoc();
+
+        echo '<a href="listanimals.php">Retour</a>';
+
+        echo '<div class="form_pets">
     
-    $query = "UPDATE pets SET name = $pets_name, breed = $pets_breed, age = $pets_age, genre = $pets_genre, type = $pets_type, localisation = $pets_localisation, urgent = $pets_urgent, description = $pets_description FROM pets WHERE id = ?";
-    if ($conn->query($query) === TRUE) {
-        echo "L'utilisateur a été modifié avec succès.";
+            <h2>Formulaire de modifications d\'Animaux</h2>
+    
+            <form method="post" class="flex flex-col">
+                <label for="name">Nom de l\'animal:</label>
+                <input type="text" name="name" value="' . $pet['name'] . '" required /><br>
+    
+                <label for="breed">Race:</label>
+                <input type="text" name="breed" value="' . $pet['breed'] . '" required /><br>
+    
+                <label for="age">Âge:</label>
+                <input type="number" name="age" value="' . $pet['age'] . '" required /><br>
+    
+                <label for="genre">Sexe:</label>
+                <select name="genre">
+                    <option value="Femelle" ' . ($pet['genre'] == 'Femelle' ? 'selected' : '') . '>Femelle</option>
+                    <option value="Male" ' . ($pet['genre'] == 'Male' ? 'selected' : '') . '>Male</option>
+                </select><br>
+    
+                <label for="type">Type:</label>
+                <input type="text" name="type" value="' . $pet['type'] . '" required /><br>
+    
+                <label for="localisation">Localisation:</label>
+                <input type="text" name="localisation" value="' . $pet['localisation'] . '" required /><br>
+    
+                <label for="description">Description:</label>
+                <textarea name="description" required>' . $pet['description'] . '</textarea><br>
+    
+                <label for="urgent">Urgent:</label>
+                <select name="urgent">
+                    <option value="Non" ' . ($pet['urgent'] == 'Non' ? 'selected' : '') . '>Non</option>
+                    <option value="Oui" ' . ($pet['urgent'] == 'Oui' ? 'selected' : '') . '>Oui</option>
+                </select><br>
+    
+                <button type="submit" name="modify" value="modify">
+                    Confirmer les modifications
+                </button>
+            </form>
+        </div>';
+    } else {
+        echo 'Animaux non trouvés.';
     }
+
+    // N'oubliez pas de fermer la balise body et l'élément HTML
+    echo '</body></html>';
 }
 
 
+// READ
 // READ
 function read_pets($conn, $pets_id)
 {
@@ -96,12 +142,17 @@ function read_pets($conn, $pets_id)
                     <h3>Description : </h3>
                     <p>' . $pets_description . '</p>
                 </div>
-            </div>';
+            </div>
+            <form method="post" action="">
+                <button type="submit" name="delete" value="delete">Supprimer l\'animal</button>
+            </form>
+            <a href="modifypage.php?id=' . $pets_id . '" " class="redirect-button" >Modifier l\'animal</a>';
         } else {
             echo "Aucun animal trouvé avec cet identifiant.";
         }
     }
 }
+
 
 // DELETE
 function delete_pets($conn, $pets_id)
@@ -121,20 +172,15 @@ function pets_display($conn)
     if ($result->num_rows > 0) {
         echo '<div class="grid_pets">';
         while ($row = $result->fetch_assoc()) {
-?>
+            echo '
             <div class="place_name">
-                <a href="pageanimals.php?id=<?= $row['id']; ?>">
-                    <h2><?= $row["name"]; ?></h2>
+                <a href="pageanimals.php?id=' . $row['id'] . '">
+                    <h2>' . $row["name"] . '</h2>
                 </a>
             </div>
-<?php
+        </div>';
         }
-        echo '</div>';
     } else {
         echo "Aucun animal trouvé.";
     }
 }
-
-
-
-?>
