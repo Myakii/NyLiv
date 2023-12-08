@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import './Header.css';
-import { getAuth } from 'firebase/auth';
+import { authContext, useAuth } from '../Auth';
 
 export default function Navbar() {
 
-    const auth = getAuth();
+    const auth = useAuth(authContext);
+    
+    const [user, setUser] = useState({});
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
 
-        if ( auth.currentUser ) {
+        if ( auth ) {
             setIsLoggedIn(true);
+            setUser(auth);
+            console.log("Oui")
         }
 
-    }), [];
+    }), [auth];
     
 
   return (
@@ -28,25 +32,32 @@ export default function Navbar() {
 
                 <li className='nav-item'>
 
-                    <Link to="/">Home</Link>
+                    <Link to="/">Accueil</Link>
 
                 </li>
 
                 <li className='nav-item'>
 
-                    <Link to="/">Oui</Link>
+                    <Link to="/">Adoptez un animal</Link>
 
                 </li>
 
                 <li className='nav-item'>
 
-                    <Link to="/">Oui</Link>
+                    <Link to="/">SPA</Link>
 
                 </li>
+
+                <li className='nav-item'>
+
+                    <Link to="/">30 Millions D'Amis</Link>
+
+                </li>
+
             </ul>
         </nav>
 
-        {isLoggedIn?
+        {isLoggedIn == false ?
 
             (<nav className='navbar-right flex flex-row'>
 
@@ -77,7 +88,7 @@ export default function Navbar() {
                         
                         <li className='nav-item'>
 
-                            <p>Connecté</p>
+                            <p>{user.email}</p>
 
                         </li>
 

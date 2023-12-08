@@ -63,8 +63,12 @@ export default function SignUp() {
 
     };
 
+    useEffect(() => {
+
+    });
+
   return (
-    <div className='sign-up'>
+    <div className='sign-up centered-div'>
       <form>
         {/* <label htmlFor='firstname'>Prenom</label>
         <input type='text' name='firstname' onChange={handleFirstName} />
