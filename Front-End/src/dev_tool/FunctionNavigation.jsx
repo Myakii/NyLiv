@@ -37,7 +37,7 @@ export default function FunctionNavigation() {
 
   
   return (
-    <div className='function-navigation centered-div'>
+    <div className='function-navigation'>
 
       <Link to='/adoption-formulaire'>Adoption Formulaire</Link>
       <Link to='/inscription'>Inscription</Link>

@@ -45,7 +45,7 @@ export default function AdoptForm() {
   };
 
   return (
-    <div className="adopt-form centered-div">
+    <div className="adopt-form">
       <h2>Formulaire d'Ajout d'Animaux</h2>
 
       <form method="post" className="flex flex-col">

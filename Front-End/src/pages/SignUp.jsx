@@ -68,7 +68,7 @@ export default function SignUp() {
     });
 
   return (
-    <div className='sign-up centered-div'>
+    <div className='sign-up'>
       <form>
         {/* <label htmlFor='firstname'>Prenom</label>
         <input type='text' name='firstname' onChange={handleFirstName} />

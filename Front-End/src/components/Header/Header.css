@@ -1,0 +1,31 @@
+.header {
+
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    background-color: #159DC0;
+    color: white;
+    padding: 2vh 10vw;
+    height: 20dvh;
+    
+
+}
+
+.nav-items {
+
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#navbar-nyliv-logo {
+
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    grid-column: 2;
+
+}

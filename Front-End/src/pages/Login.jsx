@@ -42,7 +42,7 @@ export default function Login() {
 
   
   return (
-    <div className='login centered-div'>
+    <div className='login'>
 
       <form>
         <label htmlFor='email' >E-mail</label>
