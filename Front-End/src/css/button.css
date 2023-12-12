@@ -1,0 +1,48 @@
+.btn {
+
+    width: 18.75rem;
+    height: 5rem;
+    color: white;
+    border-radius: 50px;
+
+    font-size: 1.75rem;    /* h4 font size */
+    font-weight: normal; /* h4 font weight */
+
+}
+
+.btn-orange {
+
+    background-color: #F47D34;
+
+}
+
+.btn-orange:hover {
+
+    background-color: #E6610F;
+
+}
+
+.btn-orange:active {
+
+
+    background-color: #F6A979;
+
+}
+
+.btn-blue {
+
+    background-color: #159DC0;
+
+}
+
+.btn-blue:hover {
+
+    background-color: #107993;
+
+}
+
+.btn-blue:active {
+
+    background-color: #5ACFED;
+
+}

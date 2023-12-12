@@ -7,6 +7,7 @@ import FunctionNavigation from './dev_tool/FunctionNavigation'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import Auth from './Auth'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
 
         </Routes>
         <FunctionNavigation />
+
+        <Footer />
 
       </div>
     </Auth>
