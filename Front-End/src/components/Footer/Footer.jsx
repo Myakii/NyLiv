@@ -1,17 +1,48 @@
 import React from 'react'
 import './Footer.css'
+import Logo from './components/Logo';
+import Informations from './components/Informations/Informations';
+import LocalisationInformation from './components/LocalisationInformation/LocalisationInformation';
 
 export default function Footer() {
+
+
+  const functionInc = (e) => {
+
+    e.preventDefault();
+
+  }
+
+
   return (
 
-    <footer className='footer-section'>
+    <footer className='footer-section centered-padding-div'>
 
-      <img className="navbar-nyliv-logo w-52" src='./src/assets/NyLiv_Logo.png' alt="Logo de NyLiv" />
-        <h2 className='flex'>
-          <div className='text-[#159DC0]'>Ny</div>
-          <div className='text-[#F27D33]'>Liv</div>
-        </h2>
+      <div className='top-footer'>
 
+        <Logo />
+
+        <div className='noname'>
+
+          <form>
+            <input type="email" className='newsletter-input' placeholder='Votre Email'/>
+            <button type="submit" onClick={functionInc} className='newsletter-btn btn-blue'>Inscrivez-vous</button>
+          </form>
+
+          <LocalisationInformation />
+x
+          <Informations />
+
+        </div>
+
+      </div>
+
+      <div className='end-page'>
+
+        <p className='copyright'>© 2023, NyLiv</p>
+      
+      </div>
+      
     </footer>
     
   )

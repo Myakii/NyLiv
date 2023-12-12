@@ -11,17 +11,12 @@
 
 }
 
-input, textarea {
-
-    border: 1px solid red;
-
-
-}
 
 h1 {
 
     font-size: 4rem;
     font-weight: bold;
+    width: fit-content;
 
 }
 
@@ -29,6 +24,7 @@ h2 {
 
     font-size: 2.75rem;
     font-weight: 600;
+    width: fit-content;
 
 }
 
@@ -36,6 +32,7 @@ h3 {
 
     font-size: 2.25rem;
     font-weight: 500;
+    width: fit-content;
 
 }
 
@@ -43,13 +40,15 @@ h4 {
 
     font-size: 1.75rem;
     font-weight: normal;
+    width: fit-content;
 
 }
 
 p, span {
 
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 300;
+    width: fit-content;
 
 }
 

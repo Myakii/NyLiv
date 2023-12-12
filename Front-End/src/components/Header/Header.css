@@ -7,13 +7,11 @@
     background-color: #159DC0;
     color: white;
     padding: 2vh 5dvw;
-    height: 20dvh;
     position: relative;
-    
 
 }
 
-.nav-items {
+header .nav-items {
 
     display: flex;
     flex-direction: row;
@@ -23,7 +21,7 @@
 
 }
 
-.logo {
+header .logo {
     
     display: flex;
     grid-column: 2;
