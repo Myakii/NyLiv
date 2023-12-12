@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <header className="header">
      
-        <div className='navbar-left'>
+        <nav className='navbar-left'>
 
             <ul className='nav-items'>
 
@@ -43,11 +43,13 @@ export default function Navbar() {
 
             </ul>
 
+        </nav>
+
+        <div className='logo'>
+            <img className="navbar-nyliv-logo w-52" src='./src/assets/NyLiv_Logo.png' alt="Logo de NyLiv" />
         </div>
-     
-        <img id="navbar-nyliv-logo" src='./src/assets/NyLiv_Logo.png' alt="Logo de NyLiv" />
-        
-        <div className='navbar-right'>
+
+        <nav className='navbar-right'>
 
             <ul className='nav-items'>
 
@@ -63,7 +65,7 @@ export default function Navbar() {
 
             </ul>
 
-        </div>
+        </nav>
 
     </header>
 
