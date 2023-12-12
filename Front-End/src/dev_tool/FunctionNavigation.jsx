@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './test.css'
 import { getAuth, signOut } from 'firebase/auth'
 import { authContext, useAuth } from '../Auth';
+import Button from './Button';
 
 export default function FunctionNavigation() {
 
@@ -44,6 +45,8 @@ export default function FunctionNavigation() {
       <Link to='/connexion'>Connexion</Link>
       <button onClick={handleSignOut}>Déconnexion</button>
       <button onClick={checkIfConnected}>Voir si jsuis co</button>
+      
+      <Button />
 
     </div>
   )

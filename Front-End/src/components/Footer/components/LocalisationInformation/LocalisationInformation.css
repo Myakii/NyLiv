@@ -1,0 +1,18 @@
+footer .noname .localisation {
+
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    position: relative;
+
+}
+
+footer 
+.noname 
+.localisation 
+.information-item {
+
+    bottom: 0;
+    position: absolute;
+
+}

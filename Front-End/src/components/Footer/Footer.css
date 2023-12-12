@@ -1,0 +1,102 @@
+.footer-section {
+
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: white;
+    position: relative;
+    padding: 6.25rem 0px;
+
+}
+
+footer .top-footer {
+
+    display: flex;
+    padding-bottom: 3.125rem;
+    gap: 10%;
+
+}
+
+footer .footer-logo {
+
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    width: 15.625rem;
+    height: 15.625rem;
+    
+    
+}
+
+footer form {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 37.5rem;
+    height: fit-content;
+
+}
+
+footer form .newsletter-input {
+
+    width: 37.5rem;
+    height: 3.125rem;
+    border-radius: 50px;
+    padding-left: 2%;
+    color: black;
+    font-size: 1.5rem; /* Corps de texte font size */
+    font-weight: 300; /* Corps de texte font weight */
+    padding-right: 12.5rem;
+
+}
+
+footer form .newsletter-btn {
+
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 50px;
+    position: absolute;
+    right: 0;    
+
+}
+
+footer .noname {
+
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 70%;
+
+
+
+}
+
+footer .noname form{
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    justify-content: center;
+    align-items: center;
+
+    grid-row: 1;
+
+}
+
+footer .end-page {
+
+    width: 90dvw;
+    position: absolute;
+    border-top: 1px solid #F47D34;
+
+}
+
+footer .copyright {
+    
+    position: absolute;
+    margin-top: 1.25rem;
+    right: 0;
+
+}

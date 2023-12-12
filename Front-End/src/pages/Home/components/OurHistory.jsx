@@ -18,16 +18,20 @@ export default function OurHistory() {
 
         <p>
           {ourTextHistory}
-    
         </p>
+
+
+        <button className='btn btn-blue'>Voir plus...</button>
 
       </article>
 
-      <div>
-          <p>img</p>
+      <div className='oui'>
+
+        <p>img</p>
 
       </div>
 
+  
 
     </section>
   )
