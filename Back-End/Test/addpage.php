@@ -24,6 +24,9 @@ add_pets($conn);
         <form method="post" class="flex flex-col">
             <label for="name">Nom de l'animal:</label>
             <input type="text" name="name" onChange={handleInputChange} required /><br>
+            
+            <label for="img">Image:</label>
+            <input type="file" name="img" accept="image/*" required /><br>
 
             <label for="breed">Race:</label>
             <input type="text" name="breed" onChange={handleInputChange} required /><br>
