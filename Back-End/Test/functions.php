@@ -25,7 +25,7 @@ function add_pets($conn)
         $urgent = $_POST['urgent'];
 
         // Éviter les attaques par injection SQL
-        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent))VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssissssi", $name, $breed, $age, $genre, $type, $localisation, $description, $urgent);
 
         // Exécutez la requête préparée
