@@ -52,3 +52,19 @@ p, span {
     font-weight: 300;
 
 }
+
+
+
+.centered-marg-div {
+
+    margin-left: 5dvw;
+    margin-right: 5dvw;
+
+}
+
+.centered-padding-div {
+
+    padding-left: 5dvw;
+    padding-right: 5dvw;
+
+}

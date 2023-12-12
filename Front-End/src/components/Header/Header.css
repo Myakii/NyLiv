@@ -2,10 +2,13 @@
 
     display: grid;
     grid-template-columns: 40% 20% 40%;
+    justify-content: center;
+    align-items: center;
     background-color: #159DC0;
     color: white;
-    padding: 2vh 10vw;
+    padding: 2vh 5dvw;
     height: 20dvh;
+    position: relative;
     
 
 }
@@ -20,12 +23,11 @@
 
 }
 
-
-#navbar-nyliv-logo {
-
-    width: 200px;
-    max-width: 100%;
-    height: auto;
+.logo {
+    
+    display: flex;
     grid-column: 2;
+    align-items: center;
+    justify-content: center;
 
 }

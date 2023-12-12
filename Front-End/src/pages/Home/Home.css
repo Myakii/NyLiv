@@ -1,6 +1,5 @@
 .image-banner {
 
-    width: 100%;
     border: 1px solid red;
     height: 80dvh;
 
@@ -8,10 +7,22 @@
 
 .our-history {
 
-
-    width: 100%;
+    display: grid;
     height: 100dvh;
     background-color: #F47D34;
+    grid-template-columns: 50% 50%;
 
+}
+
+.our-history article {
+
+    grid-column: 1;
+
+}
+
+.our-history div {
+
+    grid-column: 2;
+    background-color: white;
 
 }
