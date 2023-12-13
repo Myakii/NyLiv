@@ -3,7 +3,6 @@
 
 .image-banner {
 
-    border: 1px solid red;
     height: 80dvh;
 
 }
@@ -37,10 +36,18 @@
 }
 
 
-.oui {
+.our-history .our-history-img {
 
     grid-column: 2;
     background-color: white;
+
+}
+
+/* Our Partner */
+
+.our-partner {
+
+    justify-content: center;
 
 }
 

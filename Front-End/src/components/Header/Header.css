@@ -6,7 +6,7 @@
     align-items: center;
     background-color: #159DC0;
     color: white;
-    padding: 2vh 5dvw;
+    padding: 3dvh 0;
     position: relative;
 
 }
@@ -16,10 +16,25 @@ header .nav-items {
     display: flex;
     flex-direction: row;
     gap: 10%;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 
 }
+
+header .navbar-left .nav-items {
+
+    justify-content: right;
+
+}
+
+header .navbar-right .nav-items {
+
+    justify-content: left;
+
+}
+
+
+
 
 header .logo {
     

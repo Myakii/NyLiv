@@ -26,7 +26,7 @@ export default function Navbar() {
     
 
   return (
-    <header className="header">
+    <header className="header centered-padding-div">
      
         <nav className='navbar-left'>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
                 </li>
                 
                 <li className="nav-item">
-                    <FontAwesomeIcon icon={faBars} size='xl'/>
+                    <FontAwesomeIcon icon={faBars} className='burger-navbar' size='3x'/>
 
                 </li>
 

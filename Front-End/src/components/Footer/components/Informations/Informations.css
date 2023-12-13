@@ -1,4 +1,4 @@
-footer .noname .informations {
+footer .middle-footer-page .informations {
 
     grid-row: 2;
     grid-column: 2;
@@ -8,7 +8,7 @@ footer .noname .informations {
 }
 
 footer 
-.noname 
+.middle-footer-page 
 .informations 
 .information-nav {
 

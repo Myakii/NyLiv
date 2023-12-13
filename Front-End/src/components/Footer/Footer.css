@@ -1,3 +1,5 @@
+/* Footer CSS */
+
 .footer-section {
 
     background-color: black;
@@ -17,6 +19,9 @@ footer .top-footer {
 
 }
 
+
+/* Footer Logo */
+
 footer .footer-logo {
 
     display: flex;
@@ -29,6 +34,9 @@ footer .footer-logo {
     
 }
 
+
+/* Footer middle page */
+
 footer form {
 
     position: relative;
@@ -38,6 +46,7 @@ footer form {
     height: fit-content;
 
 }
+
 
 footer form .newsletter-input {
 
@@ -62,7 +71,7 @@ footer form .newsletter-btn {
 
 }
 
-footer .noname {
+footer .middle-footer-page {
 
     display: grid;
     width: fit-content;
@@ -73,7 +82,7 @@ footer .noname {
 
 }
 
-footer .noname form{
+footer .middle-footer-page form{
 
     grid-column-start: 1;
     grid-column-end: 2;
@@ -84,6 +93,9 @@ footer .noname form{
     grid-row: 1;
 
 }
+
+
+/* Footer end page */
 
 footer .end-page {
 

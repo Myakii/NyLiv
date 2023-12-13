@@ -25,7 +25,7 @@ export default function OurHistory() {
 
       </article>
 
-      <div className='oui'>
+      <div className='our-history-img'>
 
         <p>img</p>
 

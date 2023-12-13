@@ -22,7 +22,7 @@ export default function Footer() {
 
         <Logo />
 
-        <div className='noname'>
+        <div className='middle-footer-page'>
 
           <form>
             <input type="email" className='newsletter-input' placeholder='Votre Email'/>
