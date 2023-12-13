@@ -11,10 +11,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// ADD
 function add_pets($conn)
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+        $img_path = "Assets/Animals/";
         $name = $_POST['name'];
         $breed = $_POST['breed'];
         $age = $_POST['age'];
@@ -24,9 +24,21 @@ function add_pets($conn)
         $description = $_POST['description'];
         $urgent = $_POST['urgent'];
 
+        // Gestion de l'image
+        if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) {
+            $img = $_FILES['img']['name'];
+            $img_temp = $_FILES['img']['tmp_name'];
+            $img_path = "Assets/Animals" . $img;
+
+            move_uploaded_file($img_temp, $img_path);
+        } else {
+            // Gérer le cas où aucune image n'est téléchargée
+            $img_path = ''; // Ou la valeur par défaut que vous souhaitez utiliser
+        }
+
         // Éviter les attaques par injection SQL
-        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent))VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssissssi", $name, $breed, $age, $genre, $type, $localisation, $description, $urgent);
+        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param('ssissssssi', $name, $breed, $age, $genre, $type, $localisation, $description, $urgent, $img_path);
 
         // Exécutez la requête préparée
         $stmt->execute();
@@ -34,71 +46,36 @@ function add_pets($conn)
     }
 }
 
+
 // MODIFY
-function modify_pets($conn, $pets_id)
+function modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $pets_img)
 {
-    $query = "UPDATE pets SET name=?, breed=?, age=?, genre=?, type=?, localisation=?, urgent=?, description=? WHERE id=?";
+    $query = "UPDATE pets SET name=?, breed=?, age=?, genre=?, type=?, localisation=?, urgent=?, description=?, img=? WHERE id=?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("i", $pets_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
 
-    // Vérifiez si une ligne est récupérée
-    if ($result->num_rows > 0) {
-        $pet = $result->fetch_assoc();
+    // Liaison des paramètres
+    $stmt->bind_param('ssissssssi', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $pets_img, $pets_id);
 
-        echo '<a href="listanimals.php">Retour</a>';
-
-        echo '<div class="form_pets">
-    
-            <h2>Formulaire de modifications d\'Animaux</h2>
-    
-            <form method="post" class="flex flex-col">
-                <label for="name">Nom de l\'animal:</label>
-                <input type="text" name="name" value="' . $pet['name'] . '" required /><br>
-    
-                <label for="breed">Race:</label>
-                <input type="text" name="breed" value="' . $pet['breed'] . '" required /><br>
-    
-                <label for="age">Âge:</label>
-                <input type="number" name="age" value="' . $pet['age'] . '" required /><br>
-    
-                <label for="genre">Sexe:</label>
-                <select name="genre">
-                    <option value="Femelle" ' . ($pet['genre'] == 'Femelle' ? 'selected' : '') . '>Femelle</option>
-                    <option value="Male" ' . ($pet['genre'] == 'Male' ? 'selected' : '') . '>Male</option>
-                </select><br>
-    
-                <label for="type">Type:</label>
-                <input type="text" name="type" value="' . $pet['type'] . '" required /><br>
-    
-                <label for="localisation">Localisation:</label>
-                <input type="text" name="localisation" value="' . $pet['localisation'] . '" required /><br>
-    
-                <label for="description">Description:</label>
-                <textarea name="description" required>' . $pet['description'] . '</textarea><br>
-    
-                <label for="urgent">Urgent:</label>
-                <select name="urgent">
-                    <option value="Non" ' . ($pet['urgent'] == 'Non' ? 'selected' : '') . '>Non</option>
-                    <option value="Oui" ' . ($pet['urgent'] == 'Oui' ? 'selected' : '') . '>Oui</option>
-                </select><br>
-    
-                <button type="submit" name="modify" value="modify">
-                    Confirmer les modifications
-                </button>
-            </form>
-        </div>';
-    } else {
-        echo 'Animaux non trouvés.';
+    // Vérifiez si la requête préparée a réussi
+    if (!$stmt) {
+        die('Erreur de requête préparée: ' . $conn->error);
     }
 
-    // N'oubliez pas de fermer la balise body et l'élément HTML
-    echo '</body></html>';
+    // Exécution de la requête
+    $stmt->execute();
+
+    // Vérifiez si l'exécution de la requête a réussi
+    if ($stmt->affected_rows > 0) {
+        echo 'Mise à jour réussie.';
+    } else {
+        echo 'Aucune mise à jour effectuée.';
+    }
+
+    // Fermez la requête préparée
+    $stmt->close();
 }
 
 
-// READ
 // READ
 function read_pets($conn, $pets_id)
 {
@@ -122,11 +99,12 @@ function read_pets($conn, $pets_id)
             $pets_localisation = $pets_detail['localisation'];
             $pets_urgent = $pets_detail['urgent'];
             $pets_description = $pets_detail['description'];
+            $pets_img = $pets_detail['img'];
 
             echo '<div class="pets_info">
-                <h2>' . $pets_name . '</h2>
-                IMG
-                <div class="info">
+                <h2>' . $pets_name . '</h2>'
+                . $pets_img .
+                '<div class="info">
                     <h3>Race : </h3>
                     <p>' . $pets_breed . '</p>
                     <h3>Âge : </h3>
@@ -166,21 +144,22 @@ function delete_pets($conn, $pets_id)
 // AFFICHAGE DE TOUTES UNE BASE DE DONNEES
 function pets_display($conn)
 {
-    $query = "SELECT id, name FROM pets";
+    $query = "SELECT id, name, img FROM pets";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
         echo '<div class="grid_pets">';
         while ($row = $result->fetch_assoc()) {
             echo '
-            <div class="place_name">
-                <a href="pageanimals.php?id=' . $row['id'] . '">
-                    <h2>' . $row["name"] . '</h2>
-                </a>
-            </div>
-        </div>';
+                <div class="place_name">
+                    <a href="pageanimals.php?id=' . $row['id'] . '">
+                        <h2>' . $row["name"] . '</h2>
+                        <h2>' . $row["img"] . '</h2>
+                    </a>
+                </div>';
         }
+        echo '</div>'; // Move this outside the loop
     } else {
         echo "Aucun animal trouvé.";
     }
-}
+}    
