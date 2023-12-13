@@ -25,12 +25,12 @@ export default function Footer() {
         <div className='middle-footer-page'>
 
           <form>
-            <input type="email" className='newsletter-input' placeholder='Votre Email'/>
+            <input type="email" className='newsletter-input' id='newsletter-input' placeholder='Votre Email'/>
             <button type="submit" onClick={functionInc} className='newsletter-btn btn-blue'>Inscrivez-vous</button>
           </form>
 
           <LocalisationInformation />
-x
+
           <Informations />
 
         </div>

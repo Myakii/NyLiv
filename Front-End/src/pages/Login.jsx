@@ -45,11 +45,11 @@ export default function Login() {
     <div className='login'>
 
       <form>
-        <label htmlFor='email' >E-mail</label>
-        <input type='email' name='email' onChange={handleEmail} />
+        <label htmlFor='login-email' >E-mail</label>
+        <input type='email' id='login-email' name='email' onChange={handleEmail} autoComplete='email' />
 
-        <label htmlFor='password'>Mot de Passe</label>
-        <input type='password' name='password' onChange={handlePassword} />
+        <label htmlFor='login-password'>Mot de Passe</label>
+        <input type='password' id='login-password' name='password' onChange={handlePassword} />
 
         <input type='submit' name='submit' onClick={register} />
 
