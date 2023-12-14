@@ -1,0 +1,1120 @@
+{
+  "filters": [
+    {
+      "name": "establishment",
+      "label": "Nom de l'\u00e9tablissement",
+      "values": [
+        {
+          "name": "Dispensaire SPA du Cannet - Jeanine Vincent",
+          "slug": "dispensaire-spa-du-cannet-jeanine-vincent",
+          "near": 0
+        },
+        {
+          "name": "Grand Refuge SPA de Pervench\u00e8res",
+          "slug": "grand-refuge-spa-de-pervencheres",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA d\u2019Ajaccio",
+          "slug": "maison-spa-dajaccio",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA de Bordeaux",
+          "slug": "maison-spa-de-bordeaux",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA de Lons-Le-Saunier",
+          "slug": "maison-spa-de-lons-le-saunier",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA de Nice",
+          "slug": "maison-spa-de-nice",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA de Niort",
+          "slug": "maison-spa-de-niort",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA de Tourcoing",
+          "slug": "maison-spa-de-tourcoing",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Bouguenais - Nantes",
+          "slug": "refuge-de-bouguenais-nantes",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d'Aix-En-Provence - Des Chiens En Libert\u00e9",
+          "slug": "refuge-spa-daix-en-provence-des-chiens-en-liberte",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d'Arry - Gerhard Cramer",
+          "slug": "refuge-spa-darry-gerhard-cramer",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Brian\u00e7on - Le Chazal",
+          "slug": "refuge-spa-de-briancon-le-chazal",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Brugheas - Vichy",
+          "slug": "refuge-spa-de-brugheas-vichy",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Cabourg",
+          "slug": "refuge-spa-de-cabourg",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Chamarande",
+          "slug": "refuge-spa-de-chamarande",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Chameyrat - Tulle",
+          "slug": "refuge-spa-de-chameyrat-tulle",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Ch\u00e2teau-D'olonne - Les Petites Prises",
+          "slug": "refuge-spa-de-chateau-dolonne-les-petites-prises",
+          "near": 0
+        },
+        {
+          "name": "Refuge de Ch\u00e2teaubourg",
+          "slug": "refuge-spa-de-chateaubourg",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Chilleurs-Aux-Bois - Le Moulin d\u2019en Haut",
+          "slug": "refuge-spa-de-chilleurs-aux-bois-le-moulin-den-haut",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Cholet - De l'Esp\u00e9rance",
+          "slug": "refuge-spa-de-cholet-de-lesperance",
+          "near": 0
+        },
+        {
+          "name": "Maison SPA de Charleville-M\u00e9zi\u00e8res",
+          "slug": "refuge-spa-de-cliron-charleville-mezieres",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Cluses - De La Vall\u00e9e Blanche",
+          "slug": "refuge-spa-de-cluses-de-la-vallee-blanche",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Compi\u00e8gne",
+          "slug": "refuge-spa-de-compiegne",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Crozon",
+          "slug": "refuge-spa-de-crozon",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Flayosc - Draguignan",
+          "slug": "refuge-spa-de-flayosc-draguignan",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Forbach",
+          "slug": "refuge-spa-de-forbach",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Gennevilliers - Grammont",
+          "slug": "refuge-spa-de-gennevilliers-grammont",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Golfech - Des Deux Rives",
+          "slug": "refuge-spa-de-golfech-des-deux-rives",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Guadeloupe - Papillon",
+          "slug": "refuge-spa-de-guadeloupe-papillon",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de La-Roche-Sur-Yon",
+          "slug": "refuge-spa-de-la-roche-sur-yon",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Laon - Des Pr\u00e9s de Longuevalle",
+          "slug": "refuge-spa-de-laon-des-pres-de-longuevalle",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Le Garric - Albi",
+          "slug": "refuge-spa-de-le-garric-albi",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Lezignan Corbi\u00e8res",
+          "slug": "refuge-spa-de-lezignan-corbieres",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Luynes - Tours",
+          "slug": "refuge-spa-de-luynes-tours",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Marennes - Lyon",
+          "slug": "refuge-spa-de-marennes-lyon",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Millau - L'Escale",
+          "slug": "refuge-spa-de-millau-lescale",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Mirepoix - Le Clergue",
+          "slug": "refuge-spa-de-mirepoix-le-clergue",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Montlu\u00e7on - La Loue",
+          "slug": "refuge-spa-de-montlucon-la-loue",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Mor\u00e9e - Jean Leriche",
+          "slug": "refuge-spa-de-moree-jean-leriche",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Perpignan",
+          "slug": "refuge-spa-de-perpignan",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Plaisir",
+          "slug": "refuge-spa-de-plaisir",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Plouhinec",
+          "slug": "refuge-spa-de-plouhinec",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Pornic - Saint-P\u00e8re en Retz",
+          "slug": "refuge-spa-de-pornic-saint-pere-en-retz",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Port-La-Nouvelle - Narbonne",
+          "slug": "refuge-spa-de-port-la-nouvelle-narbonne",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Poulainville",
+          "slug": "refuge-spa-de-poulainville",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Quimper - Du Corniguel",
+          "slug": "refuge-spa-de-quimper-du-corniguel",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Redon",
+          "slug": "refuge-spa-de-redon",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Rennes",
+          "slug": "refuge-spa-de-rennes",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Saint-Omer - Le Brockus",
+          "slug": "refuge-spa-de-saint-omer-le-brockus",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Saint-Parres-Aux-Tertres - Troyes",
+          "slug": "refuge-spa-de-saint-parres-aux-tertres-troyes",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Saint-Pierre-du-Mont - Mont-de-Marsan",
+          "slug": "refuge-spa-de-saint-pierre-du-mont-mont-de-marsan",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Sa\u00f4ne et Loire - Beaurepaire en Bresse",
+          "slug": "refuge-spa-de-saone-et-loire-beaurepaire-en-bresse",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Sarreguemines",
+          "slug": "refuge-spa-de-sarreguemines",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Thionville",
+          "slug": "refuge-spa-de-thionville",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Tilloy-Les-Mofflaines - Arras",
+          "slug": "refuge-spa-de-tilloy-les-mofflaines-arras",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Torreilles - Le Jardin de La Padrine",
+          "slug": "refuge-spa-de-torreilles-le-jardin-de-la-padrine",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Vallerargues - Al\u00e8s",
+          "slug": "refuge-spa-de-vallerargues-ales",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Vaux-Le-Penil",
+          "slug": "refuge-spa-de-vaux-le-penil",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Vitr\u00e9 - Le Bois Pinson",
+          "slug": "refuge-spa-de-vitre-le-bois-pinson",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d\u2019\u00c9talondes",
+          "slug": "refuge-spa-detalondes",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d'Hermeray",
+          "slug": "refuge-spa-dhermeray",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d\u2019Inzinzac - Lorient",
+          "slug": "refuge-spa-dinzinzac-lorient",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d'Orgeval",
+          "slug": "refuge-spa-dorgeval",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA du Cotentin - Cherbourg",
+          "slug": "refuge-spa-du-cotentin-cherbourg",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA d'Yvr\u00e9-l'\u00c9v\u00eaque - Le Mans",
+          "slug": "refuge-spa-dyvre-leveque-le-mans",
+          "near": 0
+        },
+        {
+          "name": "Refuge SPA de Haute-Marne Voillecomte - Maison des Calim\u00e9ros",
+          "slug": "refuge-spa-haute-marne-voillecomte",
+          "near": 0
+        }
+      ],
+      "used_radius": "100"
+    },
+    {
+      "name": "species",
+      "label": "Esp\u00e8ces",
+      "values": [
+        { "name": "Autres", "slug": "autres" },
+        { "name": "Bovin", "slug": "bovin" },
+        { "name": "Caprin", "slug": "caprin" },
+        { "name": "Chat", "slug": "chat" },
+        { "name": "Chien", "slug": "chien" },
+        { "name": "Equid\u00e9", "slug": "equide" },
+        { "name": "NAC", "slug": "nac" },
+        { "name": "Ovin", "slug": "ovin" },
+        { "name": "Porcin", "slug": "porcin" }
+      ]
+    },
+    {
+      "name": "races",
+      "label": "Races/Apparence",
+      "values": [
+        { "name": "Airedale", "slug": "airedale" },
+        { "name": "Akita American", "slug": "akita-american" },
+        { "name": "Akita inu", "slug": "akita-inu" },
+        { "name": "American Bully", "slug": "american-bully" },
+        { "name": "American staffordshire", "slug": "american-staffordshire" },
+        { "name": "\u00c2ne", "slug": "ane" },
+        { "name": "Anglo", "slug": "anglo" },
+        { "name": "Angora", "slug": "angora" },
+        { "name": "Ariegeois", "slug": "ariegeois" },
+        { "name": "Basset", "slug": "basset" },
+        {
+          "name": "Basset fauve de Bretagne",
+          "slug": "basset-fauve-de-bretagne"
+        },
+        { "name": "Beagle", "slug": "beagle" },
+        { "name": "Bearded collie", "slug": "bearded-collie" },
+        { "name": "B\u00e9lier", "slug": "belier" },
+        { "name": "Berger", "slug": "berger" },
+        { "name": "Berger allemand", "slug": "berger-allemand" },
+        {
+          "name": "Berger australien d'Am\u00e9rique",
+          "slug": "berger-australien-damerique"
+        },
+        {
+          "name": "Berger belge Groenendael",
+          "slug": "berger-belge-groenendael"
+        },
+        { "name": "Berger belge Malinois", "slug": "berger-belge-malinois" },
+        { "name": "Berger belge Tervueren", "slug": "berger-belge-tervueren" },
+        { "name": "Berger blanc Suisse", "slug": "berger-blanc-suisse" },
+        { "name": "Berger Cr\u00e9ole", "slug": "berger-creole" },
+        { "name": "Berger d'Anatolie", "slug": "berger-danatolie" },
+        { "name": "Berger d'Asie Centrale", "slug": "berger-dasie-centrale" },
+        { "name": "Berger de Beauce", "slug": "berger-de-beauce" },
+        { "name": "Berger des Pyrenees", "slug": "berger-des-pyrenees" },
+        { "name": "Berger des Shetland", "slug": "berger-des-shetland" },
+        { "name": "Berger du Caucase", "slug": "berger-du-caucase" },
+        { "name": "Berger Hollandais", "slug": "berger-hollandais" },
+        { "name": "Berger picard", "slug": "berger-picard" },
+        { "name": "Berger yougoslave", "slug": "berger-yougoslave" },
+        { "name": "Bichon", "slug": "bichon" },
+        { "name": "Bleu de Gascogne", "slug": "bleu-de-gascogne" },
+        { "name": "Border Collie", "slug": "border-collie" },
+        { "name": "Bouc", "slug": "bouc" },
+        { "name": "Bouledogue Am\u00e9ricain", "slug": "bouledogue-americain" },
+        { "name": "Bouledogue anglais", "slug": "bouledogue-anglais" },
+        { "name": "Bouledogue francais", "slug": "bouledogue-francais" },
+        { "name": "Bouvier australien", "slug": "bouvier-australien" },
+        { "name": "Bouvier Bernois", "slug": "bouvier-bernois" },
+        { "name": "Boxer", "slug": "boxer" },
+        { "name": "Braque", "slug": "braque" },
+        { "name": "Braque Allemand", "slug": "braque-allemand" },
+        { "name": "Braque d'Auvergne", "slug": "braque-dauvergne" },
+        { "name": "Braque du Bourbonnais", "slug": "braque-du-bourbonnais" },
+        { "name": "British shorthair", "slug": "british-shorthair" },
+        { "name": "Bruno du Jura", "slug": "bruno-du-jura" },
+        { "name": "Bull dog Am\u00e9ricain", "slug": "bull-dog-americain" },
+        { "name": "Bull terrier", "slug": "bull-terrier" },
+        { "name": "Cairn terrier", "slug": "cairn-terrier" },
+        { "name": "Canard", "slug": "canard" },
+        { "name": "Cane Corso", "slug": "cane-corso" },
+        { "name": "Caniche grand", "slug": "caniche-grand" },
+        { "name": "Cavalier King-Charles", "slug": "cavalier-king-charles" },
+        { "name": "Cheval", "slug": "cheval" },
+        { "name": "Ch\u00e8vre", "slug": "chevre" },
+        { "name": "Chien corse", "slug": "chien-corse" },
+        { "name": "Chien courant", "slug": "chien-courant" },
+        { "name": "Chien courant slovaque", "slug": "chien-courant-slovaque" },
+        { "name": "Chien de Canaan", "slug": "chien-de-canaan" },
+        { "name": "Chien loup de Saarloos", "slug": "chien-loup-de-saarloos" },
+        { "name": "Chien loup tcheque", "slug": "chien-loup-tcheque" },
+        { "name": "Chihuahua", "slug": "chihuahua" },
+        { "name": "Chinchilla", "slug": "chinchilla" },
+        { "name": "Chow chow", "slug": "chow-chow" },
+        { "name": "Cochon d'inde", "slug": "cochon-dinde" },
+        {
+          "name": "Cocker americain (spaniel)",
+          "slug": "cocker-americain-spaniel"
+        },
+        {
+          "name": "Cocker anglais (spaniel)",
+          "slug": "cocker-anglais-spaniel"
+        },
+        { "name": "Colley", "slug": "colley" },
+        { "name": "Coq", "slug": "coq" },
+        { "name": "Crois\u00e9 / Autre", "slug": "croise-autre" },
+        { "name": "Dalmatien", "slug": "dalmatien" },
+        { "name": "Dobermann", "slug": "dobermann" },
+        { "name": "Dogo canario", "slug": "dogo-canario" },
+        { "name": "Dogue", "slug": "dogue" },
+        { "name": "Dogue allemand", "slug": "dogue-allemand" },
+        { "name": "Dogue argentin", "slug": "dogue-argentin" },
+        { "name": "Dogue de Bordeaux", "slug": "dogue-de-bordeaux" },
+        { "name": "Drahthaar", "slug": "drahthaar" },
+        { "name": "Epagneul", "slug": "epagneul" },
+        { "name": "Epagneul bleu picard", "slug": "epagneul-bleu-picard" },
+        { "name": "Epagneul breton", "slug": "epagneul-breton" },
+        { "name": "Epagneul francais", "slug": "epagneul-francais" },
+        { "name": "Epagneul Japonais", "slug": "epagneul-japonais" },
+        { "name": "Europeen", "slug": "europeen" },
+        { "name": "Fox terrier poil dur", "slug": "fox-terrier-poil-dur" },
+        { "name": "Fox terrier poil lisse", "slug": "fox-terrier-poil-lisse" },
+        { "name": "Golden Retriever", "slug": "golden-retriever" },
+        { "name": "Grand anglo francais", "slug": "grand-anglo-francais" },
+        { "name": "Grand bleu de Gascogne", "slug": "grand-bleu-de-gascogne" },
+        { "name": "Grand chien japonais", "slug": "grand-chien-japonais" },
+        {
+          "name": "Grand gascon saintongeois",
+          "slug": "grand-gascon-saintongeois"
+        },
+        { "name": "Griffon", "slug": "griffon" },
+        {
+          "name": "Griffon a poil dur Korthals",
+          "slug": "griffon-a-poil-dur-korthals"
+        },
+        {
+          "name": "Griffon bleu de Gascogne",
+          "slug": "griffon-bleu-de-gascogne"
+        },
+        {
+          "name": "Griffon fauve de Bretagne",
+          "slug": "griffon-fauve-de-bretagne"
+        },
+        { "name": "Griffon nivernais", "slug": "griffon-nivernais" },
+        { "name": "Hamster", "slug": "hamster" },
+        { "name": "Hamster dor\u00e9", "slug": "hamster-dore" },
+        { "name": "Hamster nain", "slug": "hamster-nain" },
+        { "name": "Harrier", "slug": "harrier" },
+        { "name": "Husky siberien", "slug": "husky-siberien" },
+        { "name": "Jack Russel terrier", "slug": "jack-russel-terrier" },
+        { "name": "Jadg Terrier", "slug": "jadg-terrier" },
+        { "name": "Labrador (retriever)", "slug": "labrador-retriever" },
+        { "name": "Lama", "slug": "lama" },
+        { "name": "Lapin", "slug": "lapin" },
+        { "name": "Leonberg", "slug": "leonberg" },
+        { "name": "Levrier", "slug": "levrier" },
+        { "name": "Malamute de l'Alaska", "slug": "malamute-de-lalaska" },
+        {
+          "name": "Montagne des Pyr\u00e9n\u00e9es",
+          "slug": "montagne-des-pyrenees"
+        },
+        { "name": "Mouton", "slug": "mouton" },
+        { "name": "NAC", "slug": "nac" },
+        { "name": "Norvegien", "slug": "norvegien" },
+        { "name": "Oiseau", "slug": "oiseau" },
+        { "name": "Parson Russel terrier", "slug": "parson-russel-terrier" },
+        { "name": "Pekinois", "slug": "pekinois" },
+        { "name": "Persan", "slug": "persan" },
+        { "name": "Pinscher moyen", "slug": "pinscher-moyen" },
+        { "name": "Pinscher nain", "slug": "pinscher-nain" },
+        { "name": "Podenco", "slug": "podenco" },
+        { "name": "Pointer", "slug": "pointer" },
+        { "name": "Poney", "slug": "poney" },
+        { "name": "Porcelaine", "slug": "porcelaine" },
+        { "name": "Porcin", "slug": "porcin" },
+        { "name": "Poule", "slug": "poule" },
+        { "name": "Rat", "slug": "rat" },
+        { "name": "Ratier", "slug": "ratier" },
+        { "name": "Rhodesian Ridgeback", "slug": "rhodesian-ridgeback" },
+        { "name": "Rottweiler", "slug": "rottweiler" },
+        { "name": "Sacre de birmanie", "slug": "sacre-de-birmanie" },
+        { "name": "Saint Bernard", "slug": "saint-bernard" },
+        { "name": "Schnauzer moyen", "slug": "schnauzer-moyen" },
+        { "name": "Scottish Fold", "slug": "scottish-fold" },
+        { "name": "Setter anglais", "slug": "setter-anglais" },
+        { "name": "Setter gordon", "slug": "setter-gordon" },
+        { "name": "Shar pei", "slug": "shar-pei" },
+        { "name": "Shiba inu", "slug": "shiba-inu" },
+        { "name": "Siamois", "slug": "siamois" },
+        { "name": "Spitz", "slug": "spitz" },
+        { "name": "Springer", "slug": "springer" },
+        { "name": "Staffie", "slug": "staffie" },
+        {
+          "name": "StaffordShire bull terrier",
+          "slug": "staffordshire-bull-terrier"
+        },
+        { "name": "Teckel", "slug": "teckel" },
+        { "name": "Terre Neuve", "slug": "terre-neuve" },
+        { "name": "Terrier", "slug": "terrier" },
+        { "name": "Vache", "slug": "vache" },
+        { "name": "X Terrier", "slug": "x-terrier" },
+        { "name": "Yorkshire terrier", "slug": "yorkshire-terrier" }
+      ]
+    },
+    {
+      "name": "sex",
+      "label": "Sexe",
+      "values": [
+        { "name": "Femelle", "slug": "female" },
+        { "name": "M\u00e2le", "slug": "male" }
+      ]
+    },
+    { "name": "location", "label": "Localisation", "values": [] },
+    {
+      "name": "age",
+      "label": "\u00c2ge",
+      "values": [
+        { "name": "Junior", "slug": "junior" },
+        { "name": "Adulte", "slug": "adult" },
+        { "name": "S\u00e9nior", "slug": "senior" }
+      ]
+    },
+    { "name": "name", "label": "Nom de l'animal", "values": [] },
+    {
+      "name": "criteria",
+      "label": "Adoptions sauvetage",
+      "values": [
+        { "name": "FAD", "slug": "fad", "short_name": "FAD" },
+        { "name": "SOS", "slug": "sos", "short_name": "SOS" },
+        {
+          "name": "Ma\u00eetre exp\u00e9riment\u00e9",
+          "slug": "expert",
+          "short_name": "EXPR"
+        }
+      ]
+    }
+  ],
+  "nb_pages": 236,
+  "total": 4248,
+  "results": [
+    {
+      "ID": 99174,
+      "name": "ARAMIS",
+      "description": null,
+      "url": "/animal/aramis-3/",
+      "uid": "animal-aramis-3",
+      "full_url": "https://www.la-spa.fr/app/animal/aramis-3/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/99174/aramis-99174-65291a8cef511.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "junior",
+      "age_label": "Junior",
+      "age_number": "N/A",
+      "establishment": {
+        "ID": 7377,
+        "name": "Refuge SPA de Cholet - De l'Esp\u00e9rance",
+        "slug": "refuge-spa-de-cholet-de-lesperance",
+        "url": "/etablissement/refuge-spa-de-cholet-de-lesperance/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-cholet-de-lesperance"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-10-13 12:23:07"
+    },
+    {
+      "ID": 105335,
+      "name": "MA\u00cfTIKA",
+      "description": "Les animaux pr\u00e9sents au refuge du Papillon sont adoptables uniquement en Guadeloupe. Pas de r\u00e9servation possible depuis la France hexagonale. Une rencontre physique entre la famille et l'animal est obligatoire avant tout d\u00e9part en adoption. Merci de votre compr\u00e9hension<br />\r\n",
+      "url": "/animal/maitika/",
+      "uid": "animal-maitika",
+      "full_url": "https://www.la-spa.fr/app/animal/maitika/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/105335/maitika-105335-6569f1ed5876b.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "junior",
+      "age_label": "Junior",
+      "age_number": "N/A",
+      "establishment": {
+        "ID": 7404,
+        "name": "Refuge SPA de Guadeloupe - Papillon",
+        "slug": "refuge-spa-de-guadeloupe-papillon",
+        "url": "/etablissement/refuge-spa-de-guadeloupe-papillon/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-guadeloupe-papillon"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-12-01 15:47:07"
+    },
+    {
+      "ID": 21446,
+      "name": "0 TIGRA 06/21",
+      "description": "Les animaux pr\u00e9sents au refuge du Papillon sont adoptables uniquement en Guadeloupe. Pas de r\u00e9servation possible depuis la France exagonale. Une rencontre physique entre la famille et l'animal est obligatoire avant tout d\u00e9part en adoption. Merci de votre compr\u00e9hension",
+      "url": "/animal/0-tigra-06-21/",
+      "uid": "animal-0-tigra-06-21",
+      "full_url": "https://www.la-spa.fr/app/animal/0-tigra-06-21/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/21446/0-tigra-06-21-21446-61952dbc60bc9.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "5 ans",
+      "establishment": {
+        "ID": 7404,
+        "name": "Refuge SPA de Guadeloupe - Papillon",
+        "slug": "refuge-spa-de-guadeloupe-papillon",
+        "url": "/etablissement/refuge-spa-de-guadeloupe-papillon/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-guadeloupe-papillon"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2021-11-17 17:28:43"
+    },
+    {
+      "ID": 106464,
+      "name": "HERMES",
+      "description": null,
+      "url": "/animal/hermes/",
+      "uid": "animal-hermes",
+      "full_url": "https://www.la-spa.fr/app/animal/hermes/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/106464/hermes-106464-6579b1c7c95a6.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Crois\u00e9 / Autre, Labrador (retriever)",
+      "age": "junior",
+      "age_label": "Junior",
+      "age_number": "N/A",
+      "establishment": {
+        "ID": 7353,
+        "name": "Refuge SPA de Montlu\u00e7on - La Loue",
+        "slug": "refuge-spa-de-montlucon-la-loue",
+        "url": "/etablissement/refuge-spa-de-montlucon-la-loue/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-montlucon-la-loue"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-12-11 11:44:41"
+    },
+    {
+      "ID": 43656,
+      "name": "fox",
+      "description": "Fox est un chien un peu craintif devant les inconnus ou la nouveaut\u00e9, ce qui le rend nerveux et peut donner parfois une mauvaise image de lui. Pour autant, une fois  mis en confiance, Fox s'av\u00e8re un chien tr\u00e8s c\u00e2lin, en demande de contacts.<br />\r\nFox a probablement eu des fractures mal soign\u00e9es aux pattes arri\u00e8res dans sa jeunesse et avec le temps des tumeurs s'y sont d\u00e9velopp\u00e9es. Les v\u00e9t\u00e9rinaires s'accordent sur un diagnostic d'ost\u00e9osarcome, mais nous ne connaissons pas son esp\u00e9rance de vie.<br />\r\nPas question de grande balade pour lui, les longues marches lui  devenant douloureuses, Fox recherche \u00e0 pr\u00e9sent un bon panier retraite bien au chaud, dans un environnement calme (pas d'enfants en bas \u00e2ge), o\u00f9 il serait le seul animal.<br />\r\nFox est \u00e9ligible au dispositif de famille d'accueil d\u00e9finitive (frais inh\u00e9rents \u00e0 sa maladie pris en charge par la SPA).<br />\r\n<br />\r\n<br />\r\n",
+      "url": "/animal/fox/",
+      "uid": "animal-fox",
+      "full_url": "https://www.la-spa.fr/app/animal/fox/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/43656/fox-43656-6571629725f9d.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Dobermann",
+      "age": "senior",
+      "age_label": "Senior",
+      "age_number": "12 ans",
+      "establishment": {
+        "ID": 7388,
+        "name": "Refuge SPA de Torreilles - Le Jardin de La Padrine",
+        "slug": "refuge-spa-de-torreilles-le-jardin-de-la-padrine",
+        "url": "/etablissement/refuge-spa-de-torreilles-le-jardin-de-la-padrine/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-torreilles-le-jardin-de-la-padrine"
+      },
+      "fad": true,
+      "expr": false,
+      "sos": true,
+      "created_at": "2022-06-06 08:48:44"
+    },
+    {
+      "ID": 106280,
+      "name": "Nova",
+      "description": "FIV Positif",
+      "url": "/animal/nova-2/",
+      "uid": "animal-nova-2",
+      "full_url": "https://www.la-spa.fr/app/animal/nova-2/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/106280/nova-106280-657446b257e20.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "6 ans",
+      "establishment": {
+        "ID": 7386,
+        "name": "Refuge SPA de Tilloy-Les-Mofflaines - Arras",
+        "slug": "refuge-spa-de-tilloy-les-mofflaines-arras",
+        "url": "/etablissement/refuge-spa-de-tilloy-les-mofflaines-arras/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-tilloy-les-mofflaines-arras"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": true,
+      "created_at": "2023-12-09 11:16:19"
+    },
+    {
+      "ID": 36961,
+      "name": "ISIS",
+      "description": "Isis est une malinoise de 8 ans arriv\u00e9e au refuge car elle ne s'entendait pas avec l'enfant de la famille. Dynamique, gourmande et joyeuse, Isis est plut\u00f4t affectueuse mais sur la r\u00e9serve quand elle ne connait pas. Lorsqu'elle commence \u00e0 accorder sa confiance, Isis se r\u00e9v\u00e8le vite une chienne attentive \u00e0 son ma\u00eetre et tr\u00e8s (tr\u00e8s) joueuse :) ! Elle est propre et sait rester seule mais n'appr\u00e9cie pas les voitures et les v\u00e9los. Elle devra apprendre \u00e0 se canaliser et \u00e0 marcher calmement en balade car elle a tendance \u00e0 vite monter en excitation (elle a d\u00e9j\u00e0 fait des progr\u00e8s :) ). Elle recherche une famille sans autres animaux et ne sera pas plac\u00e9e en pr\u00e9sence d'enfants.",
+      "url": "/animal/isis-4/",
+      "uid": "animal-isis-4",
+      "full_url": "https://www.la-spa.fr/app/animal/isis-4/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/36961/isis-36961-6239cc4c8cc9d.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Berger belge Malinois",
+      "age": "senior",
+      "age_label": "Senior",
+      "age_number": "11 ans",
+      "establishment": {
+        "ID": 7380,
+        "name": "Refuge SPA de Thionville",
+        "slug": "refuge-spa-de-thionville",
+        "url": "/etablissement/refuge-spa-de-thionville/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-thionville"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": true,
+      "created_at": "2022-03-22 14:17:00"
+    },
+    {
+      "ID": 102643,
+      "name": "VIRUS",
+      "description": null,
+      "url": "/animal/virus/",
+      "uid": "animal-virus",
+      "full_url": "https://www.la-spa.fr/app/animal/virus/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/102643/virus-102643-654e3eeb80acd.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Staffie",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "4 ans",
+      "establishment": {
+        "ID": 7377,
+        "name": "Refuge SPA de Cholet - De l'Esp\u00e9rance",
+        "slug": "refuge-spa-de-cholet-de-lesperance",
+        "url": "/etablissement/refuge-spa-de-cholet-de-lesperance/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-cholet-de-lesperance"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-11-10 15:32:10"
+    },
+    {
+      "ID": 104237,
+      "name": "HALLOWEEN",
+      "description": null,
+      "url": "/animal/halloween/",
+      "uid": "animal-halloween",
+      "full_url": "https://www.la-spa.fr/app/animal/halloween/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/104237/halloween-104237-655f2f33e7a0c.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "5 ans",
+      "establishment": {
+        "ID": 7349,
+        "name": "Maison SPA de Tourcoing",
+        "slug": "maison-spa-de-tourcoing",
+        "url": "/etablissement/maison-spa-de-tourcoing/",
+        "search_url": "/adoption/?establishment=maison-spa-de-tourcoing"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-11-23 11:53:39"
+    },
+    {
+      "ID": 100110,
+      "name": "Sourdine",
+      "description": "Chat Craintif, nous ne pouvons pas le toucher pour le moment.<br />\r\nPlacement sans enfants.<br />\r\n<br />\r\nObligatoire depuis le 01/10/2022, il vous faudra pr\u00e9senter le certificat d\u2019engagement et de connaissance dat\u00e9 d\u2019au moins 7 jours avant l\u2019adoption : https://www.la-spa.fr/adopter/sinformer-sur-ladoption/conditions-dadoption/le-certificat-dengagement-et-de-connaissance-des-besoins-specifiques-de-lespece/ ",
+      "url": "/animal/sourdine/",
+      "uid": "animal-sourdine",
+      "full_url": "https://www.la-spa.fr/app/animal/sourdine/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/100110/sourdine-100110-656747cdaf437.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "junior",
+      "age_label": "Junior",
+      "age_number": "2 ans",
+      "establishment": {
+        "ID": 7389,
+        "name": "Refuge SPA de Marennes - Lyon",
+        "slug": "refuge-spa-de-marennes-lyon",
+        "url": "/etablissement/refuge-spa-de-marennes-lyon/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-marennes-lyon"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-10-20 14:55:45"
+    },
+    {
+      "ID": 93531,
+      "name": "Osiris",
+      "description": "Un projet d'adoption pour cet animal ? Envoyez nous un mail (millau@la-spa.fr) pour recevoir le questionnaire adoption sp\u00e9cifique au refuge (ne remplissez pas celui du site internet).<br />\r\n<br />\r\nOsiris a \u00e9t\u00e9 attach\u00e9e \u00e0 un arbre et laiss\u00e9e l\u00e0... C'est une chienne active, sportive et tr\u00e8s joueuse. Elle est sociable avec l'humain et proche de son ma\u00eetre.<br />\r\nElle peut se montrer inqui\u00e8te face \u00e0 certaines situations inconnues.",
+      "url": "/animal/osiris/",
+      "uid": "animal-osiris",
+      "full_url": "https://www.la-spa.fr/app/animal/osiris/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/93531/osiris-93531-64ef1477aaab6.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Berger belge Malinois",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "5 ans",
+      "establishment": {
+        "ID": 7360,
+        "name": "Refuge SPA de Millau - L'Escale",
+        "slug": "refuge-spa-de-millau-lescale",
+        "url": "/etablissement/refuge-spa-de-millau-lescale/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-millau-lescale"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-08-30 12:05:43"
+    },
+    {
+      "ID": 103356,
+      "name": "Roger",
+      "description": "Un projet d'adoption pour cet animal ? Envoyez nous un mail (millau@la-spa.fr) pour recevoir le questionnaire adoption sp\u00e9cifique au refuge (ne remplissez pas celui du site internet).<br />\r\n<br />\r\nRoger est un jeune chien dynamique, sociable et c\u00e2lin avec l'humain. Il est sociable avec certains de ses cong\u00e9n\u00e8res mais course les chats. <br />\r\nRoger est un grand fugueur, un jardin bien cl\u00f4tur\u00e9 sera indispensable. Souvent en divagation dans son pass\u00e9, il s'en est d\u00e9j\u00e0 pris \u00e0 des moutons et \u00e0 des poules. Il a une base d'\u00e9ducation qu'il faudra poursuivre notamment l'apprentissage de la solitude et du rappel. ",
+      "url": "/animal/roger/",
+      "uid": "animal-roger",
+      "full_url": "https://www.la-spa.fr/app/animal/roger/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/103356/roger-103356-6560793539a1b.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Crois\u00e9 / Autre, American staffordshire",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "3 ans",
+      "establishment": {
+        "ID": 7360,
+        "name": "Refuge SPA de Millau - L'Escale",
+        "slug": "refuge-spa-de-millau-lescale",
+        "url": "/etablissement/refuge-spa-de-millau-lescale/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-millau-lescale"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-11-16 11:51:07"
+    },
+    {
+      "ID": 21262,
+      "name": "JULES",
+      "description": null,
+      "url": "/animal/jules/",
+      "uid": "animal-jules",
+      "full_url": "https://www.la-spa.fr/app/animal/jules/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/21262/jules-21262-65113bc081335.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "autres",
+      "species_label": "Autres",
+      "is_liked": false,
+      "races_label": "Coq",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "N/A",
+      "establishment": {
+        "ID": 7387,
+        "name": "Refuge SPA de Perpignan",
+        "slug": "refuge-spa-de-perpignan",
+        "url": "/etablissement/refuge-spa-de-perpignan/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-perpignan"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2021-11-17 17:28:34"
+    },
+    {
+      "ID": 83754,
+      "name": "MAX haa23840",
+      "description": "Max est de retour parmi nous pour la deuxi\u00e8me fois, alors venez vite faire sa connaissance pour que son temps ici soit de courte dur\u00e9e.<br />\r\nPlut\u00f4t sociable avec les autres chiens, Max aura besoin d'une famille dynamique qui sache r\u00e9pondre \u00e0 ses besoins. Frustr\u00e9 d'\u00eatre de retour au refuge o\u00f9 il n'a pas suffisamment l'occasion de se d\u00e9penser, Max aura besoin de pratiquer des activit\u00e9s diverses en compagnie de ses nouveaux adoptants.<br />\r\nUn accompagnement avec un \u00e9ducateur est fortement recommand\u00e9, Max garde des traumatismes de ses pr\u00e9c\u00e9dents abandons et aura besoin que sa famille lui apporte une \u00e9ducation coh\u00e9rente malgr\u00e9 de bonnes bases.<br />\r\nVenez rencontrer Max au refuge pour qu'il soit enfin libre !",
+      "url": "/animal/max-haa23840/",
+      "uid": "animal-max-haa23840",
+      "full_url": "https://www.la-spa.fr/app/animal/max-haa23840/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/83754/max-haa23840-83754-65213c3350b0a.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Epagneul breton",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "8 ans",
+      "establishment": {
+        "ID": 7393,
+        "name": "Refuge SPA d'Hermeray",
+        "slug": "refuge-spa-dhermeray",
+        "url": "/etablissement/refuge-spa-dhermeray/",
+        "search_url": "/adoption/?establishment=refuge-spa-dhermeray"
+      },
+      "fad": false,
+      "expr": true,
+      "sos": true,
+      "created_at": "2023-06-11 16:26:12"
+    },
+    {
+      "ID": 99196,
+      "name": "CHOCO PAA21856",
+      "description": "Choco est un grand gamin tr\u00e8s tr\u00e8s joyeux qui est tr\u00e8s d\u00e9monstratif<br />\r\nil est sociable avec ses cong\u00e9n\u00e8res mais peut \u00eatre assez brutal avec eux <br />\r\npour personnes habitu\u00e9es des grands chiens <br />\r\nson \u00e9ducation est \u00e0 poursuivre ",
+      "url": "/animal/choco-paa21856/",
+      "uid": "animal-choco-paa21856",
+      "full_url": "https://www.la-spa.fr/app/animal/choco-paa21856/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/99196/choco-paa21856-99196-6537d45b53f1e.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Crois\u00e9 / Autre, Dogue",
+      "age": "junior",
+      "age_label": "Junior",
+      "age_number": "2 ans",
+      "establishment": {
+        "ID": 7394,
+        "name": "Refuge SPA de Plaisir",
+        "slug": "refuge-spa-de-plaisir",
+        "url": "/etablissement/refuge-spa-de-plaisir/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-plaisir"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-10-13 13:14:30"
+    },
+    {
+      "ID": 100198,
+      "name": "CHATNOUILLE",
+      "description": "CHATNOUILLE est arriv\u00e9e  fourri\u00e8re , nous ne connaissons pas son pass\u00e9 .<br />\r\n<br />\r\nIl a \u00e9t\u00e9 test\u00e9 FIV +( sida du chat ) .<br />\r\n<br />\r\nIl est c\u00e2lin , sociable .<br />\r\n<br />\r\nIl est manipulable et propre .",
+      "url": "/animal/chatnouille/",
+      "uid": "animal-chatnouille",
+      "full_url": "https://www.la-spa.fr/app/animal/chatnouille/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/100198/chatnouille-100198-65662b5add7dd.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "5 ans",
+      "establishment": {
+        "ID": 7396,
+        "name": "Refuge SPA de Poulainville",
+        "slug": "refuge-spa-de-poulainville",
+        "url": "/etablissement/refuge-spa-de-poulainville/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-poulainville"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": true,
+      "created_at": "2023-10-20 17:34:14"
+    },
+    {
+      "ID": 105457,
+      "name": "GREEN",
+      "description": "Green est un jeune m\u00e2le de 2 mois.<br />\r\nIl est tr\u00e8s timide et sur la r\u00e9serve.<br />\r\nIl faudra l'apprivoiser avec beaucoup de douceur et de patience.<br />\r\nIl s'entend avec les autres chats.<br />\r\nIl pourra vivre en appartement.<br />\r\n",
+      "url": "/animal/green/",
+      "uid": "animal-green",
+      "full_url": "https://www.la-spa.fr/app/animal/green/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/105457/green-105457-656b3ba1d6a1c.jpg",
+      "sex": "male",
+      "sex_label": "M\u00e2le",
+      "color": null,
+      "species": "chat",
+      "species_label": "Chat",
+      "is_liked": false,
+      "races_label": "Europeen",
+      "age": "junior",
+      "age_label": "Junior",
+      "age_number": "N/A",
+      "establishment": {
+        "ID": 7382,
+        "name": "Refuge SPA de Forbach",
+        "slug": "refuge-spa-de-forbach",
+        "url": "/etablissement/refuge-spa-de-forbach/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-forbach"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-12-02 15:13:53"
+    },
+    {
+      "ID": 98674,
+      "name": "CALIE",
+      "description": "Calie est une chienne sympa qui peut mettre du temps \u00e0 donner sa confiance.  <br />\r\nPlut\u00f4t dynamique il lui faudra ses balades quotidiennes. <br />\r\nc'est une chienne affectueuse. <br />\r\n<br />\r\nElle devra \u00eatre le seul animal du foyer. <br />\r\n",
+      "url": "/animal/calie-3/",
+      "uid": "animal-calie-3",
+      "full_url": "https://www.la-spa.fr/app/animal/calie-3/",
+      "image": "https://www.la-spa.fr/app/assets-spa/uploads/animals/98674/calie-98674-6569e376415a0.jpg",
+      "sex": "female",
+      "sex_label": "Femelle",
+      "color": null,
+      "species": "chien",
+      "species_label": "Chien",
+      "is_liked": false,
+      "races_label": "Crois\u00e9 / Autre, Terrier",
+      "age": "adult",
+      "age_label": "Adulte",
+      "age_number": "3 ans",
+      "establishment": {
+        "ID": 7353,
+        "name": "Refuge SPA de Montlu\u00e7on - La Loue",
+        "slug": "refuge-spa-de-montlucon-la-loue",
+        "url": "/etablissement/refuge-spa-de-montlucon-la-loue/",
+        "search_url": "/adoption/?establishment=refuge-spa-de-montlucon-la-loue"
+      },
+      "fad": false,
+      "expr": false,
+      "sos": false,
+      "created_at": "2023-10-07 17:29:01"
+    }
+  ]
+}

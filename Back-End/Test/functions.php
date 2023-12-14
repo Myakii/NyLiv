@@ -14,35 +14,28 @@ if ($conn->connect_error) {
 function add_pets($conn)
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-        $img_path = "Assets/Animals/";
-        $name = $_POST['name'];
-        $breed = $_POST['breed'];
-        $age = $_POST['age'];
-        $genre = $_POST['genre'];
-        $type = $_POST['type'];
-        $localisation = $_POST['localisation'];
-        $description = $_POST['description'];
-        $urgent = $_POST['urgent'];
+        $pets_name = $_POST['name'];
+        $pets_breed = $_POST['breed'];
+        $pets_age = $_POST['age'];
+        $pets_genre = $_POST['genre'];
+        $pets_type = $_POST['type'];
+        $pets_localisation = $_POST['localisation'];
+        $pets_description = $_POST['description'];
+        $pets_urgent = $_POST['urgent'];
 
-        // Gestion de l'image
-        if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) {
-            $img = $_FILES['img']['name'];
-            $img_temp = $_FILES['img']['tmp_name'];
-            $img_path = "Assets/Animals" . $img;
-
-            move_uploaded_file($img_temp, $img_path);
-        } else {
-            // Gérer le cas où aucune image n'est téléchargée
-            $img_path = ''; // Ou la valeur par défaut que vous souhaitez utiliser
-        }
+        // Gérer le fichier téléchargé
+        $img_content = file_get_contents($_FILES['img']['tmp_name']);
+        $img_base64 = base64_encode($img_content);
 
         // Éviter les attaques par injection SQL
         $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('ssissssssi', $name, $breed, $age, $genre, $type, $localisation, $description, $urgent, $img_path);
-
-        // Exécutez la requête préparée
+        $stmt->bind_param('ssisssbss', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_description, $pets_urgent, $img_base64);
         $stmt->execute();
-        header("Location: listanimals.php");
+        $new_pets_id = $stmt->insert_id;
+        header("Location: listanimals.php?id=" . $new_pets_id);
+        exit();
+    } else {
+        echo "Veuillez remplir tous les champs.";
     }
 }
 
@@ -102,9 +95,9 @@ function read_pets($conn, $pets_id)
             $pets_img = $pets_detail['img'];
 
             echo '<div class="pets_info">
-                <h2>' . $pets_name . '</h2>'
-                . $pets_img .
-                '<div class="info">
+                <h2>' . $pets_name . '</h2>
+                <img src="data:image/jpeg;base64,' . $pets_img . '" alt="' . $pets_name . '">
+                <div class="info">
                     <h3>Race : </h3>
                     <p>' . $pets_breed . '</p>
                     <h3>Âge : </h3>
@@ -154,12 +147,12 @@ function pets_display($conn)
                 <div class="place_name">
                     <a href="pageanimals.php?id=' . $row['id'] . '">
                         <h2>' . $row["name"] . '</h2>
-                        <h2>' . $row["img"] . '</h2>
+                        <img src="data:image/jpeg;base64,' . $row["img"] . '" alt="' . $row["name"] . '">
                     </a>
                 </div>';
         }
-        echo '</div>'; // Move this outside the loop
+        echo '</div>'; 
     } else {
         echo "Aucun animal trouvé.";
     }
-}    
+}
