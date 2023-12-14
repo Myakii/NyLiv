@@ -1,10 +1,11 @@
 import React from 'react'
 import './Home.css'
-import OurPartner from './components/OurPartner'
-import AnimalHistory from './components/AnimalHistory'
-import AdoptionCategory from './components/AdoptionCategory'
-import OurHistory from './components/OurHistory'
-import ImageBanner from './components/ImageBanner'
+import OurPartner from './components/OurPartner/OurPartner.jsx'
+import AnimalHistory from './components/AnimalHistory/AnimalHistory.jsx'
+import AdoptionCategory from './components/AdoptionCategory/AdoptionCategory.jsx'
+import OurHistory from './components/OurHistory/OurHistory.jsx'
+import ImageBanner from './components/ImageBanner/ImageBanner.jsx'
+
 
 export default function Home() {
   return (

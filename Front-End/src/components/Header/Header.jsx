@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import './Header.css';
 import { authContext, useAuth } from '../../Auth';
-import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 export default function Navbar() {
@@ -27,7 +26,7 @@ export default function Navbar() {
 
   return (
     <header className="header centered-padding-div">
-     
+        
         <nav className='navbar-left'>
 
             <ul className='nav-items'>
@@ -46,7 +45,7 @@ export default function Navbar() {
         </nav>
 
         <div className='logo'>
-            <img className="navbar-nyliv-logo w-52" src='./src/assets/NyLiv_Logo.png' alt="Logo de NyLiv" />
+            <Link to='/'><img className="navbar-nyliv-logo w-52" src='./Assets/Logo/NyLiv_Logo.png' alt="Logo de NyLiv" /></Link>
         </div>
 
         <nav className='navbar-right'>
@@ -59,7 +58,8 @@ export default function Navbar() {
                 </li>
                 
                 <li className="nav-item">
-                    <FontAwesomeIcon icon={faBars} className='burger-navbar' size='3x'/>
+       
+                    <MenuIcon sx={{fontSize: 60}} />
 
                 </li>
 

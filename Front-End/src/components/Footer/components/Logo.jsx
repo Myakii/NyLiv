@@ -5,7 +5,7 @@ export default function Logo() {
 
     <div className='footer-logo'>
 
-      <img className="navbar-nyliv-logo " src='./src/assets/NyLiv_Logo.png' alt="Logo de NyLiv" />
+      <img className="footer-nyliv-logo " src='./Assets/Logo/NyLiv_Logo.png' alt="Logo de NyLiv" />
 
       <h2 className='flex'>
 

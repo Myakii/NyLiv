@@ -76,14 +76,14 @@ export default function SignUp() {
         <label htmlFor='lastname'>Nom</label>
         <input type='text' name='lastname' onChange={handleLastName} /> */}
 
-        <label htmlFor='email'>Email</label>
-        <input type='email' name='email' onChange={handleEmail} />
+        <label htmlFor='email-signup'>Email</label>
+        <input type='email' id='email-signup' name='email' onChange={handleEmail} autoComplete='email'/>
         
-        <label htmlFor='password'>Saisir un mot de passe</label>
-        <input type='password' name='password' onChange={handlePassword} />
+        <label htmlFor='password-signup'>Saisir un mot de passe</label>
+        <input type='password' id='password-signup' name='password' onChange={handlePassword} />
 
-        <label htmlFor='cpassword'>Veuillez confirmer votre mot de passe</label>
-        <input type='password' name='cpassword' onChange={handleConfirmPassword} />
+        <label htmlFor='cpassword-signup'>Veuillez confirmer votre mot de passe</label>
+        <input type='password' id='cpassword-signup' name='cpassword' onChange={handleConfirmPassword} />
 
         <input type='submit' name='submit' onClick={register} />
 

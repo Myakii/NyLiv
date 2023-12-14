@@ -12,7 +12,7 @@
 
 .btn-orange {
 
-    background-color: #F47D34;
+    background-color: #F27D33;
 
 }
 
@@ -44,5 +44,30 @@
 .btn-blue:active {
 
     background-color: #5ACFED;
+
+}
+
+
+.info-btn-orange {
+
+    color: #F27D33;
+
+}
+
+.info-btn-orange:hover {
+
+    color: #E6610F;
+
+}
+
+.info-btn-blue {
+
+    color: #159DC0;
+
+}
+
+.info-btn-blue:hover {
+
+    color: #107993;
 
 }

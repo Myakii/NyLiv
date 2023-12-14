@@ -1,4 +1,5 @@
 import React from 'react'
+import './ImageBanner.css'
 
 export default function ImageBanner() {
   return (

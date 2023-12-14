@@ -1,4 +1,5 @@
 import React from 'react'
+import './OurHistory.css'
 
 export default function OurHistory() {
 
