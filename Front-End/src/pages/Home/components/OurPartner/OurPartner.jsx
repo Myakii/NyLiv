@@ -1,4 +1,5 @@
 import React from 'react'
+import './OurPartner.css'
 
 export default function OurPartner() {
   return (

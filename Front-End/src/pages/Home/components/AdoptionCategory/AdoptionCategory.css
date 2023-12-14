@@ -1,0 +1,53 @@
+
+/* Adoption Category */
+
+.adoption-category {
+
+    padding: 3.125rem 0;
+
+}
+
+.adoption-category .display-card {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.adoption-category .animal-card-home {
+
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.125rem 3.75rem;
+    gap: 3.125rem;
+    flex: 33.333333%;
+  
+
+}
+
+.adoption-category .animal-card-home .card-img {
+
+    width: 15.625rem;
+    height: 15.625rem;
+    border: 1px solid red;
+
+}
+
+.adoption-category .animal-card-home .information-button {
+
+    position: relative;
+    width: fit-content;
+
+}
+
+.adoption-category .animal-card-home .information-button .info-icon {
+
+    position: absolute;
+    bottom: 15px;
+    right: 13px;
+
+
+}

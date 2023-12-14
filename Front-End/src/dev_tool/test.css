@@ -1,17 +1,41 @@
-.function-navigation a {
-
-    border: 1px black solid;
-    border-radius: 25px;
-
-    margin-top: 5vh;
-    
-}
-
-.function-navigation {
+.admin-tool {
 
     display: flex;
     flex-direction: row;
     gap: 2%;
+  
 
 
 }
+
+.information-button {
+
+    position: relative;
+    width: fit-content;
+
+}
+
+.information-button .info-icon {
+
+    position: absolute;
+    bottom: 15px;
+    right: 13px;
+
+
+}
+
+
+.admin-btn-tool {
+
+    position: sticky;
+    z-index: 100;
+    bottom: 20px;
+    float: right;
+    margin-right: 20px;
+ 
+
+}
+
+
+
+

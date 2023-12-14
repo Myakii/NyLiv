@@ -1,0 +1,25 @@
+/* Our Partner */
+
+.our-partner {
+
+    padding: 2% 0px;
+
+}
+
+.our-partner .display-partner {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+   
+
+}
+
+.our-partner .display-partner a img {
+
+    width: 100%;
+
+
+}

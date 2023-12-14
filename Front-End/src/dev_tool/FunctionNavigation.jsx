@@ -5,6 +5,7 @@ import { getAuth, signOut } from 'firebase/auth'
 import { authContext, useAuth } from '../Auth';
 import Button from './Button';
 
+
 export default function FunctionNavigation() {
 
   const auth = useAuth(authContext);
@@ -32,21 +33,31 @@ export default function FunctionNavigation() {
   const checkIfConnected = () => {
     const user_information = auth;
     
-    console.log(user_information.email)
+    try {
+
+     console.log(user_information.email)
+    
+    } catch (error) {
+
+      console.log("Vous n'êtes pas connecté");
+
+    }
 
   };
 
   
   return (
-    <div className='function-navigation'>
+    <div className='admin-tool centered-marg-div'>
 
-      <Link to='/adoption-formulaire'>Adoption Formulaire</Link>
-      <Link to='/inscription'>Inscription</Link>
-      <Link to='/connexion'>Connexion</Link>
-      <button onClick={handleSignOut}>Déconnexion</button>
-      <button onClick={checkIfConnected}>Voir si jsuis co</button>
       
+       <button className='btn btn-blue'><Link to='/adoption-formulaire'>Adoption Formulaire</Link></button>
+       <button className='btn btn-blue'><Link to='/inscription'>Inscription</Link></button>
+      <button className='btn btn-blue'><Link to='/connexion'>Connexion</Link></button>
+      <button className='btn btn-orange'><Link to='/crashtestapi'>Rosine</Link></button>
+      <button className='btn btn-blue' onClick={handleSignOut}>Déconnexion</button>
+      <button className='btn btn-blue' onClick={checkIfConnected}>Voir si jsuis co</button>
       <Button />
+
 
     </div>
   )
