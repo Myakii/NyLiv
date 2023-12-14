@@ -40,7 +40,7 @@ CREATE TABLE `pets` (
   `localisation` varchar(255) NOT NULL,
   `urgent` varchar(3) NOT NULL,
   `description` text NOT NULL,
-  `img` mediumint(9) NOT NULL
+  `img` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

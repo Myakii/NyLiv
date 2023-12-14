@@ -20,14 +20,12 @@ add_pets($conn);
     <div class="form_pets">
 
         <h2>Formulaire d'Ajout d'Animaux</h2>
+        <form method="post" class="flex flex-col" enctype="multipart/form-data">
+            <label for="name">Nom de l'animal:</label><br>
+            <input type="text" name="name" required />
 
-        <form method="post" class="flex flex-col">
-            <label for="name">Nom de l'animal:</label>
-            <input type="text" name="name" onChange={handleInputChange} required /><br>
-            
             <label for="img">Image:</label>
-            <input type="file" name="img" accept="image/*" required /><br>
-
+            <input type="file" name="img"> <br>
             <label for="breed">Race:</label>
             <input type="text" name="breed" onChange={handleInputChange} required /><br>
 
@@ -45,21 +43,19 @@ add_pets($conn);
             <input type="text" name="type" onChange={handleInputChange} required /><br>
 
             <label="localisation">Localisation:</label>
-            <input type="text" name="localisation" onChange={handleInputChange} required /><br>
+                <input type="text" name="localisation" onChange={handleInputChange} required /><br>
 
-            <label for="description">Description:</label>
-            <textarea name="description" onChange={handleInputChange} required></textarea><br>
+                <label for="description">Description:</label>
+                <textarea name="description" onChange={handleInputChange} required></textarea><br>
 
-            <label for="urgent">Urgent:</label>
+                <label for="urgent">Urgent:</label>
 
-            <select name="urgent" onChange={handleInputChange}>
-                <option value="Non">Non</option>
-                <option value="Oui">Yes</option>
-            </select><br>
+                <select name="urgent" onChange={handleInputChange}>
+                    <option value="Non">Non</option>
+                    <option value="Oui">Yes</option>
+                </select><br>
 
-            <button type="submit" name="submit" value="submit">
-                Ajouter l'animal
-            </button>
+                <input type="submit" name="submit" value="Envoyer">
         </form>
     </div>
 </body>
