@@ -1,0 +1,31 @@
+
+{
+    "ID": 73112,
+    "name": "TANTALE",
+    "description": "Tantale est une jeune chèvre pleine de vie. Elle adore faire le clown et se montre très curieuse. Elle est très gentille avec ses congénères.",
+    "url": "\/animal\/tantale\/",
+    "uid": "animal-tantale",
+    "full_url": "https:\/\/www.la-spa.fr\/app\/animal\/tantale\/",
+    "image": "https:\/\/www.la-spa.fr\/app\/assets-spa\/uploads\/animals\/73112\/tantale-73112-6400c31c954dc.jpg",
+    "sex": "female",
+    "sex_label": "Femelle",
+    "color": null,
+    "species": "caprin",
+    "species_label": "Caprin",
+    "is_liked": false,
+    "races_label": "Chèvre",
+    "age": "junior",
+    "age_label": "Junior",
+    "age_number": "1 an",
+    "establishment": {
+        "ID": 7351,
+        "name": "Grand Refuge SPA de Pervenchères",
+        "slug": "grand-refuge-spa-de-pervencheres",
+        "url": "\/etablissement\/grand-refuge-spa-de-pervencheres\/",
+        "search_url": "\/adoption\/?establishment=grand-refuge-spa-de-pervencheres"
+    },
+    "fad": false,
+    "expr": false,
+    "sos": false,
+    "created_at": "2023-03-02 16:39:08"
+}

@@ -49,7 +49,7 @@ export default function FunctionNavigation() {
   return (
     <div className='admin-tool centered-marg-div'>
 
-      
+      <Link to='./'>Accueil</Link>
        <button className='btn btn-blue'><Link to='/adoption-formulaire'>Adoption Formulaire</Link></button>
        <button className='btn btn-blue'><Link to='/inscription'>Inscription</Link></button>
       <button className='btn btn-blue'><Link to='/connexion'>Connexion</Link></button>

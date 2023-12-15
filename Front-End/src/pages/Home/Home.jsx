@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.css'
 import OurPartner from './components/OurPartner/OurPartner.jsx'
 import AnimalHistory from './components/AnimalHistory/AnimalHistory.jsx'
@@ -8,6 +8,11 @@ import ImageBanner from './components/ImageBanner/ImageBanner.jsx'
 
 
 export default function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='Home'>
 
