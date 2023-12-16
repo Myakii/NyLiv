@@ -10,31 +10,31 @@ export default function OurPartner() {
 
         <a href="https://www.la-spa.fr" target="_blank" rel="noopener noreferrer">
 
-          <img src="./Assets/Partenaire/SPA.png" />
+          <img src="./Assets/Partners/SPA.png" />
 
         </a>
 
         <a href="https://www.30millionsdamis.fr" target="_blank" rel="noopener noreferrer">
 
-          <img src="./Assets/Partenaire/30mAmis.png" />
+          <img src="./Assets/Partners/30mAmis.png" />
 
         </a>
 
         <a href="https://www.fondationbrigittebardot.fr" target="_blank" rel="noopener noreferrer">
         
-          <img src="./Assets/Partenaire/Fondation_Brigitte_Bardot.png" />
+          <img src="./Assets/Partners/Fondation_Brigitte_Bardot.png" />
 
         </a>
 
         <a href="https://www.royalcanin.com/fr" target="_blank" rel="noopener noreferrer">
 
-          <img src="./Assets/Partenaire/Royal_Canin.png" />
+          <img src="./Assets/Partners/Royal_Canin.png" />
 
         </a>
 
         <a href="https://www.donenconfiance.org" target="_blank" rel="noopener noreferrer">
 
-          <img src="./Assets/Partenaire/comitecharte.png" />
+          <img src="./Assets/Partners/comitecharte.png" />
 
         </a>
 
