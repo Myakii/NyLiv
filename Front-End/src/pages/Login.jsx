@@ -44,7 +44,7 @@ export default function Login() {
   return (
     <div className='login'>
 
-      <form>
+      {/* <form>
         <label htmlFor='login-email' >E-mail</label>
         <input type='email' id='login-email' name='email' onChange={handleEmail} autoComplete='email' />
 
@@ -53,7 +53,14 @@ export default function Login() {
 
         <input type='submit' name='submit' onClick={register} />
 
-      </form>
+      </form> */}
+
+      
+      <img src='./Assets/Animals/loginDoggo.png' />
+
+
+
+
 
     </div>  
   )
