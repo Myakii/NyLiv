@@ -22,14 +22,22 @@ function add_pets($conn)
         $pets_localisation = $_POST['localisation'];
         $pets_description = $_POST['description'];
         $pets_urgent = $_POST['urgent'];
+        $pets_house = $_POST['house'];
+        // . Les cases à cocher sont généralement représentées par des valeurs booléennes
+        $pets_dog = isset($_POST['dog']) ? 'Oui' : 'Non';
+        $pets_cat = isset($_POST['cat']) ? 'Oui' : 'Non';
+        $pets_kids = isset($_POST['kids']) ? 'Oui' : 'Non';
 
-        // Gérer le fichier téléchargé
+        // Gère les imgs
         $img_content = file_get_contents($_FILES['img']['tmp_name']);
         $img_base64 = base64_encode($img_content);
 
-        // Éviter les attaques par injection SQL
-        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('ssisssbss', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_description, $pets_urgent, $img_base64);
+        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img, house, dog, kids, cat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        // Permets de voir où est le problème avec $conn->error 
+        if ($stmt === false) {
+            die("Erreur dans la préparation de la requête : " . $conn->error);
+        }
+        $stmt->bind_param('ssissssssssss', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_description, $pets_urgent, $img_base64, $pets_house, $pets_dog, $pets_kids, $pets_cat);
         $stmt->execute();
         $new_pets_id = $stmt->insert_id;
         header("Location: listanimals.php?id=" . $new_pets_id);
@@ -41,13 +49,13 @@ function add_pets($conn)
 
 
 // MODIFY
-function modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $pets_img)
+function modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $pets_img, $pets_house, $pets_dog, $pets_cat, $pets_kids)
 {
-    $query = "UPDATE pets SET name=?, breed=?, age=?, genre=?, type=?, localisation=?, urgent=?, description=?, img=? WHERE id=?";
+    $query = "UPDATE pets SET name=?, breed=?, age=?, genre=?, type=?, localisation=?, urgent=?, description=?, img=?, house=?, dog=?, cat=?, kids=? WHERE id=?";
     $stmt = $conn->prepare($query);
 
     // Liaison des paramètres
-    $stmt->bind_param('ssissssssi', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $pets_img, $pets_id);
+    $stmt->bind_param('ssissssssssssi', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $pets_img, $pets_house, $pets_dog, $pets_cat, $pets_kids, $pets_id);
 
     // Vérifiez si la requête préparée a réussi
     if (!$stmt) {
@@ -62,11 +70,13 @@ function modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_
         echo 'Mise à jour réussie.';
     } else {
         echo 'Aucune mise à jour effectuée.';
+        echo 'Erreur lors de l\'exécution de la requête : ' . $stmt->error;
     }
 
     // Fermez la requête préparée
     $stmt->close();
 }
+
 
 
 // READ
@@ -93,6 +103,11 @@ function read_pets($conn, $pets_id)
             $pets_urgent = $pets_detail['urgent'];
             $pets_description = $pets_detail['description'];
             $pets_img = $pets_detail['img'];
+            $pets_house = $pets_detail['house'];
+            // . Les cases à cocher sont généralement représentées par des valeurs booléennes
+            $pets_dog = $pets_detail['dog'];
+            $pets_cat = $pets_detail['cat'];
+            $pets_kids = $pets_detail['kids'];
 
             echo '<div class="pets_info">
                 <h2>' . $pets_name . '</h2>
@@ -112,6 +127,15 @@ function read_pets($conn, $pets_id)
                     <p>' . $pets_urgent . '</p>
                     <h3>Description : </h3>
                     <p>' . $pets_description . '</p>
+                    <h3>Maison : </h3>
+                    <p>' . $pets_house . '</p>
+
+                    <h3>Chiens : </h3>
+                    <p>' . $pets_dog . '</p>
+                    <h3>Chats : </h3>
+                    <p>' . $pets_cat . '</p>
+                    <h3>Enfants : </h3>
+                    <p>' . $pets_kids . '</p>
                 </div>
             </div>
             <form method="post" action="">
@@ -151,7 +175,7 @@ function pets_display($conn)
                     </a>
                 </div>';
         }
-        echo '</div>'; 
+        echo '</div>';
     } else {
         echo "Aucun animal trouvé.";
     }

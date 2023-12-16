@@ -6,9 +6,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $pets_id = $_GET['id'];
 
     // Vérifiez si le formulaire a été soumis
-    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['modify']) && isset($_FILES['img'])) {
-    
-        // Récupérez les valeurs du formulaire
+    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['modify'])) {
+
+        // Récupérez les valeurs du formulaire et effectuez la modification
         $pets_name = isset($_POST['name']) ? $_POST['name'] : '';
         $pets_breed = isset($_POST['breed']) ? $_POST['breed'] : '';
         $pets_age = isset($_POST['age']) ? $_POST['age'] : '';
@@ -17,31 +17,26 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $pets_localisation = isset($_POST['localisation']) ? $_POST['localisation'] : '';
         $pets_urgent = isset($_POST['urgent']) ? $_POST['urgent'] : '';
         $pets_description = isset($_POST['description']) ? $_POST['description'] : '';
+        $pets_house = isset($_POST['house']) ? $_POST['house'] : '';
+        $pets_dog = isset($_POST['dog']) ? 'Oui' : 'Non';
+        $pets_cat = isset($_POST['cat']) ? 'Oui' : 'Non';
+        $pets_kids = isset($_POST['kids']) ? 'Oui' : 'Non';
 
         // Gérez l'image téléchargée
-        $file_name = $_FILES['img']['name'];
-        $file_tmp = $_FILES['img']['tmp_name'];
-        $file_type = $_FILES['img']['type'];
-        $file_size = $_FILES['img']['size'];
-
-        // Emplacement de stockage des images (vous devrez adapter cela à votre structure)
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($file_name);
-
-        // Déplacez l'image téléchargée vers le répertoire cible
-        move_uploaded_file($file_tmp, $target_file);
+        $img_content = file_get_contents($_FILES['img']['tmp_name']);
+        $base64_image = base64_encode($img_content);
 
         // Appel à la fonction modify_pets
-        modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $target_file);
-    } else {
-        // Si le formulaire n'a pas été soumis
-        die("Erreur");
+        modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_urgent, $pets_description, $base64_image, $pets_house, $pets_dog, $pets_cat, $pets_kids);
     }
-} else {
-    die("ID invalide.");
 }
 
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,13 +48,16 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 </head>
 
 <body>
+    <a href="listanimals.php">Retour</a>
     <h2>Modifier un animal</h2>
-    <form method="post" action="" enctype="multipart/form-data">
-        <label for="nouvelleImage">Sélectionnez la nouvelle image :</label>
-        <input type="file" name="img" accept="image/*" required />
-        
+    <form method="post" enctype="multipart/form-data">
+        <!-- ... (votre formulaire ici) -->
         <label for="name">Nom de l'animal:</label>
         <input type="text" name="name" value="" required /><br>
+
+        <label for="img">Sélectionnez la nouvelle image :</label>
+        <input type="file" name="img" required> <br>
+
 
         <label for="breed">Race:</label>
         <input type="text" name="breed" value="" required /><br>
@@ -87,6 +85,21 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <option value="Non">Non</option>
             <option value="Oui">Oui</option>
         </select><br>
+
+        <label for="compability">Compabilité:</label><br>
+        <input type="checkbox" id="dog" name="dog" require checked />
+        <label for="dog">Chiens</label><br>
+        <input type="checkbox" id="cat" name="cat" require checked />
+        <label for="cat">Chats</label><br>
+        <input type="checkbox" id="kids" name="kids" require checked />
+        <label for="kids">Enfants</label><br>
+
+        <label for="house">Maison:</label> <br>
+        <select name="house">
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+        </select><br>
+
 
         <button type="submit" name="modify" value="modify">
             Confirmer les modifications
