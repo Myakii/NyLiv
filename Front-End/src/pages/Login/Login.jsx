@@ -51,7 +51,7 @@ export default function Login() {
       <form className='login-form'>
 
         <header className='logo'>
-          <img src='./Assets/Logo/NyLiv_Logo.png' />
+          <Link to='/' ><img src='./Assets/Logo/NyLiv_Logo.png' /></Link>
           <h1 className='text-[#159DC0]'>Connexion</h1>
         </header>
 
