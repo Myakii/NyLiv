@@ -40,7 +40,7 @@ function add_pets($conn)
         $stmt->bind_param('ssissssssssss', $pets_name, $pets_breed, $pets_age, $pets_genre, $pets_type, $pets_localisation, $pets_description, $pets_urgent, $img_base64, $pets_house, $pets_dog, $pets_kids, $pets_cat);
         $stmt->execute();
         $new_pets_id = $stmt->insert_id;
-        header("Location: listanimals.php?id=" . $new_pets_id);
+        header("Location: pageanimals.php?id=" . $new_pets_id);
         exit();
     } else {
         echo "Veuillez remplir tous les champs.";
