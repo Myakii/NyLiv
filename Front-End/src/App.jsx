@@ -18,11 +18,7 @@ function App() {
   const location = useLocation();
 
   const hideNavbarAndFooter = routesWithoutNavbarAndFooter.includes(location.pathname)
-  useEffect(() => {
 
-    console.log(location);
-
-  })
 
   return (
 
@@ -45,7 +41,7 @@ function App() {
 
 
         </Routes> 
-        {/* <Link to='./admin' > <BuildCircleIcon className='admin-btn-tool' color='secondary' sx={{fontSize: 60 }} /> </Link> */}
+        <Link to='./admin' > <BuildCircleIcon className='admin-btn-tool' color='secondary' sx={{fontSize: 60 }} /> </Link>
 
         {!hideNavbarAndFooter && <Footer /> }
 

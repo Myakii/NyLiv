@@ -49,11 +49,33 @@ export default function FunctionNavigation() {
   return (
     <div className='admin-tool centered-marg-div'>
 
-      <Link to='./'>Accueil</Link>
-       <button className='btn btn-blue'><Link to='/adoption-formulaire'>Adoption Formulaire</Link></button>
-       <button className='btn btn-blue'><Link to='/inscription'>Inscription</Link></button>
-      <button className='btn btn-blue'><Link to='/connexion'>Connexion</Link></button>
-      <button className='btn btn-orange'><Link to='/crashtestapi'>Rosine</Link></button>
+      <Link to='./'>Accueil</Link> 
+
+      <Link to='/adoption-formulaire'>
+        <button className='btn btn-blue'>
+
+          Adoption Formulaire
+        </button>
+       </Link>
+
+       <Link to='/inscription'>
+        <button className='btn btn-blue'>
+          Inscription
+        </button>
+      </Link>
+
+      <Link to='/connexion'>
+        <button className='btn btn-blue'>
+          Connexion
+        </button>
+      </Link>
+
+      <Link to='/crashtestapi'>
+        <button className='btn btn-orange'>
+          Rosine
+        </button>
+      </Link>
+      
       <button className='btn btn-blue' onClick={handleSignOut}>Déconnexion</button>
       <button className='btn btn-blue' onClick={checkIfConnected}>Voir si jsuis co</button>
       <Button />

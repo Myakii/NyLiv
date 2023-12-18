@@ -56,13 +56,13 @@ export default function Login() {
         </header>
 
         <div className='login-inputs'>
-          <div className='input-mail'>
-            <label htmlFor='login-email' ><h3 className='text-[#159DC0]'>Email</h3></label>
+          <div className='input-mail flex flex-col'>
+            <label htmlFor='login-email'>Email</label>
             <input type='email' id='login-email' name='email' onChange={handleEmail} autoComplete='email' />
           </div>
 
-          <div className='input-password'>
-            <label htmlFor='login-password'><h3 className='text-[#159DC0]'>Mot de Passe</h3></label>
+          <div className='input-password flex flex-col'>
+            <label htmlFor='login-password'> Mot de Passe</label>
           
             <input type='password' id='login-password' name='password' onChange={handlePassword} />
           </div> 
@@ -73,7 +73,7 @@ export default function Login() {
           <nav className='nav-items'>
             <ul>
 
-              <li>
+              <li className='nav-item'>
                 
                 <Link to='/'>
                 <h4 className='text-[#159DC0] text-right'>Mot de passe oublié ?</h4>
@@ -81,7 +81,7 @@ export default function Login() {
 
               </li>
 
-              <li>
+              <li className='nav-item'>
 
                 <h4 className='flex gap-2 justify-end'>
                   Pas encore inscrit ? 
@@ -97,6 +97,7 @@ export default function Login() {
           <button className='btn btn-orange ml-auto' type='submit' name='submit' onClick={register}>Se connecter</button>
 
         </div>
+
       </form>
 
       

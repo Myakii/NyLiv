@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
 
         echo json_encode(['status' => 'success', 'message' => 'Animal ajouté avec succès']);
+        
     } catch (PDOException $e) {
         echo json_encode(['status' => 'error', 'message' => 'Erreur lors de l\'ajout de l\'animal']);
         // }
-        echo json_encode(['status' => 'success', 'message' => $data]);
     }
 }

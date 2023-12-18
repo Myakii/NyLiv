@@ -18,7 +18,6 @@ export default function Navbar() {
         if ( auth ) {
             setIsLoggedIn(true);
             setUser(auth);
-            console.log("Oui")
         }
 
     }), [auth];

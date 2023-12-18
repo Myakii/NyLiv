@@ -87,9 +87,12 @@ export default function AdoptForm() {
           Ajouter un animal
         </button>
       </form>
+
       <div className="flex flex-col">
         <p>{formValues.name}</p>
+
       </div>
+
     </div>
   );
 }
