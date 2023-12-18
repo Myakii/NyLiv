@@ -45,7 +45,7 @@ function App() {
 
 
         </Routes> 
-        <Link to='./admin' > <BuildCircleIcon className='admin-btn-tool' sx={{fontSize: 60}} /> </Link>
+        <Link to='./admin' > <BuildCircleIcon className='admin-btn-tool' color='secondary' sx={{fontSize: 60 }} /> </Link>
 
         {!hideNavbarAndFooter && <Footer /> }
 
