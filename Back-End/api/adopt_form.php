@@ -39,14 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['error' => 'Données d\'image manquantes.']);
     }
 
-    // Vérifier la valeur de $breed
-    var_dump($breed);
-
     // Préparez la requête d'insertion
     $stmt = $conn->prepare("INSERT INTO pets (name, img, breed, age, genre, type, localisation, description, urgent, house, dog, cat, kids) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param('sssisssssssss', $name, $img_base64, $breed, $age, $genre, $type, $localisation, $description, $urgent, $house, $dog, $cat, $kids);
-
-    // Exécutez la requête
     $stmt->execute();
 
     echo json_encode(['status' => 'success', 'message' => 'Animal ajouté avec succès']);

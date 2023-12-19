@@ -4,8 +4,8 @@ import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import AdoptForm from './pages/AdoptForm'
 import FunctionNavigation from './dev_tool/FunctionNavigation'
-import SignUp from './pages/SignUp'
-import Login from './pages/Login'
+import SignUp from './pages/SignUp/SignUp'
+import Login from './pages/Login/Login'
 import Auth from './Auth'
 import Footer from './components/Footer/Footer'
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
@@ -18,11 +18,7 @@ function App() {
   const location = useLocation();
 
   const hideNavbarAndFooter = routesWithoutNavbarAndFooter.includes(location.pathname)
-  useEffect(() => {
 
-    console.log(location);
-
-  })
 
   return (
 
