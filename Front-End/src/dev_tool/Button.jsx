@@ -4,7 +4,7 @@ import InfoIcon from '@mui/icons-material/Info';
 export default function Button() {
   return (
 
-    <div>
+    <div className='flex flex-col '>
         <h3>Les boutons</h3>
         <button className='btn btn-orange'>Orange</button>
         <button className='btn btn-blue'>Bleu</button>
