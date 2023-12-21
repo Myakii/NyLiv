@@ -1,5 +1,4 @@
 import './css/App.css'
-import Navbar from './components/Header/Header'
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import AdoptForm from './pages/AdoptForm'
@@ -11,6 +10,7 @@ import Footer from './components/Footer/Footer'
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import Crashtestapi from './dev_tool/CrashTestApi'
 import { useEffect } from 'react'
+import Header from './components/Header/Header'
   
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
     <Auth>
       <div className='App'>
 
-        {!hideNavbarAndFooter && <Navbar />}
+        {!hideNavbarAndFooter && <Header />}
 
         <Routes>
           <Route path="/" element={<Home />} />   

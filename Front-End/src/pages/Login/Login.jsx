@@ -45,7 +45,7 @@ export default function Login() {
   return (
     <div className='login'>
 
-      <img className='login-img'src='./Assets/Animals/loginDoggo.png' />
+      <img className='login-img'src='./Assets/DesignImg/loginDoggo.png' />
 
 
       <form className='login-form'>
