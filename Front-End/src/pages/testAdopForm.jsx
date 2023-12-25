@@ -49,10 +49,8 @@ export default function AdoptForm() {
     console.log("Valeur du formulaire:", formValues);
     e.preventDefault();
 
-    let response; // Déclarer response à un niveau supérieur
-
     try {
-      response = await fetch(
+      const response = await fetch(
         import.meta.env.VITE_REACT_APP_API_URL +
           `NyLiv/Back-End/API/adopt_form.php`,
         {
@@ -65,15 +63,15 @@ export default function AdoptForm() {
       );
 
       if (response.ok) {
-        const contentType = response.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
-          const responseData = await response.json();
-          console.log(responseData);
-        } else {
-          console.error("La réponse n'est pas du JSON valide.");
-        }
+        const responseData = await response.json();
+        // Traitement de la réponse du serveur
+        console.log(responseData);
       } else {
-        console.error("La requête a échoué avec le statut :", response.status);
+        // Gérez les erreurs si la requête a échoué
+        console.error(
+          "Une erreur s'est produite lors de l'envoi des données :",
+          response.statusText
+        );
       }
     } catch (error) {
       // Gérez les erreurs en conséquence
@@ -81,24 +79,8 @@ export default function AdoptForm() {
         "Une erreur s'est produite lors de l'envoi des données :",
         error
       );
-      if (response && !response.bodyUsed) {
-        const contentType = response.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
-          const text = await response.text();
-          try {
-            const jsonData = JSON.parse(text);
-            console.log("Contenu de la réponse (JSON) :", jsonData);
-          } catch (jsonError) {
-            console.error("Erreur lors de l'analyse du JSON :", jsonError);
-          }
-        } else {
-          console.error(
-            "La réponse n'est pas du JSON valide. Contenu HTML détecté."
-          );
-          const text = await response.text();
-          console.log("Contenu de la réponse (HTML) :", text);
-        }
-      }
+      const text = await response.text();
+      console.log("Contenu de la réponse :", text);
     }
   };
 
@@ -106,11 +88,12 @@ export default function AdoptForm() {
     <div className="adopt-form">
       <div
         style={{ backgroundColor: "green", color: "white", padding: "10px" }}
-      ></div>
+      />
       <h2>Formulaire d'Ajout d'Animaux</h2>
 
       <form
         method="post"
+        action="adopt_form.php"
         className="flex flex-col"
         encType="multipart/form-data"
       >

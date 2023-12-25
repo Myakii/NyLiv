@@ -79,7 +79,7 @@ function modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_
 
 
 
-// READ
+// READ un animal selon l'ID
 function read_pets($conn, $pets_id)
 {
     $query = "SELECT * FROM pets WHERE id = ?";
@@ -129,7 +129,6 @@ function read_pets($conn, $pets_id)
                     <p>' . $pets_description . '</p>
                     <h3>Maison : </h3>
                     <p>' . $pets_house . '</p>
-
                     <h3>Chiens : </h3>
                     <p>' . $pets_dog . '</p>
                     <h3>Chats : </h3>
