@@ -32,13 +32,8 @@ header .navbar .navbar-right .nav-items {
 
 }
 
-header .navbar .nav-item {
-    
-    color: white;
 
-}
-
-@keyframes navitemHover {
+/* @keyframes navitemHover {
 
     from {color:white;}
     to {color:#F27D33}
@@ -51,7 +46,7 @@ header .navbar .nav-item:hover {
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
 
-}
+} */
 
 
 header .navbar .logo {
@@ -70,19 +65,3 @@ header .navbar .header-burger {
 
 }
 
-
-@keyframes burgerClick {
-
-    from {background-color: none;}
-    to {background-color: white;}
-
-}
-
-header .navbar .header-burger:active {
-
-    animation-name: burgerClick;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    border-radius: 50px;
-
-}

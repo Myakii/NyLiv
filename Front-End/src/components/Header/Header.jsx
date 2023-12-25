@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Header.css';
 import { authContext, useAuth } from '../../Auth';
 import Navbar from './components/Navbar/Navbar.jsx';
+import AccountHeader from './components/AccountHeader/AccountHeader.jsx';
 
 
 
@@ -27,6 +28,8 @@ export default function Header() {
     <header className="header">
 
         <Navbar />
+
+        <AccountHeader />
         
 
     </header>

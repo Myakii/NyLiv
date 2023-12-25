@@ -41,7 +41,7 @@ export default function Navbar() {
                 <li className="nav-item">
     
                     
-                    <MenuIcon sx={{fontSize: 60}} className='header-burger'/>
+                    <MenuIcon sx={{fontSize: 60}} className='header-burger' id='header-burger' />
 
                 </li>
 

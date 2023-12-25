@@ -1,2 +1,20 @@
 
+header .nav-item {
+    
+    color: white;
+    transition: color 0.3s ease;
 
+}
+
+header .nav-item:hover, header .header-burger:hover {
+
+    color: #F27D33;
+
+}
+
+header .header-burger:active, header .nav-item:active {
+
+    color: #E6610F;
+
+
+}
