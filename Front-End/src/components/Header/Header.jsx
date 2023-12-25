@@ -27,6 +27,7 @@ export default function Header() {
     <header className="header">
 
         <Navbar />
+        
 
     </header>
 
