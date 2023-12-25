@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
@@ -6,6 +7,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Navbar() {
   const auth = useAuth(authContext);
+=======
+import React, { useEffect, useState } from 'react';
+import './Header.css';
+import { authContext, useAuth } from '../../Auth';
+import Navbar from './components/Navbar/Navbar.jsx';
+import AccountHeader from './components/AccountHeader/AccountHeader.jsx';
+
+
+
+export default function Header() {
+>>>>>>> ed6a9a3f1788d32f3af5dceabafacc1c09f77d69
 
   const [user, setUser] = useState({});
 
@@ -20,6 +32,7 @@ export default function Navbar() {
     [auth];
 
   return (
+<<<<<<< HEAD
     <header className="header centered-padding-div">
       <nav className="navbar-left">
         <ul className="nav-items">
@@ -54,6 +67,14 @@ export default function Navbar() {
               <h3>Accompagnez-nous</h3>
             </Link>
           </li>
+=======
+    <header className="header">
+
+        <Navbar />
+
+        <AccountHeader />
+        
+>>>>>>> ed6a9a3f1788d32f3af5dceabafacc1c09f77d69
 
           <li className="nav-item">
             <MenuIcon sx={{ fontSize: 60 }} />

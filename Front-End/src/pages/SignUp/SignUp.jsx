@@ -74,7 +74,7 @@ export default function SignUp() {
   return (
     <div className='sign-up'>
 
-      <img className='signup-img' src='./Assets/Animals/SignUpKitty.png' />
+      <img className='signup-img' src='./Assets/DesignImg/SignUpKitty.png' />
 
       <form className='signup-form' >
       

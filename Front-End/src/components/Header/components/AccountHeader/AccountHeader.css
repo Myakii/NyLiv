@@ -1,0 +1,14 @@
+.account-header {
+
+    
+    display: none;
+    flex-direction: row;
+    align-items: center;
+
+
+    height: 10dvh;
+    background-color: #159DC0;
+    color: white;
+
+
+}

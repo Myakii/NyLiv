@@ -1,45 +1,20 @@
-.header {
 
-    display: grid;
-    grid-template-columns: 40% 20% 40%;
-    justify-content: center;
-    align-items: center;
-    background-color: #159DC0;
-    color: white;
-    padding: 3dvh 0;
-    position: relative;
-
-}
-
-header .nav-items {
-
-    display: flex;
-    flex-direction: row;
-    gap: 10%;
-    /* justify-content: center; */
-    align-items: center;
-
-}
-
-header .navbar-left .nav-items {
-
-    justify-content: right;
-
-}
-
-header .navbar-right .nav-items {
-
-    justify-content: left;
-
-}
-
-
-header .logo {
+header .nav-item {
     
-    display: flex;
-    grid-column: 2;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 10%;
+    color: white;
+    transition: color 0.3s ease;
+
+}
+
+header .nav-item:hover, header .header-burger:hover {
+
+    color: #F27D33;
+
+}
+
+header .header-burger:active, header .nav-item:active {
+
+    color: #E6610F;
+
 
 }

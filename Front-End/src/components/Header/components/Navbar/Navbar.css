@@ -1,0 +1,67 @@
+.header .navbar{
+
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    justify-content: center;
+    align-items: center;
+    background-color: #159DC0;
+    padding: 3dvh 0;
+    position: relative;
+
+}
+
+header .navbar .nav-items {
+
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+header .navbar .navbar-left .nav-items {
+
+    justify-content: right;
+
+}
+
+header .navbar .navbar-right .nav-items {
+
+    justify-content: left;
+
+}
+
+
+/* @keyframes navitemHover {
+
+    from {color:white;}
+    to {color:#F27D33}
+
+}
+
+header .navbar .nav-item:hover {
+
+    animation-name: navitemHover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+} */
+
+
+header .navbar .logo {
+    
+    display: flex;
+    grid-column: 2;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10%;
+
+}
+
+header .navbar .header-burger {
+
+    cursor: pointer;
+
+}
+
