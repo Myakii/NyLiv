@@ -1,0 +1,17 @@
+.report-container header {
+
+    padding-top: 3.125rem;
+    
+
+}
+
+.report-container header .report-button {
+
+    margin-top: 6.25rem;
+    margin-bottom: 7.25rem;
+    width: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+}

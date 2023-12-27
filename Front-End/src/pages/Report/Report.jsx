@@ -1,32 +1,46 @@
 import React from 'react'
+import './Report.css'
+import ReportHeader from './components/ReportHeader/ReportHeader'
+import ReportInformation from './components/ReportInformation/ReportInformation'
+import OurPartner from '../Home/components/OurPartner/OurPartner'
+import '../Home/components/OurPartner/OurPartner.css'
+import ReportThanking from './components/ReportThanking/ReportThanking'
+import { Link } from 'react-router-dom'
 
 export default function Report() {
+
+
   return (
-    <div className='report-container centered-padding-div'>
+    <div className='report-container'>
 
-        <header>
-            <h1 className='text-center'>Je Signale</h1>
+        <ReportHeader />
 
-            <h3 className='text-center'>
-                Bienvenue dans la section "Je Signale" de notre site, 
-                dédiée à la protection et au bien-être des animaux. 
-            </h3>
+        <ReportInformation />
 
-            <h4 className='text-center'>
-                Nous croyons fermement que chaque être vivant mérite d'être traité
-                avec respect et compassion. 
-                Cette section a été créée dans le but de permettre à nos visiteurs 
-                de signaler tout comportement abusif envers les animaux, 
-                car votre vigilance est cruciale pour assurer leur sécurité.
-            </h4>
+        <ReportThanking />
 
-            <button className='btn-blue btn'>Je souhaite signaler</button>
-        </header>
+        <div className="to-help-us centered-padding-div">
+            <h2 className='text-center'>Pour nous soutenir autrement, vous pouvez...</h2>
 
-        <div className='toknow-container'>
- 
+            <nav className='nav-items'>
+                <Link to='/'>
+                    <button className='btn-orange btn help-btn'>
+                        Adopter un compagnon
+                    </button>
+                </Link>
+
+                <Link to='/'>
+                    <button className='btn-orange btn help-btn'>
+                        Faire un don
+                    </button>
+                </Link>
+
+            </nav>
 
         </div>
+
+        {/* OurPartner from Home Folder */}
+        <OurPartner />
 
     </div>
   )

@@ -1,0 +1,23 @@
+
+.report-container .report-information-container {
+
+    background-color: #F47D34;
+    padding-top: 3.125rem;
+
+}
+
+.report-container .report-information-container article {
+
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+    gap: 3.125rem;
+
+}
+
+.report-container .report-information-container article .info-item {
+
+    gap: 3.125rem;
+
+
+}
+
