@@ -12,6 +12,7 @@ import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import Crashtestapi from "./dev_tool/CrashTestApi";
 import ReadPets from "./pages/ReadPets";
 import PageAnimals from "./pages/PageAnimals";
+import Report from "./pages/Report/Report";
 
 function App() {
   const routesWithoutNavbarAndFooter = ["/inscription", "/connexion"];
@@ -25,6 +26,7 @@ function App() {
     <Auth>
       <div className="App">
         {!hideNavbarAndFooter && <Navbar />}
+
         <Routes>
           <Route path="/" element={<Home />} />
 
@@ -37,7 +39,10 @@ function App() {
 
           <Route path="/inscription" element={<SignUp />} />
           <Route path="/connexion" element={<Login />} />
+
+          <Route path="/signalement" element={<Report />} />
         </Routes>
+
         <Link to="./admin">
           {" "}
           <BuildCircleIcon

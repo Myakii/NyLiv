@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function AdoptForm() {
+const AdoptForm = () => {
   const [formValues, setFormValues] = useState({
     name: "",
     breed: "",
@@ -16,6 +16,8 @@ export default function AdoptForm() {
     kids: "Non",
     img: null,
   });
+
+  const [animalData, setAnimalData] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, type, checked, files } = e.target;
@@ -41,63 +43,48 @@ export default function AdoptForm() {
     }
   };
 
-  const handleUpdate = async (e) => {
-    console.log("Valeur du formulaire:", formValues);
-    e.preventDefault();
-
+  const handleUpdate = async () => {
     const formData = new FormData();
 
     for (const key in formValues) {
-      console.log(`Hello`);
-
-      if (key === "img" && formValues[key] && formValues[key] instanceof File) {
-        formData.append(key, formValues[key]);
-      } else {
-        formData.append(key, formValues[key]);
-      }
+      formData.append(key, formValues[key]);
     }
 
-    console.log("Forme Data", formData);
+    console.log("Form data to be sent:", formData);
+
     try {
-      console.log("Here ?");
       const response = await fetch(
-        import.meta.env.VITE_REACT_APP_API_URL +
-          `nyliv/Back-End/API/adopt_form.php`,
+        `${
+          import.meta.env.VITE_REACT_APP_API_URL
+        }nyliv/Back-End/api/adopt_form.php`,
         {
           method: "POST",
-          body: formData,
+          body: Object.fromEntries(formData),
         }
       );
 
       if (!response.ok) {
-        throw new Error(`Erreur HTTP! Statut : ${response.status}`);
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        try {
-          const responseData = await response.json();
-          if (responseData.error) {
-            console.error("Erreur côté serveur :", responseData.error);
-          } else {
-            console.log("Réponse JSON reçue :", responseData);
-          }
-        } catch (error) {
-          console.error("Erreur lors de l'analyse de la réponse JSON :", error);
+      const text = await response.text();
+      console.log("Raw response:", text);
 
-          // Si le corps de la réponse n'a pas été lu avec response.json(), lisez-le avec response.text()
-          if (!response.bodyUsed) {
-            console.log("Réponse complète :", await response.text());
-          }
-        }
+      if (!response.ok) {
+        console.error("Server error:", response.status, response.statusText);
+      } else {
+        const data = text ? JSON.parse(text) : null;
+        console.log("Parsed data:", data);
+        setAnimalData(data);
       }
     } catch (error) {
-      // Gérez les erreurs en conséquence
-      console.error(
-        "Une erreur s'est produite lors de l'envoi des données :",
-        error
-      );
+      console.error("Erreur :", error);
     }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await handleUpdate();
   };
 
   return (
@@ -108,8 +95,7 @@ export default function AdoptForm() {
       <h2>Formulaire d'Ajout d'Animaux</h2>
 
       <form
-        method="post"
-        action="NyLiv/Back-End/API/adopt_form.php"
+        onSubmit={handleSubmit}
         className="flex flex-col"
         encType="multipart/form-data"
       >
@@ -175,7 +161,7 @@ export default function AdoptForm() {
           <option value="Oui">Oui</option>
           <option value="Non">Non</option>
         </select>
-        <button type="submit" name="submit" onClick={handleUpdate}>
+        <button type="submit" name="submit">
           Ajouter un animal
         </button>
       </form>
@@ -199,4 +185,5 @@ export default function AdoptForm() {
       </div>
     </div>
   );
-}
+};
+export default AdoptForm;

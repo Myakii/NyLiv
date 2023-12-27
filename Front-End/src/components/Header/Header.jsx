@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./Header.css";
 import { authContext, useAuth } from "../../Auth";
-import MenuIcon from "@mui/icons-material/Menu";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import AccountHeader from "./components/AccountHeader/AccountHeader.jsx";
 
-export default function Navbar() {
+export default function Header() {
   const auth = useAuth(authContext);
 
   const [user, setUser] = useState({});
@@ -20,45 +20,10 @@ export default function Navbar() {
     [auth];
 
   return (
-    <header className="header centered-padding-div">
-      <nav className="navbar-left">
-        <ul className="nav-items">
-          <li className="nav-item">
-            <Link to="/">
-              <h3>J'adopte</h3>
-            </Link>
-          </li>
+    <header className="header">
+      <Navbar />
 
-          <li className="nav-item">
-            <Link to="/">
-              <h3>Je signale</h3>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="logo">
-        <Link to="/">
-          <img
-            className="navbar-nyliv-logo w-52"
-            src="/Assets/Logo/NyLiv_Logo.png"
-            alt="Logo de NyLiv"
-          />
-        </Link>
-      </div>
-
-      <nav className="navbar-right">
-        <ul className="nav-items">
-          <li className="nav-item">
-            <Link to="/">
-              <h3>Accompagnez-nous</h3>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <MenuIcon sx={{ fontSize: 60 }} />
-          </li>
-        </ul>
-      </nav>
+      <AccountHeader />
     </header>
   );
 }
