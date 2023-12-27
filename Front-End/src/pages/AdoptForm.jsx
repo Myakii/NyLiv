@@ -18,25 +18,21 @@ export default function AdoptForm() {
   });
 
   const handleInputChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
+    const { name, type, checked, files } = e.target;
     const checkboxValue =
-      type === "checkbox" ? (checked ? "Oui" : "Non") : value;
+      type === "checkbox" ? (checked ? "Oui" : "Non") : e.target.value;
 
     if (name === "img" && files.length > 0) {
       const reader = new FileReader();
 
-      reader.onload = function (event) {
-        const imgValue = event.target.result;
+      reader.onloadend = () => {
         setFormValues((prevValues) => ({
           ...prevValues,
-          [name]: {
-            name: files[0].name,
-            base64: imgValue,
-          },
+          [name]: reader.result, // Stocke le contenu de l'image en base64
         }));
       };
 
-      reader.readAsDataURL(files[0]);
+      reader.readAsDataURL(files[0]); // Lit le contenu de l'image en base64
     } else {
       setFormValues((prevValues) => ({
         ...prevValues,
@@ -49,31 +45,51 @@ export default function AdoptForm() {
     console.log("Valeur du formulaire:", formValues);
     e.preventDefault();
 
-    let response; // Déclarer response à un niveau supérieur
+    const formData = new FormData();
 
+    for (const key in formValues) {
+      console.log(`Hello`);
+
+      if (key === "img" && formValues[key] && formValues[key] instanceof File) {
+        formData.append(key, formValues[key]);
+      } else {
+        formData.append(key, formValues[key]);
+      }
+    }
+
+    console.log("Forme Data", formData);
     try {
-      response = await fetch(
+      console.log("Here ?");
+      const response = await fetch(
         import.meta.env.VITE_REACT_APP_API_URL +
-          `NyLiv/Back-End/API/adopt_form.php`,
+          `nyliv/Back-End/API/adopt_form.php`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formValues),
+          body: formData,
         }
       );
 
-      if (response.ok) {
-        const contentType = response.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP! Statut : ${response.status}`);
+      }
+
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        try {
           const responseData = await response.json();
-          console.log(responseData);
-        } else {
-          console.error("La réponse n'est pas du JSON valide.");
+          if (responseData.error) {
+            console.error("Erreur côté serveur :", responseData.error);
+          } else {
+            console.log("Réponse JSON reçue :", responseData);
+          }
+        } catch (error) {
+          console.error("Erreur lors de l'analyse de la réponse JSON :", error);
+
+          // Si le corps de la réponse n'a pas été lu avec response.json(), lisez-le avec response.text()
+          if (!response.bodyUsed) {
+            console.log("Réponse complète :", await response.text());
+          }
         }
-      } else {
-        console.error("La requête a échoué avec le statut :", response.status);
       }
     } catch (error) {
       // Gérez les erreurs en conséquence
@@ -81,24 +97,6 @@ export default function AdoptForm() {
         "Une erreur s'est produite lors de l'envoi des données :",
         error
       );
-      if (response && !response.bodyUsed) {
-        const contentType = response.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
-          const text = await response.text();
-          try {
-            const jsonData = JSON.parse(text);
-            console.log("Contenu de la réponse (JSON) :", jsonData);
-          } catch (jsonError) {
-            console.error("Erreur lors de l'analyse du JSON :", jsonError);
-          }
-        } else {
-          console.error(
-            "La réponse n'est pas du JSON valide. Contenu HTML détecté."
-          );
-          const text = await response.text();
-          console.log("Contenu de la réponse (HTML) :", text);
-        }
-      }
     }
   };
 
@@ -106,11 +104,12 @@ export default function AdoptForm() {
     <div className="adopt-form">
       <div
         style={{ backgroundColor: "green", color: "white", padding: "10px" }}
-      ></div>
+      />
       <h2>Formulaire d'Ajout d'Animaux</h2>
 
       <form
         method="post"
+        action="NyLiv/Back-End/API/adopt_form.php"
         className="flex flex-col"
         encType="multipart/form-data"
       >
@@ -176,7 +175,7 @@ export default function AdoptForm() {
           <option value="Oui">Oui</option>
           <option value="Non">Non</option>
         </select>
-        <button type="button" name="submit" onClick={handleUpdate}>
+        <button type="submit" name="submit" onClick={handleUpdate}>
           Ajouter un animal
         </button>
       </form>

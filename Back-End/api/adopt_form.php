@@ -1,9 +1,8 @@
 <?php
-
-header("Access-Control-Allow-Origin: * ");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
-header('Content-Type: application/json; charset=utf-8');
+header("Content-Type: application/json; charset=utf-8");
 
 $servername = "localhost";
 $username = "root";
@@ -17,52 +16,58 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// ... (votre code existant)
+// Vérifiez si la requête est une requête OPTIONS
+if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+    http_response_code(200);
+    echo ('kk');
+    exit();
+}
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Lire directement les données depuis le flux d'entrée sans json_decode
-    $data = json_decode(file_get_contents('php://input'), true);
+// Vérifiez si la requête est une requête POST
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Récupérez les données JSON du corps de la requête
+    $postData = json_decode(file_get_contents("php://input"), true);
 
-    $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img, house, dog, kids, cat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    // Vérifiez si les données nécessaires sont présentes
+    if (isset($postData['submit'])) {
+        $name = $_POST['name'] ?? '';
+        $breed = $_POST['breed'] ?? '';
+        $age = $_POST['age'] ?? '';
+        $genre = $_POST['genre'] ?? '';
+        $type = $_POST['type'] ?? '';
+        $localisation = $_POST['localisation'] ?? '';
+        $description = $_POST['description'] ?? '';
+        $urgent = $_POST['urgent'] ?? '';
+        $house = $_POST['house'] ?? '';
+        // Les cases à cocher sont généralement représentées par des valeurs booléennes
+        $dog = isset($_POST['dog']) ? 'Oui' : 'Non';
+        $cat = isset($_POST['cat']) ? 'Oui' : 'Non';
+        $kids = isset($_POST['kids']) ? 'Oui' : 'Non';
 
-    // Vérifiez si la préparation de la requête a réussi
-    if ($stmt === false) {
-        die("Erreur dans la préparation de la requête : " . $conn->error);
+        // Gère les imgs
+        // Récupérez la chaîne base64 de l'image
+        $img_base64 = $_POST['img'];
+
+        // Convertissez la chaîne base64 en contenu binaire
+        $img_content = base64_decode($img_base64);
+
+        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img, house, dog, kids, cat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param('ssissssssssss', $name, $breed, $age, $genre, $type, $localisation, $description, $urgent, $img_content, $house, $dog, $kids, $cat);
+
+        if ($stmt->execute() === false) {
+            $error = $stmt->error;
+            http_response_code(500); // Code d'erreur du serveur interne
+            echo json_encode(['error' => $error]);
+            exit();
+        }
+
+        $new_pets_id = $stmt->insert_id;
+        echo json_encode(['success' => true, 'id' => $new_pets_id]);
+    } else {
+        http_response_code(400); // Définissez le code de réponse approprié pour une erreur de requête
+        echo json_encode(['error' => 'Veuillez remplir tous les champs.', 'postData' => $postData]);
     }
-
-    // Gère les imgs
-    $img_content = file_get_contents($_FILES['img']['tmp_name']);
-
-    // Vérifiez que le fichier est une image
-    $allowed_types = [IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_GIF];
-    $detected_type = exif_imagetype($_FILES['img']['tmp_name']);
-
-    if (!in_array($detected_type, $allowed_types)) {
-        // Si le type de fichier n'est pas autorisé, renvoyez une erreur JSON
-        echo json_encode(array('error' => 'Le fichier n\'est pas une image valide.'));
-        exit();
-    }
-
-    $img_base64 = base64_encode($img_content);
-
-    // Les cases à cocher sont généralement représentées par des valeurs booléennes
-    $pets_dog = isset($data['dog']) ? 'Oui' : 'Non';
-    $pets_cat = isset($data['cat']) ? 'Oui' : 'Non';
-
-    $stmt->bind_param('ssissssssssss', $data['name'], $data['breed'], $data['age'], $data['genre'], $data['type'], $data['localisation'], $data['description'], $data['urgent'], $img_base64, $data['house'], $pets_dog, $pets_kids, $pets_cat);
-
-    // Exécutez la requête
-    $stmt->execute();
-
-    // Construisez une réponse JSON
-    $response = array(
-        'success' => true,
-        'message' => 'Animal ajouté avec succès.'
-    );
-
-    // Encodez la réponse en JSON
-    echo json_encode($response);
 } else {
-    // Si la méthode n'est pas POST, renvoyer un message d'erreur
-    echo json_encode(array('error' => 'Veuillez remplir tous les champs.'));
+    http_response_code(405); // Définissez le code de réponse approprié pour une méthode non autorisée
+    echo json_encode(['error' => "Méthode non autorisée"]);
 }
