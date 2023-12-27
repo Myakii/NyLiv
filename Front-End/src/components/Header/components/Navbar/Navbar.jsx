@@ -18,7 +18,7 @@ export default function Navbar() {
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/'><h3>Je signale</h3></Link>
+                    <Link to='/signalement'><h3>Je signale</h3></Link>
                 </li>
 
             </ul>
