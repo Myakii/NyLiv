@@ -19,9 +19,6 @@ export default function ReadPets() {
       .then((data) => {
         console.log(data);
         setAnimalData(data);
-      })
-      .catch((error) => {
-        console.error("Erreur :", error);
       });
   }, [id]);
 
@@ -31,7 +28,7 @@ export default function ReadPets() {
 
   return (
     <div className="info-animal">
-      <h2>{animalData.name}</h2>
+      <h3>{animalData.name}</h3>
       <img
         src={`data:image/jpeg;base64,${animalData.img}`}
         alt={animalData.name}
