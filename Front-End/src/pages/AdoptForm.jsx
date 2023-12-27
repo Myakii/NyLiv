@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function AdoptForm() {
+const AdoptForm = () => {
   const [formValues, setFormValues] = useState({
     name: "",
     breed: "",
@@ -17,26 +17,24 @@ export default function AdoptForm() {
     img: null,
   });
 
+  const [animalData, setAnimalData] = useState(null);
+
   const handleInputChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
+    const { name, type, checked, files } = e.target;
     const checkboxValue =
-      type === "checkbox" ? (checked ? "Oui" : "Non") : value;
+      type === "checkbox" ? (checked ? "Oui" : "Non") : e.target.value;
 
     if (name === "img" && files.length > 0) {
       const reader = new FileReader();
 
-      reader.onload = function (event) {
-        const imgValue = event.target.result;
+      reader.onloadend = () => {
         setFormValues((prevValues) => ({
           ...prevValues,
-          [name]: {
-            name: files[0].name,
-            base64: imgValue,
-          },
+          [name]: reader.result, // Stocke le contenu de l'image en base64
         }));
       };
 
-      reader.readAsDataURL(files[0]);
+      reader.readAsDataURL(files[0]); // Lit le contenu de l'image en base64
     } else {
       setFormValues((prevValues) => ({
         ...prevValues,
@@ -45,72 +43,59 @@ export default function AdoptForm() {
     }
   };
 
-  const handleUpdate = async (e) => {
-    console.log("Valeur du formulaire:", formValues);
-    e.preventDefault();
+  const handleUpdate = async () => {
+    const formData = new FormData();
 
-    let response; // Déclarer response à un niveau supérieur
+    for (const key in formValues) {
+      formData.append(key, formValues[key]);
+    }
+
+    console.log("Form data to be sent:", formData);
 
     try {
-      response = await fetch(
-        import.meta.env.VITE_REACT_APP_API_URL +
-          `NyLiv/Back-End/API/adopt_form.php`,
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_REACT_APP_API_URL
+        }nyliv/Back-End/api/adopt_form.php`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formValues),
+          body: Object.fromEntries(formData),
         }
       );
 
-      if (response.ok) {
-        const contentType = response.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
-          const responseData = await response.json();
-          console.log(responseData);
-        } else {
-          console.error("La réponse n'est pas du JSON valide.");
-        }
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const text = await response.text();
+      console.log("Raw response:", text);
+
+      if (!response.ok) {
+        console.error("Server error:", response.status, response.statusText);
       } else {
-        console.error("La requête a échoué avec le statut :", response.status);
+        const data = text ? JSON.parse(text) : null;
+        console.log("Parsed data:", data);
+        setAnimalData(data);
       }
     } catch (error) {
-      // Gérez les erreurs en conséquence
-      console.error(
-        "Une erreur s'est produite lors de l'envoi des données :",
-        error
-      );
-      if (response && !response.bodyUsed) {
-        const contentType = response.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
-          const text = await response.text();
-          try {
-            const jsonData = JSON.parse(text);
-            console.log("Contenu de la réponse (JSON) :", jsonData);
-          } catch (jsonError) {
-            console.error("Erreur lors de l'analyse du JSON :", jsonError);
-          }
-        } else {
-          console.error(
-            "La réponse n'est pas du JSON valide. Contenu HTML détecté."
-          );
-          const text = await response.text();
-          console.log("Contenu de la réponse (HTML) :", text);
-        }
-      }
+      console.error("Erreur :", error);
     }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await handleUpdate();
   };
 
   return (
     <div className="adopt-form">
       <div
         style={{ backgroundColor: "green", color: "white", padding: "10px" }}
-      ></div>
+      />
       <h2>Formulaire d'Ajout d'Animaux</h2>
 
       <form
-        method="post"
+        onSubmit={handleSubmit}
         className="flex flex-col"
         encType="multipart/form-data"
       >
@@ -176,7 +161,7 @@ export default function AdoptForm() {
           <option value="Oui">Oui</option>
           <option value="Non">Non</option>
         </select>
-        <button type="button" name="submit" onClick={handleUpdate}>
+        <button type="submit" name="submit">
           Ajouter un animal
         </button>
       </form>
@@ -200,4 +185,5 @@ export default function AdoptForm() {
       </div>
     </div>
   );
-}
+};
+export default AdoptForm;

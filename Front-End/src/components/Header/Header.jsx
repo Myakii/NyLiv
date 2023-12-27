@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import './Header.css';
-import { authContext, useAuth } from '../../Auth';
-import Navbar from './components/Navbar/Navbar.jsx';
-import AccountHeader from './components/AccountHeader/AccountHeader.jsx';
-
-
+import React, { useEffect, useState } from "react";
+import "./Header.css";
+import { authContext, useAuth } from "../../Auth";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import AccountHeader from "./components/AccountHeader/AccountHeader.jsx";
 
 export default function Header() {
-
   const auth = useAuth(authContext);
 
   const [user, setUser] = useState({});
@@ -19,15 +16,14 @@ export default function Header() {
       setIsLoggedIn(true);
       setUser(auth);
     }
-  }), [auth];
+  }),
+    [auth];
 
   return (
     <header className="header">
+      <Navbar />
 
-        <Navbar />
-
-        <AccountHeader />
-      
+      <AccountHeader />
     </header>
   );
 }

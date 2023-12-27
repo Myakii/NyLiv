@@ -14,12 +14,13 @@ import ReadPets from "./pages/ReadPets";
 import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
 
-
 function App() {
   const routesWithoutNavbarAndFooter = ["/inscription", "/connexion"];
   const location = useLocation();
 
-  const hideNavbarAndFooter = routesWithoutNavbarAndFooter.includes(location.pathname);
+  const hideNavbarAndFooter = routesWithoutNavbarAndFooter.includes(
+    location.pathname
+  );
 
   return (
     <Auth>
