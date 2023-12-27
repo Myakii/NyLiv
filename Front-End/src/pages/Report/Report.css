@@ -1,0 +1,25 @@
+.to-help-us {
+
+    background-color: #159DC0;
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+    width: 100%;
+    color: white;
+
+}
+
+.to-help-us .nav-items {
+
+    display: flex;
+    gap: 6.25rem;
+    padding-top: 6.25rem;
+    justify-content: center;
+
+
+}
+
+.to-help-us .nav-items .help-btn {
+
+    width: 500px;
+
+}

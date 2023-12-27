@@ -4,7 +4,7 @@ import './OurPartner.css'
 export default function OurPartner() {
   return (
     <section className='our-partner centered-marg-div '>
-        <h3 className='text-center'>Nos Partenaires</h3>
+        <h3 className='text-center'>Suivre Nos Partenaires</h3>
 
         <div className='display-partner'>
 
