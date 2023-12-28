@@ -67,9 +67,11 @@ export default function SignUp() {
 
  
 
-    useEffect(() => {
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
-    });
+      
 
   return (
     <div className='sign-up'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Report.css'
 import ReportHeader from './components/ReportHeader/ReportHeader'
 import ReportInformation from './components/ReportInformation/ReportInformation'
@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom'
 
 export default function Report() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        }, []);
 
   return (
     <div className='report-container'>

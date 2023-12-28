@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './test.css'
 import { getAuth, signOut } from 'firebase/auth'
@@ -45,11 +45,15 @@ export default function FunctionNavigation() {
 
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
   
   return (
     <div className='admin-tool centered-marg-div'>
-
-      <Link to='./'>Accueil</Link> 
 
       <Link to='/adoption-formulaire'>
         <button className='btn btn-blue'>
@@ -73,6 +77,12 @@ export default function FunctionNavigation() {
       <Link to='/crashtestapi'>
         <button className='btn btn-orange'>
           Rosine
+        </button>
+      </Link>
+
+      <Link to='/adoption'>
+        <button className='btn btn-orange'>
+          Adopter
         </button>
       </Link>
       

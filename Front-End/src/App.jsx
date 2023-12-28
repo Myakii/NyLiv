@@ -14,9 +14,10 @@ import ReadPets from "./pages/ReadPets";
 import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
 import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
+import Adoption from "./pages/Adoption/Adoption";
 
 function App() {
-  const routesWithoutNavbarAndFooter = ["/inscription", "/connexion"];
+  const routesWithoutNavbarAndFooter = ["/inscription", "/connexion", "/adoption"];
   const location = useLocation();
 
   const hideNavbarAndFooter = routesWithoutNavbarAndFooter.includes(
@@ -44,6 +45,8 @@ function App() {
           <Route path="/signalement" element={<Report />} />
 
           <Route path="/condition-adoption" element={<ConditionAdoption />} />
+          
+          <Route path="/adoption" element={<Adoption />} />
 
         </Routes>
 

@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ConditionAdopt.css'
 import {Link} from 'react-router-dom';
 
 export default function ConditionAdoption() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  
+
   return (
     <div className='condition-adopt-container centered-padding-div'>
 
@@ -23,7 +30,7 @@ export default function ConditionAdoption() {
                 </div>
 
                 <button className='btn btn-orange bottom-part'>
-                    <Link to='/'>
+                    <Link to='/adoption'>
                         J'adopte !
                     </Link>
                 </button>
