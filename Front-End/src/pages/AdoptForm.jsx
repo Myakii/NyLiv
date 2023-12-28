@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import config from "../components/Config";
 
 const AdoptForm = () => {
   const [formValues, setFormValues] = useState({
@@ -54,12 +55,10 @@ const AdoptForm = () => {
 
     try {
       const response = await fetch(
-        `${
-          import.meta.env.VITE_REACT_APP_API_URL
-        }nyliv/Back-End/api/adopt_form.php`,
+        `${config.apiUrl}/nyliv/Back-End/api/adopt_form.php`,
         {
           method: "POST",
-          body: Object.fromEntries(formData),
+          body: formData,
         }
       );
 
@@ -70,13 +69,12 @@ const AdoptForm = () => {
       const text = await response.text();
       console.log("Raw response:", text);
 
-      if (!response.ok) {
-        console.error("Server error:", response.status, response.statusText);
-      } else {
-        const data = text ? JSON.parse(text) : null;
-        console.log("Parsed data:", data);
-        setAnimalData(data);
-      }
+      // Vérifier si la réponse a du contenu avant de tenter de la parser
+      const data = text ? JSON.parse(text) : null;
+
+      console.log("Parsed data:", data); // Affiche le contenu du JSON
+
+      setAnimalData(data);
     } catch (error) {
       console.error("Erreur :", error);
     }

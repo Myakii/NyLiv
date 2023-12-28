@@ -1,8 +1,16 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=utf-8");
+
+error_log("Script start");
+error_log("Request data: " . print_r($postData, true));
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $servername = "localhost";
 $username = "root";
@@ -16,17 +24,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Log pour indiquer la réception de la requête
-error_log("Received a request");
-
 // Vérifiez si la requête est une requête POST
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Récupérez les données JSON du corps de la requête
-    $postData = json_decode(file_get_contents("php://input"), true);
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {    // Récupérez les données JSON du corps de la requête
+    $postData = json_decode(file_get_contents("php://input"), true) ?? [];
 
     // Vérifiez si les données nécessaires sont présentes
     if (isset($postData['submit'])) {
@@ -44,11 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $cat = isset($postData['cat']) ? 'Oui' : 'Non';
         $kids = isset($postData['kids']) ? 'Oui' : 'Non';
 
+        // Récupérez l'image en base64 depuis les données JSON
         $img_base64 = $postData['img'];
+
+        // Convertissez l'image en contenu binaire
         $img_content = base64_decode($img_base64);
 
-        $stmt = $conn->prepare("INSERT INTO pets (name, breed, age, genre, type, localisation, description, urgent, img, house, dog, kids, cat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('ssissssssssss', $name, $breed, $age, $genre, $type, $localisation, $description, $urgent, $img_content, $house, $dog, $kids, $cat);
+        // Utilisez le contenu de l'image dans la requête préparée
+        $stmt->bind_param('ssissssssbsss', $name, $breed, $age, $genre, $type, $localisation, $description, $urgent, $img_content, $house, $dog, $kids, $cat);
 
         try {
             if ($stmt->execute() === false) {
