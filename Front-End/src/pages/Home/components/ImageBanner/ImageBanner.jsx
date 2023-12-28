@@ -3,7 +3,7 @@ import './ImageBanner.css'
 
 export default function ImageBanner() {
   return (
-    <section className='image-banner'>
+    <section className='image-banner centered-padding-div'>
       <p>img</p>
 
     </section>

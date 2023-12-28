@@ -13,6 +13,7 @@ import Crashtestapi from "./dev_tool/CrashTestApi";
 import ReadPets from "./pages/ReadPets";
 import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
+import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
 
 function App() {
   const routesWithoutNavbarAndFooter = ["/inscription", "/connexion"];
@@ -41,6 +42,9 @@ function App() {
           <Route path="/connexion" element={<Login />} />
 
           <Route path="/signalement" element={<Report />} />
+
+          <Route path="/condition-adoption" element={<ConditionAdoption />} />
+
         </Routes>
 
         <Link to="./admin">

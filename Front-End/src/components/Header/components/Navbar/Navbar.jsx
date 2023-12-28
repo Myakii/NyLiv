@@ -14,7 +14,7 @@ export default function Navbar() {
 
                 
                 <li className='nav-item'>
-                    <Link to='/'><h3>J'adopte</h3></Link>
+                    <Link to='/condition-adoption'><h3>J'adopte</h3></Link>
                 </li>
 
                 <li className='nav-item'>

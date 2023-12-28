@@ -5,7 +5,7 @@ import './AdoptionCategory.css'
 
 export default function AdoptionCategory() {
   return (
-    <section className='adoption-category centered-marg-div'>
+    <section className='adoption-category centered-padding-div'>
 
       <h3 className='text-center'>Nos catégories</h3>
 
