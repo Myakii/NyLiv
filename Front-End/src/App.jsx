@@ -13,6 +13,7 @@ import Crashtestapi from "./dev_tool/CrashTestApi";
 import ReadPets from "./pages/ReadPets";
 import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
+import ImageUpload from "./pages/ImageUpload";
 
 function App() {
   const routesWithoutNavbarAndFooter = ["/inscription", "/connexion"];
@@ -33,6 +34,8 @@ function App() {
           <Route path="/adoption-formulaire" element={<AdoptForm />} />
           <Route path="/listedesanimaux/:id/*" element={<ReadPets />} />
           <Route path="/listedesanimaux" element={<PageAnimals />} />
+
+          <Route path="/animaux" element={<ImageUpload />} />
 
           <Route path="/admin" element={<FunctionNavigation />} />
           <Route path="/crashtestapi" element={<Crashtestapi />} />

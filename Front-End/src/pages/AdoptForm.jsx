@@ -1,186 +1,222 @@
 import React, { useState } from "react";
-import config from "../components/Config";
+import axios from "axios";
 
 const AdoptForm = () => {
-  const [formValues, setFormValues] = useState({
+  const RadioCheckboxGroup = ({ name, options, selectedOption, onChange }) => (
+    <div>
+      {options.map((option) => (
+        <label key={option}>
+          <input
+            type="radio"
+            name={name}
+            value={option}
+            checked={selectedOption === option}
+            onChange={onChange}
+          />
+          {option}
+        </label>
+      ))}
+    </div>
+  );
+
+  const [formData, setFormData] = useState({
     name: "",
     breed: "",
     age: "",
-    genre: "Femelle",
-    type: "",
+    radioButtons: {
+      type: "Chien",
+      genre: "Femelle",
+      urgent: "Non",
+      house: "Non",
+      dog: "Non",
+      cat: "Non",
+      kids: "Non",
+    },
     localisation: "",
     description: "",
-    urgent: "Non",
-    house: "Non",
-    dog: "Non",
-    cat: "Non",
-    kids: "Non",
-    img: null,
   });
 
-  const [animalData, setAnimalData] = useState(null);
-
   const handleInputChange = (e) => {
-    const { name, type, checked, files } = e.target;
-    const checkboxValue =
-      type === "checkbox" ? (checked ? "Oui" : "Non") : e.target.value;
-
-    if (name === "img" && files.length > 0) {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setFormValues((prevValues) => ({
-          ...prevValues,
-          [name]: reader.result, // Stocke le contenu de l'image en base64
-        }));
-      };
-
-      reader.readAsDataURL(files[0]); // Lit le contenu de l'image en base64
-    } else {
-      setFormValues((prevValues) => ({
-        ...prevValues,
-        [name]: checkboxValue,
-      }));
-    }
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const handleUpdate = async () => {
-    const formData = new FormData();
+  const handleRadioChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      radioButtons: {
+        ...formData.radioButtons,
+        [name]: value,
+      },
+    });
+  };
 
-    for (const key in formValues) {
-      formData.append(key, formValues[key]);
-    }
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
 
-    console.log("Form data to be sent:", formData);
-
-    try {
-      const response = await fetch(
-        `${config.apiUrl}/nyliv/Back-End/api/adopt_form.php`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const text = await response.text();
-      console.log("Raw response:", text);
-
-      // Vérifier si la réponse a du contenu avant de tenter de la parser
-      const data = text ? JSON.parse(text) : null;
-
-      console.log("Parsed data:", data); // Affiche le contenu du JSON
-
-      setAnimalData(data);
-    } catch (error) {
-      console.error("Erreur :", error);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({
+          ...formData,
+          img: reader.result,
+        });
+      };
+      reader.readAsDataURL(file);
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await handleUpdate();
-  };
+    console.log("FormData content before sending:", formData);
 
+    try {
+      const formDataToSend = new URLSearchParams();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("breed", formData.breed);
+      formDataToSend.append("age", formData.age);
+      formDataToSend.append("type", formData.radioButtons.type);
+      formDataToSend.append("genre", formData.radioButtons.genre);
+      formDataToSend.append("urgent", formData.radioButtons.urgent);
+      formDataToSend.append("house", formData.radioButtons.house);
+      formDataToSend.append("dog", formData.radioButtons.dog);
+      formDataToSend.append("cat", formData.radioButtons.cat);
+      formDataToSend.append("kids", formData.radioButtons.kids);
+      formDataToSend.append("localisation", formData.localisation);
+      formDataToSend.append("description", formData.description);
+      formDataToSend.append("img", formData.img);
+
+      console.log("FormData content before sending:", formDataToSend);
+
+      const response = await axios.post(
+        `${
+          import.meta.env.VITE_REACT_APP_API_URL
+        }NyLiv/Back-End/API/adopt_form.php`,
+        formDataToSend
+      );
+
+      console.log("Server response:", response.data);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi des données :", error);
+    }
+  };
   return (
     <div className="adopt-form">
-      <div
-        style={{ backgroundColor: "green", color: "white", padding: "10px" }}
-      />
       <h2>Formulaire d'Ajout d'Animaux</h2>
-
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col"
-        encType="multipart/form-data"
-      >
-        <label htmlFor="name">Nom de l'animal:</label>
-        <input type="text" name="name" onChange={handleInputChange} required />
-
-        <label htmlFor="img">Image:</label>
-        <input type="file" name="img" onChange={handleInputChange} />
-        <label htmlFor="breed">Race:</label>
-        <input type="text" name="breed" onChange={handleInputChange} required />
-        <label htmlFor="age">Âge:</label>
-        <input type="number" name="age" onChange={handleInputChange} required />
-        <label htmlFor="urgent">Sexe:</label>
-        <select name="genre" onChange={handleInputChange}>
-          <option value="Femelle">Femelle</option>
-          <option value="Male">Male</option>
-        </select>
-
-        <label htmlFor="type">Type:</label>
-        <input type="text" name="type" onChange={handleInputChange} required />
-        <label htmlFor="localisation">Localisation:</label>
+      <form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
+        {" "}
+        <label>
+          Nom de l'animal:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+        </label>
         <input
-          type="text"
-          name="localisation"
-          onChange={handleInputChange}
-          required
-        />
-        <label htmlFor="description">Description:</label>
-        <textarea
-          name="description"
-          onChange={handleInputChange}
-          required
-        ></textarea>
-        <label htmlFor="urgent">Urgent:</label>
-        <select name="urgent" onChange={handleInputChange}>
-          <option value="Non">Non</option>
-          <option value="Oui">Oui</option>
-        </select>
-        <label htmlFor="compability">Compabilité:</label>
-        <input
-          type="checkbox"
-          id="dog"
-          name="dog"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="dog">Chiens</label>
-        <input
-          type="checkbox"
-          id="cat"
-          name="cat"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="cat">Chats</label>
-        <input
-          type="checkbox"
-          id="kids"
-          name="kids"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="kids">Enfants</label>
-        <label htmlFor="house">Maison:</label>
-        <select name="house" onChange={handleInputChange}>
-          <option value="Oui">Oui</option>
-          <option value="Non">Non</option>
-        </select>
-        <button type="submit" name="submit">
-          Ajouter un animal
-        </button>
+          type="file"
+          accept="image/*"
+          name="img"
+          onChange={handleImageChange}
+        />{" "}
+        <label>
+          Race :
+          <input
+            type="text"
+            name="breed"
+            value={formData.breed}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Âge :
+          <input
+            type="number"
+            min={1}
+            max={30}
+            name="age"
+            value={formData.age}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Type :
+          <RadioCheckboxGroup
+            name="type"
+            options={["Chien", "Chat", "NAC"]}
+            selectedOption={formData.radioButtons.type}
+            onChange={handleRadioChange}
+          />
+        </label>
+        <label>
+          Genre :
+          <RadioCheckboxGroup
+            name="genre"
+            options={["Femelle", "Male"]}
+            selectedOption={formData.radioButtons.genre}
+            onChange={handleRadioChange}
+          />
+        </label>
+        <label>
+          Maison :
+          <RadioCheckboxGroup
+            name="house"
+            options={["Oui", "Non"]}
+            selectedOption={formData.radioButtons.house}
+            onChange={handleRadioChange}
+          />
+        </label>
+        <label>
+          Chien :
+          <RadioCheckboxGroup
+            name="dog"
+            options={["Oui", "Non"]}
+            selectedOption={formData.radioButtons.dog}
+            onChange={handleRadioChange}
+          />
+        </label>
+        <label>
+          Chat :
+          <RadioCheckboxGroup
+            name="cat"
+            options={["Oui", "Non"]}
+            selectedOption={formData.radioButtons.cat}
+            onChange={handleRadioChange}
+          />
+        </label>
+        <label>
+          Enfant :
+          <RadioCheckboxGroup
+            name="kids"
+            options={["Oui", "Non"]}
+            selectedOption={formData.radioButtons.kids}
+            onChange={handleRadioChange}
+          />
+        </label>
+        <label>
+          Localisation :
+          <input
+            type="text"
+            name="localisation"
+            value={formData.localisation}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Description :
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+          />
+        </label>
+        <button type="submit">Envoyer</button>
       </form>
-
-      <div className="flex flex-col">
-        <p>Nom de l'animal: {formValues.name}</p>
-        <p>Race: {formValues.breed}</p>
-        <p>Âge: {formValues.age}</p>
-        <p>Type: {formValues.type}</p>
-        <p>Localisation: {formValues.localisation}</p>
-        <p>Description: {formValues.description}</p>
-        <p>Urgent: {formValues.urgent}</p>
-        <p>Maison: {formValues.house}</p>
-        <p>Chien: {formValues.dog}</p>
-        <p>Chat: {formValues.cat}</p>
-        <p>Enfants: {formValues.kids}</p>
-        <p>
-          Image:{" "}
-          {formValues.img ? formValues.img.name : "Aucun fichier sélectionné"}
-        </p>
-      </div>
     </div>
   );
 };
