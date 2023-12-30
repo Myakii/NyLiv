@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Report.css'
 import ReportHeader from './components/ReportHeader/ReportHeader'
 import ReportInformation from './components/ReportInformation/ReportInformation'
@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom'
 
 export default function Report() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        }, []);
 
   return (
     <div className='report-container'>
@@ -23,7 +26,7 @@ export default function Report() {
             <h2 className='text-center'>Pour nous soutenir autrement, vous pouvez...</h2>
 
             <nav className='nav-items'>
-                <Link to='/'>
+                <Link to='/condition-adoption'>
                     <button className='btn-orange btn help-btn'>
                         Adopter un compagnon
                     </button>

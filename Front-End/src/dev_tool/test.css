@@ -6,7 +6,6 @@
     gap: 2%;
   
 
-
 }
 
 .information-button {
@@ -28,11 +27,11 @@
 
 .admin-btn-tool {
 
-    position: sticky;
+    position: fixed;
     z-index: 100;
     bottom: 20px;
-    float: right;
-    margin-right: 20px;
+    right: 20px;
+
  
 
 }

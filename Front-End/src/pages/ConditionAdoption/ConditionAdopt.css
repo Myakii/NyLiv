@@ -1,0 +1,85 @@
+.condition-adopt-container header {
+
+    padding-top: 6.25rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    position: relative;
+    
+}
+
+.condition-adopt-container header .condition-dog {
+
+    grid-column: 1;
+    grid-row: 1;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.condition-adopt-container header .catch-phrase {
+
+    grid-column: 2;
+    width: 70%;
+    padding-bottom: 6.25rem;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+.condition-adopt-container .catch-phrase .top-part h2 {
+
+    color: #159DC0;
+
+
+}
+
+.condition-adopt-container .catch-phrase .mid-part a {
+
+    font-size: 1.25rem;
+    font-weight: 300;
+
+
+}
+
+.condition-adopt-container .catch-phrase .bottom-part {
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.condition-adopt-container .pawns {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 5rem;
+
+}
+
+.condition-adopt-container .pawn {
+
+    width: 18.75rem;
+    height: 12.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+
+}
+
+.condition-adopt-container .pawn-col1, .condition-adopt-container .pawn-col3 {
+
+    border: 5px solid #F6A979;
+
+}
+
+.condition-adopt-container .pawn-col2 {
+
+    border: 5px solid #5ACFED;
+    
+}
+
+
+

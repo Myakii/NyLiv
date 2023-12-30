@@ -38,6 +38,11 @@ export default function Login() {
         const errorMessage = error.message;
       });
 
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    
+
   }
 
   // C'EST NORMAL QUE CA SCROLL JUSQU'EN BAS C'EST A CAUSE DU DEV TOOL
