@@ -1,7 +1,9 @@
 .btn {
 
-    width: 18.75rem;
-    height: 5rem;
+    width: fit-content;
+    max-width: fit-content;
+    height: 3.75rem;
+    padding: 0 6.25rem;
     color: white;
     border-radius: 50px;
 

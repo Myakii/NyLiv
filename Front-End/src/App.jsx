@@ -2,7 +2,7 @@ import "./css/App.css";
 import Navbar from "./components/Header/Header";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import AdoptForm from "./pages/AdoptForm";
+import AdoptForm from "./pages/AdoptForm/AdoptForm";
 import FunctionNavigation from "./dev_tool/FunctionNavigation";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
@@ -21,6 +21,7 @@ function App() {
     "/inscription",
     "/connexion",
     "/adoption",
+    "/adoption-formulaire"
   ];
   const location = useLocation();
 

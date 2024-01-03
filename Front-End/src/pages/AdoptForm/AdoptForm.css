@@ -1,0 +1,96 @@
+.adopt-form {
+
+    padding: 1.25rem 3.125rem;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: beige;
+
+    
+}
+
+.adopt-form header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3.125rem;  
+    height: fit-content;
+
+
+}
+
+.adopt-form form {
+
+    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.adopt-form form .top-part {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+
+.adopt-form form label:not(.checkbox-label) {
+
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+}
+
+.adopt-form form label h4, .adopt-form form label h3{
+
+    color: #159DC0;
+
+}
+
+.adopt-form form label input:not(.input-text, .description, .checkbox-input) {
+
+    width: 18.75rem;
+    padding: 0.625rem;
+    background-color: transparent;
+    border-bottom: 1px solid #F47D34;
+}
+
+
+.adopt-form form .description {
+
+    border: 1px solid #F47D34;
+    width: 50rem;
+    height: 20dvh;
+    background-color: transparent;
+    padding: 0.625rem;
+}
+
+.adopt-form form .right-part {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.adopt-form form .right-part button {
+
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.adopt-form form .right-part .animal-profile-picture {
+
+    width: 31.25rem;
+    height: 50dvh;
+  
+    object-fit: cover;
+}

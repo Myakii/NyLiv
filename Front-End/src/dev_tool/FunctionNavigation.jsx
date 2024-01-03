@@ -90,7 +90,6 @@ export default function FunctionNavigation() {
       <button className='btn btn-blue' onClick={checkIfConnected}>Voir si jsuis co</button>
       <Button />
 
-
     </div>
   )
 }

@@ -11,14 +11,14 @@ export default function Button() {
 
         <div className='information-button'>
           <button className='btn btn-orange'>
-            Orange
+            TEEEEEEEEEEEEEEEEEEEEST
           </button>
           <InfoIcon className='info-icon info-btn-blue' sx={{ fontSize: 50  }}   />
         </div>
 
         <div className='information-button'>
           <button className='btn btn-blue'>
-            Bleu
+            Bouton
           </button>
           <InfoIcon className='info-icon info-btn-orange' sx={{ fontSize: 50  }}   />
         </div>
