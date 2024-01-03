@@ -240,7 +240,7 @@ const AdoptForm = () => {
           
         </div>
 
-        <div className="right-part flex flex-col justify-between">
+        <div className="right-part flex flex-col">
           <img src="" className="animal-profile-picture"/>
       
           <button className="btn-orange btn" type="submit">Ajouter un animal</button>
