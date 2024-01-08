@@ -21,8 +21,6 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $data = json_decode(file_get_contents('php://input'), true);
-    
-    echo json_encode(['information' => $data['img']]);
 
     $name = $data['name'];
     $breed = $data['breed'];

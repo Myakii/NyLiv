@@ -81,7 +81,7 @@ const AdoptForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("FormData content before sending:", formData);
+    // console.log("FormData content before sending:", formData); pour chopper la data
 
     try {
       const formDataToSend = new URLSearchParams();
@@ -99,7 +99,7 @@ const AdoptForm = () => {
       formDataToSend.append("description", formData.description);
       formDataToSend.append("img", formData.img);
 
-      console.log("FormData content before sending:", formDataToSend);
+      // console.log("FormData content before sending:", formDataToSend); jsais pas c quoi
   
       const response = await axios.post(
         `${
