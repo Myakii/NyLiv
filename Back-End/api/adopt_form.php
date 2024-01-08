@@ -19,13 +19,14 @@ if ($conn->connect_error) {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     $data = json_decode(file_get_contents('php://input'), true);
 
     $name = $data['name'];
     $breed = $data['breed'];
     $age = $data['age'];
     $img = $data['img'];
+    $localisation = $data['localisation'];
     $description = $data['description'];
     $genre = $data['radioButtons']['genre'];
     $type = $data['radioButtons']['type'];
@@ -34,12 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dog = $data['radioButtons']['dog'];
     $cat = $data['radioButtons']['cat'];
     $kids = $data['radioButtons']['kids'];
+    $link = $data['link'];
+
 
 
     // Insertion des données dans la base de données
-    $sql = "INSERT INTO pets (name, breed, age, img, description, genre, type, urgent, house, dog, cat, kids) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO pets (name, breed, age, img, localisation, description, genre, type, urgent, house, dog, cat, kids, link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssisssssssss', $name, $breed, $age, $img, $description, $genre, $type, $urgent, $house, $dog, $cat, $kids);
+    $stmt->bind_param('ssisssssssssss', $name, $breed, $age, $img, $localisation, $description, $genre, $type, $urgent, $house, $dog, $cat, $kids, $link);
 
     // Exécutez la requête
     $stmt->execute();

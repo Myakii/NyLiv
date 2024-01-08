@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import './AdoptForm.css'
+import "./AdoptForm.css";
 import axios from "axios";
 
-
-
-const AdoptForm = () => { 
+const AdoptForm = () => {
   const RadioCheckboxGroup = ({ name, options, selectedOption, onChange }) => (
     <div className="flex flex-row gap-7">
       {options.map((option) => (
@@ -24,23 +22,24 @@ const AdoptForm = () => {
   );
 
   const [formData, setFormData] = useState({
-      name: "",
-      breed: "",
-      age: "",
+    name: "",
+    breed: "",
+    age: "",
 
-      radioButtons: {
-        type: "",
-        genre: "",
-        urgent: "Non",
-        house: "Non",
-        dog: "Non",
-        cat: "Non",
-        kids: "Non",
-      },
+    radioButtons: {
+      type: "",
+      genre: "",
+      urgent: "Non",
+      house: "Non",
+      dog: "Non",
+      cat: "Non",
+      kids: "Non",
+    },
 
     img: "",
     localisation: "",
     description: "",
+    link: "",
   });
 
   const handleInputChange = (e) => {
@@ -68,7 +67,10 @@ const AdoptForm = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        const base64Data = reader.result.split("9j/")[1]; {/* Extraction de la partie pres les informations */}
+        const base64Data = reader.result.split("9j/")[1];
+        {
+          /* Extraction de la partie pres les informations */
+        }
 
         setFormData({
           ...formData,
@@ -98,17 +100,15 @@ const AdoptForm = () => {
       formDataToSend.append("localisation", formData.localisation);
       formDataToSend.append("description", formData.description);
       formDataToSend.append("img", formData.img);
+      formDataToSend.append("link", formData.link);
 
       // console.log("FormData content before sending:", formDataToSend); jsais pas c quoi
-  
+
       const response = await axios.post(
         `${
           import.meta.env.VITE_REACT_APP_API_URL
         }NyLiv/Back-End/API/adopt_form.php`,
         formData
-        
-        
-
       );
 
       console.log("Server response:", response.data);
@@ -119,160 +119,153 @@ const AdoptForm = () => {
   return (
     <div className="adopt-form">
       <header>
-
-        <img src='./Assets/Logo/NyLiv_Logo.png' alt='Logo du site' className="navbar-nyliv-logo w-52" />
+        <img
+          src="./Assets/Logo/NyLiv_Logo.png"
+          alt="Logo du site"
+          className="navbar-nyliv-logo w-52"
+        />
         <h1 className="text-[#F47D34]">Formulaire d'Ajout d'Animal</h1>
         <h4>X</h4>
       </header>
 
       <form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
-
         <div className="top-part flex flex-row">
-
           <div className="left-part flex flex-col">
-            <img src="" className="animal-profile-picture"/>
-        
-            
+            <img src="" className="animal-profile-picture" />
           </div>
 
           <div className="mid-part">
-              <div className="left-part-in-midpart flex flex-col gap-2">
-                <label>
-                  <h4>Nom de l'animal</h4>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                  />
-                </label>
-                <label>
-                  <h4>Race</h4>
-                  <input
-                    type="text"
-                    name="breed"
-                    value={formData.breed}
-                    onChange={handleInputChange}
-                  />
-                </label>
+            <div className="left-part-in-midpart flex flex-col gap-2">
+              <label>
+                <h4>Nom de l'animal</h4>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                <h4>Race</h4>
+                <input
+                  type="text"
+                  name="breed"
+                  value={formData.breed}
+                  onChange={handleInputChange}
+                />
+              </label>
 
-                <label>
-                  <h4>Âge</h4>
-                  <input
-                    type="number"
-                    min={1}
-                    max={30}
-                    name="age"
-                    value={formData.age}
-                    onChange={handleInputChange}
-                  />
-                </label>
+              <label>
+                <h4>Âge</h4>
+                <input
+                  type="number"
+                  min={1}
+                  max={30}
+                  name="age"
+                  value={formData.age}
+                  onChange={handleInputChange}
+                />
+              </label>
 
-                <label>
-                  <h4>Localisation</h4>
-                  <input
-                    type="text"
-                    name="localisation"
-                    value={formData.localisation}
-                    onChange={handleInputChange}
-                  />
-                </label>
+              <label>
+                <h4>Localisation</h4>
+                <input
+                  type="text"
+                  name="localisation"
+                  value={formData.localisation}
+                  onChange={handleInputChange}
+                />
+              </label>
 
-                <label>
+              <label>
+                <h4>Ajouter une image</h4>
+                <input
+                  type="file"
+                  accept="image/*"
+                  name="img"
+                  onChange={handleImageChange}
+                  className="input-text"
+                />
+              </label>
+            </div>
 
-                  <h4>Ajouter une image</h4>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    name="img"
-                    onChange={handleImageChange}
-                    className="input-text"
-                  />
-                </label>
-              </div>
-
-              <div className="right-part-in-midpart flex flex-col gap-16">
-
-                <div className="top-part flex flex-row gap-16">
-                  <div className="left-part flex flex-col">
-                    <label>
-                      <h4>Type</h4>
-                      <RadioCheckboxGroup
-                        name="type"
-                        options={["Chien", "Chat", "NAC"]}
-                        selectedOption={formData.radioButtons.type}
-                        onChange={handleRadioChange}
-                      />
-                    </label>
-                    <label>
-                      <h4>Genre</h4>
-                      <RadioCheckboxGroup 
-                        name="genre"
-                        options={["Femelle", "Male"]}
-                        selectedOption={formData.radioButtons.genre}
-                        onChange={handleRadioChange}
-                      />
-                    </label>
-                    <label>
-                      <h4>Maison</h4>
-                      <RadioCheckboxGroup
-                        name="house"
-                        options={["Oui", "Non"]}
-                        selectedOption={formData.radioButtons.house}
-                        onChange={handleRadioChange}
-                      />
-                    </label>
-                  </div>
-
-                  <div className="right-part flex flex-col">
-                    <label>
-                      <h4>Chien</h4>
-                      <RadioCheckboxGroup
-                      name="dog"
-                      options={["Oui", "Non"]}
-                      selectedOption={formData.radioButtons.dog}
-                      onChange={handleRadioChange}
-                      />
-                    </label>
-                    <label>
-                      <h4>Chat</h4>
-                      <RadioCheckboxGroup
-                      name="cat"
-                      options={["Oui", "Non"]}
-                      selectedOption={formData.radioButtons.cat}
-                      onChange={handleRadioChange}
-                      />
-                    </label>
-
-                    <label>
-                      <h4>Enfant</h4>
-                      <RadioCheckboxGroup
-                      name="kids"
-                      options={["Oui", "Non"]}
-                      selectedOption={formData.radioButtons.kids}
-                      onChange={handleRadioChange}
-                      />
-                    </label>
-
-                  </div>
-                </div>
-
-                <div className="bottom-part flex flex-col justify-center">
+            <div className="right-part-in-midpart flex flex-col gap-16">
+              <div className="top-part flex flex-row gap-16">
+                <div className="left-part flex flex-col">
                   <label>
-                    <h4>Type d'urgence</h4>
+                    <h4>Type</h4>
                     <RadioCheckboxGroup
-                    name="urgent"
-                    options={["FAD", "SOS", "Vétéran"]}
-                    selectedOption={formData.radioButtons.urgent}
-                    onChange={handleRadioChange}
+                      name="type"
+                      options={["Chien", "Chat", "NAC"]}
+                      selectedOption={formData.radioButtons.type}
+                      onChange={handleRadioChange}
+                    />
+                  </label>
+                  <label>
+                    <h4>Genre</h4>
+                    <RadioCheckboxGroup
+                      name="genre"
+                      options={["Femelle", "Male"]}
+                      selectedOption={formData.radioButtons.genre}
+                      onChange={handleRadioChange}
+                    />
+                  </label>
+                  <label>
+                    <h4>Maison</h4>
+                    <RadioCheckboxGroup
+                      name="house"
+                      options={["Oui", "Non"]}
+                      selectedOption={formData.radioButtons.house}
+                      onChange={handleRadioChange}
                     />
                   </label>
                 </div>
 
+                <div className="right-part flex flex-col">
+                  <label>
+                    <h4>Chien</h4>
+                    <RadioCheckboxGroup
+                      name="dog"
+                      options={["Oui", "Non"]}
+                      selectedOption={formData.radioButtons.dog}
+                      onChange={handleRadioChange}
+                    />
+                  </label>
+                  <label>
+                    <h4>Chat</h4>
+                    <RadioCheckboxGroup
+                      name="cat"
+                      options={["Oui", "Non"]}
+                      selectedOption={formData.radioButtons.cat}
+                      onChange={handleRadioChange}
+                    />
+                  </label>
+
+                  <label>
+                    <h4>Enfant</h4>
+                    <RadioCheckboxGroup
+                      name="kids"
+                      options={["Oui", "Non"]}
+                      selectedOption={formData.radioButtons.kids}
+                      onChange={handleRadioChange}
+                    />
+                  </label>
+                </div>
               </div>
 
+              <div className="bottom-part flex flex-col justify-center">
+                <label>
+                  <h4>Type d'urgence</h4>
+                  <RadioCheckboxGroup
+                    name="urgent"
+                    options={["FAD", "SOS", "Vétéran", "Non"]}
+                    selectedOption={formData.radioButtons.urgent}
+                    onChange={handleRadioChange}
+                  />
+                </label>
+              </div>
+            </div>
           </div>
-
         </div>
 
         <div className="bottom-part">
@@ -285,14 +278,23 @@ const AdoptForm = () => {
               className="description"
             />
           </label>
+          <label>
+            <h4>Lien</h4>
+            <input
+              type="text"
+              name="link"
+              value={formData.link}
+              onChange={handleInputChange}
+            ></input>
+          </label>
 
           <div className="right-part">
-            <button className="btn-orange btn" type="submit">Ajouter un animal</button>
+            <button className="btn-orange btn" type="submit">
+              Ajouter un animal
+            </button>
           </div>
-
         </div>
       </form>
-
     </div>
   );
 };
