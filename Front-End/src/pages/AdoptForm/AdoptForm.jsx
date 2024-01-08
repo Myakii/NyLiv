@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './AdoptForm.css'
+import axios from "axios";
 
 
-// import axios from "axios";
 
 const AdoptForm = () => { 
   const RadioCheckboxGroup = ({ name, options, selectedOption, onChange }) => (
@@ -24,18 +24,21 @@ const AdoptForm = () => {
   );
 
   const [formData, setFormData] = useState({
-    name: "",
-    breed: "",
-    age: "",
-    radioButtons: {
-      type: "Chien",
-      genre: "Femelle",
-      urgent: "Non",
-      house: "Non",
-      dog: "Non",
-      cat: "Non",
-      kids: "Non",
-    },
+      name: "",
+      breed: "",
+      age: "",
+
+      radioButtons: {
+        type: "",
+        genre: "",
+        urgent: "Non",
+        house: "Non",
+        dog: "Non",
+        cat: "Non",
+        kids: "Non",
+      },
+
+    img: "",
     localisation: "",
     description: "",
   });
@@ -65,9 +68,11 @@ const AdoptForm = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
+        const base64Data = reader.result.split("9j/")[1]; {/* Extraction de la partie pres les informations */}
+
         setFormData({
           ...formData,
-          img: reader.result,
+          img: "/9j/" + base64Data,
         });
       };
       reader.readAsDataURL(file);
@@ -95,12 +100,15 @@ const AdoptForm = () => {
       formDataToSend.append("img", formData.img);
 
       console.log("FormData content before sending:", formDataToSend);
-
+  
       const response = await axios.post(
         `${
           import.meta.env.VITE_REACT_APP_API_URL
         }NyLiv/Back-End/API/adopt_form.php`,
-        formDataToSend
+        formData
+        
+        
+
       );
 
       console.log("Server response:", response.data);

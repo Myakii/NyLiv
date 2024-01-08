@@ -17,17 +17,31 @@ if ($conn->connect_error) {
 // echo "Données du formulaire POST :\n";
 // print_r($_POST);
 
-$data = json_decode(file_get_contents('php://input'), true);
 
-if (isset($_FILES['img']['tmp_name']) && !empty($_FILES['img']['tmp_name']) && is_uploaded_file($_FILES['img']['tmp_name'])) {
-    error_log('$_FILES: ' . print_r($_FILES, true));
-    error_log('img: ' . $img);
-    $img = base64_encode(file_get_contents($_FILES['img']['tmp_name']));
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $data = json_decode(file_get_contents('php://input'), true);
+    
+    echo json_encode(['information' => $data['img']]);
+
+    $name = $data['name'];
+    $breed = $data['breed'];
+    $age = $data['age'];
+    $img = $data['img'];
+    $description = $data['description'];
+    $genre = $data['radioButtons']['genre'];
+    $type = $data['radioButtons']['type'];
+    $urgent = $data['radioButtons']['urgent'];
+    $house = $data['radioButtons']['house'];
+    $dog = $data['radioButtons']['dog'];
+    $cat = $data['radioButtons']['cat'];
+    $kids = $data['radioButtons']['kids'];
+
 
     // Insertion des données dans la base de données
     $sql = "INSERT INTO pets (name, breed, age, img, description, genre, type, urgent, house, dog, cat, kids) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssibssssssss', $name, $breed, $age, $img, $description, $genre, $type, $urgent, $house, $dog, $cat, $kids);
+    $stmt->bind_param('ssisssssssss', $name, $breed, $age, $img, $description, $genre, $type, $urgent, $house, $dog, $cat, $kids);
 
     // Exécutez la requête
     $stmt->execute();
