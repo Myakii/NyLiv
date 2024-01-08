@@ -3,12 +3,12 @@
     width: fit-content;
     max-width: fit-content;
     height: 3.75rem;
-    padding: 0 6.25rem;
+    padding: 0 3.125rem;
     color: white;
     border-radius: 50px;
 
-    font-size: 1.75rem;    /* h4 font size */
-    font-weight: normal; /* h4 font weight */
+    font-size: 1.25rem;    /* h4 font size */
+    font-weight: 300; /* h4 font weight */
 
 }
 

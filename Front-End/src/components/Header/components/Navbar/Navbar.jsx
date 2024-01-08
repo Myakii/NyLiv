@@ -26,7 +26,7 @@ export default function Navbar() {
         </nav>
 
         <div className='logo'>
-            <Link to='/'><img className="navbar-nyliv-logo w-52" src='./Assets/Logo/NyLiv_Logo.png' alt="Logo de NyLiv" /></Link>
+            <Link to='/'><img className="navbar-nyliv-logo w-36" src='./Assets/Logo/NyLiv_Logo.png' alt="Logo de NyLiv" /></Link>
         </div>
 
         <nav className='navbar-right'>
