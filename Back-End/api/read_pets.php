@@ -22,14 +22,9 @@ $pets_id = $_GET['id'];
 // Préparez la requête SELECT
 $query = "SELECT * FROM pets WHERE id = ?";
 $stmt = $conn->prepare($query);
-
 // Liez l'ID en tant que paramètre à la requête
 $stmt->bind_param('i', $pets_id);
-
-// Exécutez la requête
 $stmt->execute();
-
-// Récupérez les résultats
 $result = $stmt->get_result();
 
 // Vérifiez si des résultats ont été obtenus

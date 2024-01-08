@@ -17,10 +17,6 @@ if ($conn->connect_error) {
 // echo "Données du formulaire POST :\n";
 // print_r($_POST);
 
-
-// Utilisation de file_get_contents('php://input') pour récupérer les données de la requête POST
-// Utilisation de file_get_contents('php://input') pour récupérer les données de la requête POST
-// Utilisation de file_get_contents('php://input') pour récupérer les données de la requête POST
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (isset($_FILES['img']['tmp_name']) && !empty($_FILES['img']['tmp_name']) && is_uploaded_file($_FILES['img']['tmp_name'])) {
