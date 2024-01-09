@@ -55,6 +55,8 @@ export default function ReadPets() {
       <p>{animalData.cat}</p>
       <h3>Enfants :</h3>
       <p>{animalData.kids}</p>
+      <h3>Lien :</h3>
+      <a href={animalData.link}>{animalData.link}</a>
     </div>
   );
 }

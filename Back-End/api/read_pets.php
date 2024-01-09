@@ -47,7 +47,8 @@ if ($result->num_rows > 0) {
         'house' => $pets_detail['house'],
         'dog' => $pets_detail['dog'],
         'cat' => $pets_detail['cat'],
-        'kids' => $pets_detail['kids']
+        'kids' => $pets_detail['kids'],
+        'link' => $pets_detail['link'],
     );
 
     // Convertissez le tableau associatif en JSON
