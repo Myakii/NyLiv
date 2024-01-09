@@ -8,7 +8,7 @@ export default function ReadPets() {
   useEffect(() => {
     fetch(
       import.meta.env.VITE_REACT_APP_API_URL +
-        `NyLiv/Back-End/API/read_pets.php?id=${id}`,
+        `NyLiv/Back-End/API/ReadPets.php?id=${id}`,
       {
         headers: {
           "Content-Type": "application/json",

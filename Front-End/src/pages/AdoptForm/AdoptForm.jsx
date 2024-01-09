@@ -107,7 +107,7 @@ const AdoptForm = () => {
       const response = await axios.post(
         `${
           import.meta.env.VITE_REACT_APP_API_URL
-        }NyLiv/Back-End/API/adopt_form.php`,
+        }NyLiv/Back-End/API/AdoptForm.php`,
         formData
       );
 

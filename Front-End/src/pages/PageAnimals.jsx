@@ -8,7 +8,7 @@ export default function PageAnimals() {
       try {
         const response = await fetch(
           import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/listanimals.php`
+            `NyLiv/Back-End/API/ListAnimal.php`
         );
         const data = await response.json();
         setAnimalList(data);

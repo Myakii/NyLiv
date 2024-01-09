@@ -1,30 +1,55 @@
-import React from 'react'
-import './AnimalHistory.css'
+import React, { useEffect, useState } from "react";
+
+import "./AnimalHistory.css";
 
 export default function AnimalHistory() {
+  const [animalHistory, setAnimalHistory] = useState([]);
 
+  useEffect(() => {
+    const fetchLove = async (love) => {
+      try {
+        const response = await fetch(
+          import.meta.env.VITE_REACT_APP_API_URL +
+            `NyLiv/Back-End/API/AnimalHistory.php`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ love: love }),
+          }
+        );
+        const data = await response.json();
 
-  
-  const animalHistoryText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-  const nameAnimal = 'Xixi'
-   
+        if (love === "Oui") {
+          setAnimalHistory(data);
+        } else {
+          console.error("Erreur : love invalide");
+        }
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données", error);
+      }
+    };
+
+    fetchLove("Oui");
+  }, []);
+
   return (
-    <section className='animal-history centered-padding-div'>
-
-      <h3 className='text-center'>Nos sourires du moment</h3>
-    
+    <section className="animal-history centered-padding-div">
+      <h3 className="text-center">Nos sourires du moment</h3>
       <article>
-        <img src='./' />
-
-        <div className='container-animal-history'>
-
-          <h4>{nameAnimal}</h4>
-          <p>{animalHistoryText}</p>
-          <button className='btn btn-orange'>Voir Plus...</button>
-
-
+        {animalHistory && (
+          <img
+            src={`data:image/png;base64, ${animalHistory.img}`}
+            alt={animalHistory.name}
+          />
+        )}
+        <div className="container-animal-history">
+          <h4>{animalHistory.name}</h4>
+          <p>{animalHistory.description}</p>
+          <button className="btn btn-orange">Voir Plus...</button>
         </div>
       </article>
     </section>
-  )
+  );
 }
