@@ -15,7 +15,7 @@ export default function AdoptionCategory() {
       try {
         const response = await fetch(
           import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/AdoptCategoryType.php`,
+            `NyLiv/Back-End/API/Pets/AdoptCategoryType.php`,
           {
             method: "POST",
             headers: {
@@ -44,7 +44,7 @@ export default function AdoptionCategory() {
       try {
         const response = await fetch(
           import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/AdoptCategoryUrgent.php`,
+            `NyLiv/Back-End/API/Pets/AdoptCategoryUrgent.php`,
           {
             method: "POST",
             headers: {

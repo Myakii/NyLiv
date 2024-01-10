@@ -21,7 +21,7 @@ function App() {
     "/inscription",
     "/connexion",
     "/adoption",
-    "/adoption-formulaire"
+    "/adoption-formulaire",
   ];
   const location = useLocation();
 
