@@ -1,7 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Adoption.css'
+import AdoptionHeader from './components/AdoptionHeader'
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+
+
 
 export default function Adoption() {
+
+  const [animalCategory, whichAnimalCategory] = useState("Dog");
+
+  const checkCategory = (e) => {
+    console.log(e.target.value);
+    
+    whichAnimalCategory(e.target.value);
+    
+  }
+
+  useEffect(() => {
+        
+    if (animalCategory == "Dog") {
+
+      document.getElementById("selected").style.gridColumn = 1;
+
+
+    } else if (animalCategory == "Cat") {
+
+      document.getElementById("selected").style.gridColumn = 2;
+      
+
+    } else {
+
+      document.getElementById("selected").style.gridColumn = 3;
+
+    }
+
+
+  }, [animalCategory])
 
 
   return (
@@ -14,15 +48,17 @@ export default function Adoption() {
         <div className='category'>
 
           <ul className='category-items'>
-            <button className='category-logo dog' onClick={checkCategory} value='Dog' />
-        
-        
 
-            <button className='category-logo cat' onClick={checkCategory} value='Cat' />
-    
+            <input type="image" src="./Assets/DesignImg/DogCategory.png" className='category-logo dog' onClick={checkCategory} value='Dog' />
+
+   
+            <input type="image" src="./Assets/DesignImg/CatCategory.png" className='category-logo cat' onClick={checkCategory} value='Cat' />
+
+          
+
+            <input type="image" src="./Assets/DesignImg/NacCategory.png" className='category-logo nac' onClick={checkCategory} value='Nac' />
 
 
-            <button className='category-logo nac' onClick={checkCategory} value='Nac' />
   
           </ul>
 
@@ -37,46 +73,23 @@ export default function Adoption() {
 
           <div className='animal-card'>
             <img src='./Assets/Animals/Xixi.jpeg' />
+              <div className='animal-preview'>
 
+                <h4>Xixi</h4>
+                <p>2 ans</p>
 
-          </div>
-
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-
-
-          </div>
-
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-
+              </div>
 
           </div>
 
           <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
+            <img src='./Assets/Animals/Loki.jpeg' />
+              <div className='animal-preview'>
 
+                <h4>Loki</h4>
+                <p>2 ans</p>
 
-          </div>
-          
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-
-
-          </div>
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-
-
-          </div>
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-
-
-          </div>
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-
+              </div>
 
           </div>
 
@@ -86,6 +99,7 @@ export default function Adoption() {
 
       <div className='animal-photos'>
         <img src='./Assets/Animals/Xixi.jpeg' className='animal-photo' />
+        
 
       </div>
 
@@ -124,8 +138,9 @@ export default function Adoption() {
 
       </div>
 
-      <button className='btn-orange btn adoption-button'>Adopter</button>
+      <button className='btn-orange btn adoption-button'>Je veux l'adopter !</button>
       
+      <FilterAltIcon className='filter-icon' />
 
     </div>
   )

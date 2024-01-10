@@ -278,20 +278,22 @@ const AdoptForm = () => {
               className="description"
             />
           </label>
-          <label>
-            <h4>Lien</h4>
-            <input
-              type="text"
-              name="link"
-              value={formData.link}
-              onChange={handleInputChange}
-            ></input>
-          </label>
+     
+          <div className="right-part flex flex-col gap-16">
+            <label>
+              <h4>Lien</h4>
+              <input
+                type="text"
+                name="link"
+                value={formData.link}
+                onChange={handleInputChange}
+              ></input>
+            </label>
 
-          <div className="right-part">
             <button className="btn-orange btn" type="submit">
               Ajouter un animal
             </button>
+          
           </div>
         </div>
       </form>
