@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `nyliv`
 --
-CREATE DATABASE IF NOT EXISTS `nilyv` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `nilyv`;
+CREATE DATABASE IF NOT EXISTS `nyliv` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `nyliv`;
 -- --------------------------------------------------------
 
 --
