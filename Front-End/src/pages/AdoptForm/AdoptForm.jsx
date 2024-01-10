@@ -40,6 +40,7 @@ const AdoptForm = () => {
     localisation: "",
     description: "",
     link: "",
+    love: "",
   });
 
   const handleInputChange = (e) => {
@@ -101,6 +102,7 @@ const AdoptForm = () => {
       formDataToSend.append("description", formData.description);
       formDataToSend.append("img", formData.img);
       formDataToSend.append("link", formData.link);
+      formDataToSend.append("love", formData.love);
 
       // console.log("FormData content before sending:", formDataToSend); jsais pas c quoi
 
@@ -278,7 +280,7 @@ const AdoptForm = () => {
               className="description"
             />
           </label>
-     
+
           <div className="right-part flex flex-col gap-16">
             <label>
               <h4>Lien</h4>
@@ -293,7 +295,6 @@ const AdoptForm = () => {
             <button className="btn-orange btn" type="submit">
               Ajouter un animal
             </button>
-          
           </div>
         </div>
       </form>

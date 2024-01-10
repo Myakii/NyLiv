@@ -10,7 +10,7 @@ import Auth from "./Auth";
 import Footer from "./components/Footer/Footer";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import Crashtestapi from "./dev_tool/CrashTestApi";
-import ReadPets from "./pages/ReadPets";
+import ReadPets from "./pages/ReadPets/ReadPets";
 import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
 import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";

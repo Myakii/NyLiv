@@ -26,7 +26,7 @@ export default function PageAnimals() {
         <div className="grid_pets">
           {animalList.map((pet) => (
             <div className="place_name" key={pet.id}>
-              <Link to={`listedesanimaux/${pet.id}`}>
+              <Link to={`${pet.id}`}>
                 <h2>{pet.name}</h2>
                 <img src={`data:image/jpeg;base64,${pet.img}`} alt={pet.name} />
               </Link>
