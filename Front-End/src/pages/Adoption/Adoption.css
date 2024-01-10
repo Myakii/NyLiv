@@ -6,7 +6,195 @@
 
     padding: 1.563rem 3.125rem;
     display: grid;
-    grid-template-columns: 43.75% 31.25% 25%;
-    grid-template-rows: 12.5% 75% 12.5%;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 16.5% 70% 13.5%;
+
+}
+
+.adoption-interface header {
+
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3.125rem;  
+    height: fit-content;
+
+} 
+
+.adoption-interface .animal-list {
+
+    grid-row: 2;
+    grid-column: 1;
+
+}
+
+.adoption-interface .animal-list .category {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
+    
+
+
+}
+
+.adoption-interface .animal-list .category .category-items {
+
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+}
+
+.adoption-interface .animal-list .category .category-items .category-logo {
+
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.dog {
+
+    grid-column: 1;
+
+}
+
+.cat {
+
+    grid-column: 2;
+    
+}
+
+.nac {
+
+    grid-column: 3;
+
+}
+
+
+
+.adoption-interface .animal-list .category .dynamic-bar-selection {
+
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    border-radius: 50px;
+
+}
+
+
+
+.adoption-interface .animal-list .category .dynamic-bar-selection #selected {
+
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #F47D34;
+    z-index: 999;
+    border-radius: 50px;
+
+}
+
+
+.adoption-interface .animal-list .display-animals {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3.125rem;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.adoption-interface .animal-list .display-animals .animal-card {
+
+    width: 200px;
+    height: 200px;
+    border: 1px solid red
+
+}
+
+.display-animals::-webkit-scrollbar {
+    width: 12px;
+   
+}
+
+.display-animals::-webkit-scrollbar-track {
+    
+    background-color: white;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    border-radius: 10px;
+
+}
+
+.adoption-interface .animal-photos {
+
+    grid-row: 2;
+    grid-column: 2;
+    
+
+}
+
+.adoption-interface .animal-information {
+
+    grid-row: 2;
+    grid-column: 3;    
+
+    color: white;
+    max-width: 100%;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+.adoption-interface .animal-information .compatibility {
+
+    list-style: inside;
+    /* list-style-type: "\1F44D"; */
+    margin-left: 2%;
+  
+   
+
+}
+
+.scroll::-webkit-scrollbar {
+    width: 12px;
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-track {
+    
+    background-color: white;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    border-radius: 10px;
+
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background-color: #F27D33;
+}
+
+.adoption-interface .adoption-button {
+
+    grid-row: 3;
+    grid-column: 3;
+    margin: auto;
 
 }
