@@ -1,5 +1,6 @@
 import React from 'react'
 import InfoIcon from '@mui/icons-material/Info';
+import ClearIcon from '@mui/icons-material/Clear';
 
 export default function Button() {
   return (
@@ -22,6 +23,8 @@ export default function Button() {
           </button>
           <InfoIcon className='info-icon info-btn-orange' sx={{ fontSize: 50  }}   />
         </div>
+        
+        <ClearIcon className='exit-button' sx={{ fontSize: 58}} />
 
     </div>
   )
