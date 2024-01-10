@@ -10,7 +10,7 @@ export default function AnimalHistory() {
       try {
         const response = await fetch(
           import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/AnimalHistory.php`,
+            `NyLiv/Back-End/API/Pets/AnimalHistory.php`,
           {
             method: "POST",
             headers: {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function PageAnimals() {
   const [animalList, setAnimalList] = useState([]);
@@ -8,7 +9,7 @@ export default function PageAnimals() {
       try {
         const response = await fetch(
           import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/ListAnimal.php`
+            `NyLiv/Back-End/API/Pets/ListAnimal.php`
         );
         const data = await response.json();
         setAnimalList(data);
@@ -25,10 +26,10 @@ export default function PageAnimals() {
         <div className="grid_pets">
           {animalList.map((pet) => (
             <div className="place_name" key={pet.id}>
-              <a href={`pageanimals.php?id=${pet.id}`}>
+              <Link to={`listedesanimaux/${pet.id}`}>
                 <h2>{pet.name}</h2>
                 <img src={`data:image/jpeg;base64,${pet.img}`} alt={pet.name} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
