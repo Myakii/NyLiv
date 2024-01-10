@@ -127,7 +127,7 @@ CREATE TABLE `usersstaff` (
 -- Déchargement des données de la table `pets`
 --
 
-INSERT INTO `usersstaff` (`id`, `name`, `firstname`, `password` ,`email`, `phone`, `role`) VALUES ('1', 'Rosine', 'Yang', ` `,'r_yang4@hotmail.fr', '0616322245', 'Admin');
+INSERT INTO `usersstaff` (`id`, `name`, `firstname`, `password` ,`email`, `phone`, `role`) VALUES ('1', 'Rosine', 'Yang', '12345Hello','r_yang4@hotmail.fr', '0616322245', 'Admin');
 
 -- --------------------------------------------------------
 --
@@ -146,7 +146,7 @@ ALTER TABLE `users`
 -- Index pour la table `usersstaff`
 --
 ALTER TABLE `usersstaff`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -156,7 +156,7 @@ ALTER TABLE `usersstaff`
 -- AUTO_INCREMENT pour la table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `user`
