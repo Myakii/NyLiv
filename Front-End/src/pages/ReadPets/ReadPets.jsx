@@ -61,7 +61,7 @@ export default function ReadPets() {
         <a href={animalData.link}>{animalData.link}</a>
       </div>
       <div className="button_admin">
-        <Link to={`/modify/${id}`}>
+        <Link to={`/modification-formulaire/${id}`}>
           <button>Modifier</button>
         </Link>
       </div>

@@ -61,8 +61,6 @@ function modify_pets($conn, $pets_id, $pets_name, $pets_breed, $pets_age, $pets_
     if (!$stmt) {
         die('Erreur de requête préparée: ' . $conn->error);
     }
-
-    // Exécution de la requête
     $stmt->execute();
 
     // Vérifiez si l'exécution de la requête a réussi

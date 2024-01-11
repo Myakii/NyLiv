@@ -34,13 +34,12 @@ const AdoptForm = () => {
       dog: "Non",
       cat: "Non",
       kids: "Non",
+      love: "Non",
     },
-
     img: "",
     localisation: "",
     description: "",
     link: "",
-    love: "",
   });
 
   const handleInputChange = (e) => {
@@ -70,7 +69,7 @@ const AdoptForm = () => {
       reader.onloadend = () => {
         const base64Data = reader.result.split("9j/")[1];
         {
-          /* Extraction de la partie pres les informations */
+          /* Extraction de la partie après les informations */
         }
 
         setFormData({
@@ -255,7 +254,7 @@ const AdoptForm = () => {
                 </div>
               </div>
 
-              <div className="bottom-part flex flex-col justify-center">
+              <div className="TypeUrgent">
                 <label>
                   <h4>Type d'urgence</h4>
                   <RadioCheckboxGroup
@@ -266,6 +265,15 @@ const AdoptForm = () => {
                   />
                 </label>
               </div>
+              <label>
+                <h4>Coup de coeur</h4>
+                <RadioCheckboxGroup
+                  name="love"
+                  options={["Oui", "Non"]}
+                  selectedOption={formData.radioButtons.love}
+                  onChange={handleRadioChange}
+                />
+              </label>
             </div>
           </div>
         </div>
@@ -291,7 +299,6 @@ const AdoptForm = () => {
                 onChange={handleInputChange}
               ></input>
             </label>
-
             <button className="btn-orange btn" type="submit">
               Ajouter un animal
             </button>

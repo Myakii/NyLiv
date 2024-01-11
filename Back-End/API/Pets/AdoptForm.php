@@ -35,15 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dog = $data['radioButtons']['dog'];
     $cat = $data['radioButtons']['cat'];
     $kids = $data['radioButtons']['kids'];
+    $love = $data['radioButtons']['love'];
     $link = $data['link'];
-    $love = $data['love'];
 
 
 
     // Insertion des données dans la base de données
     $sql = "INSERT INTO pets (name, breed, age, img, localisation, description, genre, type, urgent, house, dog, cat, kids, link, love) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssisssssssssss', $name, $breed, $age, $img, $localisation, $description, $genre, $type, $urgent, $house, $dog, $cat, $kids, $link, $love);
+    $stmt->bind_param('ssissssssssssss', $name, $breed, $age, $img, $localisation, $description, $genre, $type, $urgent, $house, $dog, $cat, $kids, $link, $love);
 
     // Exécutez la requête
     $stmt->execute();

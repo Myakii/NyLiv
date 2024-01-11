@@ -15,6 +15,7 @@ import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
 import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
 import Adoption from "./pages/Adoption/Adoption";
+import ModifyForm from "./pages/ReadPets/components/ModifyForm";
 
 function App() {
   const routesWithoutNavbarAndFooter = [
@@ -39,6 +40,10 @@ function App() {
 
           <Route path="/adoption-formulaire" element={<AdoptForm />} />
           <Route path="/listedesanimaux/:id/*" element={<ReadPets />} />
+          <Route
+            path="/modification-formulaire/:id/*"
+            element={<ModifyForm />}
+          />
           <Route path="/listedesanimaux" element={<PageAnimals />} />
 
           <Route path="/admin" element={<FunctionNavigation />} />
