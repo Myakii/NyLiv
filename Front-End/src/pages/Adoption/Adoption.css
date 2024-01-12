@@ -1,6 +1,6 @@
 .adoption-interface {
 
-    width: 100dvw;
+    width: 100%;
     height: 100dvh;
     background-color: #159DC0;
 
@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-rows: 16.5% 70% 13.5%;
+    position: relative;
 
 }
 
@@ -106,7 +107,7 @@
     width: 100%;
     height: 100%;
     background-color: #F47D34;
-    z-index: 999;
+    z-index: 0;
     border-radius: 50px;
 
 }
@@ -264,4 +265,65 @@
     cursor: pointer;
 
 }
+
+.adoption-interface a {
+
+    width: fit-content;
+    height: fit-content;
+
+}
+
+.adoption-interface .filter-window {
+
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    backdrop-filter: blur(5px);
+    visibility: hidden;
+
+}
+
+.adoption-interface .filter-window:target {
+    visibility: visible;
+
+}
+
+.adoption-interface .filter-window .filter-interface {
+
+    width: 70dvw;
+    height: 70dvh;
+    border-top-right-radius: 50px;
+    background-color: white;
+    border: 5px solid #F47D34;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+    display: grid;
+    grid-template-rows: 80% 20%;
+
+    
+}
+
+.adoption-interface .filter-interface .top-part {
+
+    display: block;
+    padding: 3.5rem;
+
+}
+
+.adoption-interface .filter-interface .bottom-part {
+
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #159DC0;
+
+}
+
 

@@ -140,7 +140,31 @@ export default function Adoption() {
 
       <button className='btn-orange btn adoption-button'>Je veux l'adopter !</button>
       
-      <FilterAltIcon className='filter-icon' />
+      <a href='#filter' className='filter-icon-slot'><FilterAltIcon className='filter-icon' /></a>
+
+      <div className='filter-window' id='filter'>
+
+        <div className='filter-interface' id='filter'>
+
+          <div className='top-part'>
+            
+            <h3>Age</h3>
+            <h3>Taille (petit moyen grand)</h3> 
+            <h3>Race (if it's cat shows cat race -> dog = dog race)</h3>
+            <h3>Sexe</h3>
+            <h3>Localisation</h3>
+            <h3>Compatibilité</h3>
+
+          </div>
+
+          <div className='bottom-part'>
+            <button className='btn-orange btn w-80'>Tout effacer</button>
+            <button className='btn-orange btn w-80'>Confirmer</button>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
   )
