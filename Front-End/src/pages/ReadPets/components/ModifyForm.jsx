@@ -110,7 +110,7 @@ const ModifyForm = () => {
       const response = await axios.post(
         `${
           import.meta.env.VITE_REACT_APP_API_URL
-        }NyLiv/Back-End/API/Pets/ModifiyAnimalPets.php?id=${id}`,
+        }NyLiv/Back-End/API/Pets/ModifyAnimalPets.php?id=${id}`,
         formDataToSend
       );
 
