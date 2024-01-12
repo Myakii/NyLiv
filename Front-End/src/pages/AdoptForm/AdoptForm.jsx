@@ -264,16 +264,16 @@ const AdoptForm = () => {
                     onChange={handleRadioChange}
                   />
                 </label>
+                <label>
+                  <h4>Coup de coeur</h4>
+                  <RadioCheckboxGroup
+                    name="love"
+                    options={["Oui", "Non"]}
+                    selectedOption={formData.radioButtons.love}
+                    onChange={handleRadioChange}
+                  />
+                </label>
               </div>
-              <label>
-                <h4>Coup de coeur</h4>
-                <RadioCheckboxGroup
-                  name="love"
-                  options={["Oui", "Non"]}
-                  selectedOption={formData.radioButtons.love}
-                  onChange={handleRadioChange}
-                />
-              </label>
             </div>
           </div>
         </div>
