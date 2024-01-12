@@ -100,10 +100,10 @@ const ModifyForm = () => {
       formDataToSend.append("cat", formData.radioButtons.cat);
       formDataToSend.append("kids", formData.radioButtons.kids);
       formDataToSend.append("localisation", formData.localisation);
+      formDataToSend.append("love", formData.radioButtons.love);
       formDataToSend.append("description", formData.description);
       formDataToSend.append("img", formData.img);
       formDataToSend.append("link", formData.link);
-      formDataToSend.append("love", formData.love);
 
       console.log("FormData content before sending:", formDataToSend);
 
