@@ -130,6 +130,34 @@ CREATE TABLE `usersstaff` (
 INSERT INTO `usersstaff` (`id`, `name`, `firstname`, `password` ,`email`, `phone`, `role`) VALUES ('1', 'Rosine', 'Yang', '12345Hello','r_yang4@hotmail.fr', '0616322245', 'Admin');
 
 -- --------------------------------------------------------
+-- --------------------------------------------------------
+--
+-- Structure de la table `reportanimals`
+--
+DROP TABLE IF EXISTS `reportanimals`;
+CREATE TABLE `reportanimals` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `date`  datetime NOT NULL DEFAULT current_timestamp(),
+  `reportingaddress` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `choiceofvisibility`varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Index pour les tables déchargées
+--
+--
+-- Déchargement des données de la table `pets`
+--
+
+INSERT INTO `reportanimals` (`id`, `name`, `firstname`,`email`, `phone`, `subject`, `date`,  `reportingaddress`, `text`, `choiceofvisibility`) VALUES ('1', 'Luc', 'Luc','capriceseum@gmail.com', '0666368725', 'Maltraitance', "2024-01-10 15:15:15" , "10 Rue des Etoiles, 75019 Paris" ,"Cela fait plus de 10 jours que je vois un chien vivre h24 sur un balcon alors que nous sommes en hiver", "Oui");
+
+-- --------------------------------------------------------
 --
 -- Index pour la table `pets`
 --
@@ -146,6 +174,12 @@ ALTER TABLE `users`
 -- Index pour la table `usersstaff`
 --
 ALTER TABLE `usersstaff`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `reportanimals`
+--
+ALTER TABLE `reportanimals`
   ADD PRIMARY KEY (`id`);
 
 --
