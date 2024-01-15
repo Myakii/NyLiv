@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT id, name, img FROM pets";
+$query = "SELECT * FROM pets";
 $result = $conn->query($query);
 if ($result) {
     $data = array(); // Initialise un tableau pour stocker les données
@@ -23,6 +23,7 @@ if ($result) {
     }
 
     echo json_encode($data);
+  
 } else {
     echo "Erreur dans la requête : " . $conn->error;
 }

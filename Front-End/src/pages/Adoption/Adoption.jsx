@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import './Adoption.css'
+import './css/Adoption.css'
+import './css/AnimalList.css'
+import './css/AnimalInformation.css'
+import './css/Filter.css'
 import AdoptionHeader from './components/AdoptionHeader'
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import ClearIcon from '@mui/icons-material/Clear';
+import FemaleIcon from '@mui/icons-material/Female';
+import MaleIcon from '@mui/icons-material/Male';
 
 
 
@@ -10,7 +15,9 @@ export default function Adoption() {
 
   const [animalCategory, whichAnimalCategory] = useState("Dog");
   const [animalList, setAnimalList] = useState([]);
-  
+  const [showAnimal, setShowAnimal] = useState([]);
+  const [currentAnimalId, setCurrentAnimalId] = useState(1);
+
   const checkCategory = (e) => {
     console.log(e.target.value);
     
@@ -18,29 +25,36 @@ export default function Adoption() {
     
   }
 
-  useEffect(() => {
-        
-  const fetchData = async () => {
+  const AnimalTest = async (e) => {
 
-      try {
-        const response = await fetch(
-          import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/Pets/ListAnimal.php`
-        );
-        const data = await response.json();
-        const animalArrayData = data[currentAnimalId - 1]
-        console.log(animalArrayData)
-        setShowAnimal(animalArrayData)
-        
+    parseInt(e.currentTarget.id)
+    setCurrentAnimalId(e.currentTarget.id);
+
+  };
+
+  useEffect(() => {
+    
+    const fetchData = async () => {
+
+        try {
+          const response = await fetch(
+            import.meta.env.VITE_REACT_APP_API_URL +
+              `NyLiv/Back-End/API/Pets/ListAnimal.php`
+          );
+          const data = await response.json();
+          const animalArrayData = data[currentAnimalId - 1]
+          console.log(animalArrayData)
+          setShowAnimal([animalArrayData])
+
         } catch (error) {
-      
+    
         console.error("Erreur lors de la récupération des données", error);
 
         }
-  }
-  fetchData();  
-  
-}, [currentAnimalId])
+    }
+    fetchData();  
+    
+  }, [currentAnimalId])
 
 
   useEffect(() => {
@@ -66,21 +80,51 @@ export default function Adoption() {
   }, [animalCategory])
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          import.meta.env.VITE_REACT_APP_API_URL +
-            `NyLiv/Back-End/API/Pets/ListAnimal.php`
-        );
-        const data = await response.json();
-        setAnimalList(data);
-      } catch (error) {
-        console.error("Erreur lors de la récupération des données", error);
-      }
-    };
-    fetchData();
-  }, []);
 
+      const fetchData = async () => {
+        try {
+          const response = await fetch(
+            import.meta.env.VITE_REACT_APP_API_URL +
+              `NyLiv/Back-End/API/Pets/ListAnimal.php`
+          );
+          const data = await response.json();
+
+          for (let i = 0; i < data.length; i++){
+
+            console.log(data[i].type);
+
+            if (animalCategory == "Dog") {
+
+              const dogsList = data.filter(type => type.type == "Chien")
+              setAnimalList(dogsList)
+
+            } else if (animalCategory == "Cat") {
+
+              const catsList = data.filter(type => type.type == "Chat")
+              setAnimalList(catsList)
+
+            } else {
+
+              const otherList = data.filter(type => type.type != "Chien" && type.type != "Chat")
+              setAnimalList(otherList)
+
+            }
+            
+          }
+        
+
+
+          
+        } catch (error) {
+          console.error("Erreur lors de la récupération des données", error);
+        }
+      };
+      fetchData();
+
+  }, [animalCategory]);
+
+  console.log(animalList)
+  console.log(showAnimal)
 
   return (
     <div className='adoption-interface'>
@@ -95,10 +139,7 @@ export default function Adoption() {
 
             <input type="image" src="./Assets/DesignImg/DogCategory.png" className='category-logo dog' onClick={checkCategory} value='Dog' />
 
-   
             <input type="image" src="./Assets/DesignImg/CatCategory.png" className='category-logo cat' onClick={checkCategory} value='Cat' />
-
-          
 
             <input type="image" src="./Assets/DesignImg/NacCategory.png" className='category-logo nac' onClick={checkCategory} value='Nac' />
 
@@ -110,86 +151,115 @@ export default function Adoption() {
           </div>
 
         </div>
-     
+        
+      {animalList.length > 0 ? (
         <div className='display-animals'>
-
-            {animalList.map((pet) => (
-              
-      
-              
-    
-            <div className='animal-card'>
-              
-              <img src={`data:image/jpeg;base64,${pet.img}`} alt={pet.name} />
-              <div className='animal-preview'>
-                <h4>{pet.name}</h4>
-                <p>{pet.age}</p>
+          
+        {animalList.map((pet) => (
+          
+        <div className='animal-card' id={pet.id} key={pet.id} onClick={AnimalTest}>
+          
+          <img src={`data:image/jpeg;base64,${pet.img}`} alt={pet.name} />
+          <div className='animal-preview'>
+            <p>
             
-              </div>
-                
-            </div>  
+              {pet.name} 
+              {pet.genre == "Femelle" ? (
 
-            ))}
+                  <FemaleIcon />
 
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Xixi.jpeg' />
-              <div className='animal-preview'>
 
-                <h4>Xixi</h4>
-                <p>2 ans</p>
+              ) :(
 
-              </div>
-            
+                <MaleIcon />
+
+              )}
+              
+            </p>
+          
+            <p>{pet.age} ans</p>
+        
           </div>
-        
+            
+        </div>  
+
+        ))}
         </div>
-       
-      </div>
-        
-      <div className='animal-photos'>
-        <img src='./Assets/Animals/Xixi.jpeg' className='animal-photo' />
-        
+        ) : (
+
+          <div className='display-animals'>
+            <p>Aucun animal trouvé</p>
+          </div>
+
+      )}
 
       </div>
 
+    
+      {showAnimal.length > 0 ? (
+      
+        <div className='animal-photos'>
+          {showAnimal.map((pet) => (
 
-      <div className='animal-information scroll overflow-y-scroll'>
+            <img src={`data:image/jpeg;base64,${pet.img}`} alt={pet.name} className='animal-photo' />
 
-        <h2>Xixi</h2>
-        <h4>Chien - Femelle</h4>
-        <h4>Yorkshire - 2 ans</h4>
-        
-        <p>Compatibilité :</p>
-        <ul className='compatibility'>
+          ))}
 
-          <li>Chat</li>
-          <li>Chien</li>
-          <li>Enfants</li>
-          <li>Urgent</li>
-          <li>Maison</li>
-
-        </ul>
-        <p>Saint-Maur-Des-Fossés</p>
-        
-        <h4>Description</h4>
-        <div className=''>
-          <p className='text-[#000000]'>J'aime trop raconter ma putain de vie PTDR j'ai trop de choses à dire
-            en plus là chui omega frustré par les travaux, par la vie en général
-            wsh vasy c'est quoi ca la vie adulte de devoir travailler et gagner de l'argent
-            putain moi jpensais pas ct comme ca maintenant jv devoir bosser vasy je peux
-            pas etre streamer comme ca je fais ce qui me plait MDRRR mais wsh chui un raté
-            jveux devenir streameur alors que chui low master de ces morts bon ok j'arrete
-            ct juste pour faire un long texte à la base bon je vais continuer le texte  long parce
-            que ca me fait tres tres rire 
-          </p>
         </div>
 
 
-      </div>
+      ) : (
+
+        <div className='animal-photos'>
+          
+        </div>
+        
+      )}
+      
+
+      {showAnimal.length > 0 ? (
+
+      
+        <div className='animal-information scroll overflow-y-scroll'>
+          {showAnimal.map((pet) => (
+          <div>
+            <h2>{pet.name}</h2>
+            <h4>{pet.type} - {pet.genre}</h4>
+            <h4>{pet.breed} - {pet.age} ans</h4>
+            
+            <p>Compatibilité :</p>
+            <ul className='compatibility'>
+
+              <li>Chat : {pet.cat}</li>
+              <li>Chien : {pet.dog}</li>
+              <li>Enfants : {pet.kids}</li>
+              <li>Urgent : {pet.urgent}</li>
+              <li>Maison : {pet.house}</li>
+
+            </ul>
+            <p>Localisation : {pet.localisation}</p>
+          
+            <h4>Description</h4>
+          
+              <p className='text-[#000000]'>
+                {pet.description}
+              </p>
+           
+          </div>
+          ))}
+        </div> 
+        
+      ) : (
+
+        <div className='animal-information scroll overflow-y-scroll'>
+        </div>
+      
+      )}
+      
 
       <button className='btn-orange btn adoption-button'>Je veux l'adopter !</button>
       
-      <a href='#filter' className='filter-icon-slot'><FilterAltIcon className='filter-icon' /></a>
+      <FilterAltIcon className='filter-icon' />
 
       <div className='filter-window' id='filter'>
 
