@@ -16,6 +16,7 @@ import Report from "./pages/Report/Report";
 import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
 import Adoption from "./pages/Adoption/Adoption";
 import ModifyForm from "./pages/ReadPets/components/ModifyForm";
+import ReportForm from "./pages/Report/components/ReportForm/ReportForm";
 
 function App() {
   const routesWithoutNavbarAndFooter = [
@@ -53,6 +54,10 @@ function App() {
           <Route path="/connexion" element={<Login />} />
 
           <Route path="/signalement" element={<Report />} />
+          <Route
+            path="/signalement/formulaire-report"
+            element={<ReportForm />}
+          />
 
           <Route path="/condition-adoption" element={<ConditionAdoption />} />
 
