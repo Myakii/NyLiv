@@ -20,6 +20,32 @@ export default function Adoption() {
 
   useEffect(() => {
         
+  const fetchData = async () => {
+
+      try {
+        const response = await fetch(
+          import.meta.env.VITE_REACT_APP_API_URL +
+            `NyLiv/Back-End/API/Pets/ListAnimal.php`
+        );
+        const data = await response.json();
+        const animalArrayData = data[currentAnimalId - 1]
+        console.log(animalArrayData)
+        setShowAnimal(animalArrayData)
+        
+        } catch (error) {
+      
+        console.error("Erreur lors de la récupération des données", error);
+
+        }
+  }
+  fetchData();  
+  
+}, [currentAnimalId])
+
+
+  useEffect(() => {
+        
+    console.log(animalCategory)
     if (animalCategory == "Dog") {
 
       document.getElementById("selected").style.gridColumn = 1;
