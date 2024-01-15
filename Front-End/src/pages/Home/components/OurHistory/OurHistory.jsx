@@ -15,9 +15,7 @@ export default function OurHistory() {
         <button className="btn btn-blue">Voir plus...</button>
       </article>
 
-      <div className="our-history-img">
-        <img src="./Assets/Imgs/3d7b12e99a796fd3cccd9490ba6d958d.jpg"></img>
-      </div>
+      <div className="our-history-img">img </div>
     </section>
   );
 }

@@ -15,7 +15,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// $name = $_GET['name'];
+// $breed = $_GET['breed'];
+// $age = $_GET['age'];
+// $type = $_GET['type'];
+// $localisation = $_GET['localisation'];
+// $urgent = $_GET['urgent'];
+// $description = $_GET['description'];
+// $img = $_GET['img'];
+// $house = $_GET['house'];
+// $dog = $_GET['dog'];
+// $cat = $_GET['cat'];
+// $kids = $_GET['kids'];
+// $link = $_GET['link'];
+// $love = $_GET['love'];
 $id = $_GET['id'];
+
 // Préparez la requête
 $sql = "UPDATE pets SET name=?, breed=?, age=?, type=?, localisation=?, urgent=?, description=?, img=?, house=?, dog=?, cat=?, kids=?, link=?, love=? WHERE id=?";
 $stmt = $conn->prepare($sql);
@@ -51,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Vérifiez si l'exécution de la requête a réussi
     if ($stmt->affected_rows > 0) {
         echo 'Mise à jour réussie.';
+        Header("Location: listedesanimaux/{$id}");
     } else {
         echo 'Aucune mise à jour effectuée.';
         echo 'Erreur lors de l\'exécution de la requête : ' . $stmt->error;

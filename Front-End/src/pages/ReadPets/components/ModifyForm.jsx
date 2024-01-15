@@ -100,17 +100,17 @@ const ModifyForm = () => {
       formDataToSend.append("cat", formData.radioButtons.cat);
       formDataToSend.append("kids", formData.radioButtons.kids);
       formDataToSend.append("localisation", formData.localisation);
+      formDataToSend.append("love", formData.radioButtons.love);
       formDataToSend.append("description", formData.description);
       formDataToSend.append("img", formData.img);
       formDataToSend.append("link", formData.link);
-      formDataToSend.append("love", formData.love);
 
       console.log("FormData content before sending:", formDataToSend);
 
       const response = await axios.post(
         `${
           import.meta.env.VITE_REACT_APP_API_URL
-        }NyLiv/Back-End/API/Pets/ModifiyAnimalPets.php?id=${id}`,
+        }NyLiv/Back-End/API/Pets/ModifyAnimalPets.php?id=${id}`,
         formDataToSend
       );
 
