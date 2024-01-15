@@ -312,6 +312,7 @@
 
     display: block;
     padding: 3.5rem;
+    grid-row: 1;
 
 }
 
@@ -326,4 +327,18 @@
 
 }
 
+.adoption-interface .filter-interface .clear-icon-filter {
+
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+}
+
+.clear-icon-filter:hover {
+
+    color: #159DC0;
+    cursor: pointer;
+
+}
 

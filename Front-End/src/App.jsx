@@ -22,6 +22,7 @@ function App() {
     "/inscription",
     "/connexion",
     "/adoption",
+    "/adoption/filtre",
     "/adoption-formulaire",
   ];
   const location = useLocation();
@@ -57,6 +58,10 @@ function App() {
           <Route path="/condition-adoption" element={<ConditionAdoption />} />
 
           <Route path="/adoption" element={<Adoption />} />
+
+     
+    
+
         </Routes>
 
         <Link to="./admin">

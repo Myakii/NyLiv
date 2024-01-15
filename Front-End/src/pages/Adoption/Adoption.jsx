@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import './Adoption.css'
 import AdoptionHeader from './components/AdoptionHeader'
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import ClearIcon from '@mui/icons-material/Clear';
 
 
 
 export default function Adoption() {
 
   const [animalCategory, whichAnimalCategory] = useState("Dog");
-
+  const [animalList, setAnimalList] = useState([]);
+  
   const checkCategory = (e) => {
     console.log(e.target.value);
     
@@ -37,6 +39,22 @@ export default function Adoption() {
 
   }, [animalCategory])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          import.meta.env.VITE_REACT_APP_API_URL +
+            `NyLiv/Back-End/API/Pets/ListAnimal.php`
+        );
+        const data = await response.json();
+        setAnimalList(data);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données", error);
+      }
+    };
+    fetchData();
+  }, []);
+
 
   return (
     <div className='adoption-interface'>
@@ -58,8 +76,6 @@ export default function Adoption() {
 
             <input type="image" src="./Assets/DesignImg/NacCategory.png" className='category-logo nac' onClick={checkCategory} value='Nac' />
 
-
-  
           </ul>
 
           <div className='dynamic-bar-selection'>
@@ -68,8 +84,26 @@ export default function Adoption() {
           </div>
 
         </div>
-
+     
         <div className='display-animals'>
+
+            {animalList.map((pet) => (
+              
+      
+              
+    
+            <div className='animal-card'>
+              
+              <img src={`data:image/jpeg;base64,${pet.img}`} alt={pet.name} />
+              <div className='animal-preview'>
+                <h4>{pet.name}</h4>
+                <p>{pet.age}</p>
+            
+              </div>
+                
+            </div>  
+
+            ))}
 
           <div className='animal-card'>
             <img src='./Assets/Animals/Xixi.jpeg' />
@@ -79,24 +113,13 @@ export default function Adoption() {
                 <p>2 ans</p>
 
               </div>
-
+            
           </div>
-
-          <div className='animal-card'>
-            <img src='./Assets/Animals/Loki.jpeg' />
-              <div className='animal-preview'>
-
-                <h4>Loki</h4>
-                <p>2 ans</p>
-
-              </div>
-
-          </div>
-
+        
         </div>
-
+       
       </div>
-
+        
       <div className='animal-photos'>
         <img src='./Assets/Animals/Xixi.jpeg' className='animal-photo' />
         
@@ -145,12 +168,12 @@ export default function Adoption() {
       <div className='filter-window' id='filter'>
 
         <div className='filter-interface' id='filter'>
-
+          <a href='#'><ClearIcon className='clear-icon-filter' sx={{ fontSize: 56 }}/></a>
           <div className='top-part'>
             
             <h3>Age</h3>
             <h3>Taille (petit moyen grand)</h3> 
-            <h3>Race (if it's cat shows cat race -> dog = dog race)</h3>
+            <h3>Race (if it's cat shows cat race / dog = dog race)</h3>
             <h3>Sexe</h3>
             <h3>Localisation</h3>
             <h3>Compatibilité</h3>
