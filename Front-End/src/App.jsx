@@ -10,13 +10,12 @@ import Auth from "./Auth";
 import Footer from "./components/Footer/Footer";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import Crashtestapi from "./dev_tool/CrashTestApi";
-import ReadPets from "./pages/ReadPets/ReadPets";
-import PageAnimals from "./pages/PageAnimals";
 import Report from "./pages/Report/Report";
 import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
 import Adoption from "./pages/Adoption/Adoption";
 import ModifyForm from "./pages/ReadPets/components/ModifyForm";
 import ReportForm from "./pages/Report/components/ReportForm/ReportForm";
+import AddFormAnimals from "./pages/AddFormAnimals/AddFormAnimals";
 
 function App() {
   const routesWithoutNavbarAndFooter = [
@@ -38,35 +37,42 @@ function App() {
         {!hideNavbarAndFooter && <Navbar />}
 
         <Routes>
+          {/* Page d'accueil */}
           <Route path="/" element={<Home />} />
 
-          <Route path="/adoption-formulaire" element={<AdoptForm />} />
-          <Route path="/listedesanimaux/:id/*" element={<ReadPets />} />
+          {/* Partie animaux */}
+          <Route path="/condition-adoption" element={<ConditionAdoption />} />
+          {/* Page de tous les animaux */}
+          <Route path="/listedesanimaux" element={<Adoption />} />
+          {/* <Route path="/listedesanimaux" element={<PageAnimals />} /> */}
+          {/* Page d'un Animal */}
+          {/* <Route path="/listedesanimaux/:id/*" element={<ReadPets />} /> */}
+
+          {/* Formulaire d'adoption */}
+          <Route path="/formulaire-adoption" element={<AdoptForm />} />
+
+          {/* Formulaire d'ajout d'un Animal */}
+          <Route path="/formulaire-ajout-animal" element={<AddFormAnimals />} />
+          {/* Formulaire de modification d'un Animal */}
           <Route
             path="/modification-formulaire/:id/*"
             element={<ModifyForm />}
           />
-          <Route path="/listedesanimaux" element={<PageAnimals />} />
 
+          {/* Partie des Admins */}
           <Route path="/admin" element={<FunctionNavigation />} />
           <Route path="/crashtestapi" element={<Crashtestapi />} />
 
+          {/* Partie authentification pour les adoptants */}
           <Route path="/inscription" element={<SignUp />} />
           <Route path="/connexion" element={<Login />} />
 
+          {/* Partie signalement */}
           <Route path="/signalement" element={<Report />} />
           <Route
             path="/signalement/formulaire-report"
             element={<ReportForm />}
           />
-
-          <Route path="/condition-adoption" element={<ConditionAdoption />} />
-
-          <Route path="/adoption" element={<Adoption />} />
-
-     
-    
-
         </Routes>
 
         <Link to="./admin">
