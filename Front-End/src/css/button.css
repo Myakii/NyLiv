@@ -1,89 +1,62 @@
 .btn {
+  height: 3.75rem;
+  padding: 0 3.125rem;
+  color: white;
+  border-radius: 50px;
 
-    height: 3.75rem;
-    padding: 0 3.125rem;
-    color: white;
-    border-radius: 50px;
-
-    font-size: 1.25rem;    /* p font size */
-    font-weight: 300; /* p font weight */
-
+  font-size: 1.25rem; /* p font size */
+  font-weight: 300; /* p font weight */
 }
 
 .btn-orange {
-
-    background-color: #F27D33;
-
+  background-color: #f27d33;
 }
 
 .btn-orange:hover {
-
-    background-color: #E6610F;
-
+  background-color: #e6610f;
 }
 
 .btn-orange:active {
-
-
-    background-color: #F6A979;
-
+  background-color: #f6a979;
 }
 
 .btn-blue {
-
-    background-color: #159DC0;
-
+  background-color: #159dc0;
 }
 
 .btn-blue:hover {
-
-    background-color: #107993;
-
+  background-color: #107993;
 }
 
 .btn-blue:active {
-
-    background-color: #5ACFED;
-
+  background-color: #5acfed;
 }
 
-
 .info-btn-orange {
-
-    color: #F27D33;
-
+  color: #f27d33;
 }
 
 .info-btn-orange:hover {
-
-    color: #E6610F;
-
+  color: #e6610f;
 }
 
 .info-btn-blue {
-
-    color: #159DC0;
-
+  color: #159dc0;
 }
 
 .info-btn-blue:hover {
-
-    color: #107993;
-
+  color: #107993;
 }
 
-
 .exit-button {
-
-    width: 15rem;
-    height: auto;
-    border: 7px solid #F47D34;
-    border-radius: 50px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    float: left;
-    position: absolute;
-    right: 5%;
-
+  width: 15rem;
+  height: auto;
+  border: 7px solid #f47d34;
+  border-radius: 50px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  float: left;
+  position: absolute;
+  right: 5%;
 }

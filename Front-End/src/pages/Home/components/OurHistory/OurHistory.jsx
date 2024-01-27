@@ -3,7 +3,7 @@ import "./OurHistory.css";
 
 export default function OurHistory() {
   const ourTextHistory =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    "    En 2023, après s'être rencontrés pour la première fois, Luc et Rosine ont découvert un point commun : leur amour pour les animaux. Possédant chacun un chien, leur proximité a révélé un aspect sombre de la réalité : les abandons et la maltraitance que peuvent subir ces créatures. Afin de soutenir les associations et refuges dans la recherche de foyers aimants pour ces animaux, Luc et Rosine ont décidé de créer un site dédié aux animaux abandonnés. Leur objectif est d'accentuer les aspects positifs et de faciliter les adoptions par des familles bienveillantes...";
 
   return (
     <section className="our-history centered-padding-div">

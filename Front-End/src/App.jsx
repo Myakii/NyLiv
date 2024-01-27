@@ -1,21 +1,32 @@
-import "./css/App.css";
-import Navbar from "./components/Header/Header";
+// Importation react
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import AdoptForm from "./pages/AdoptForm/AdoptForm";
-import FunctionNavigation from "./dev_tool/FunctionNavigation";
-import SignUp from "./pages/SignUp/SignUp";
-import Login from "./pages/Login/Login";
-import Auth from "./Auth";
-import Footer from "./components/Footer/Footer";
+
+// Importation css et icônes
+import "./css/App.css";
+import "./css/button.css";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
-import Crashtestapi from "./dev_tool/CrashTestApi";
-import Report from "./pages/Report/Report";
-import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
-import Adoption from "./pages/Adoption/Adoption";
+
+// Importation components
+import Navbar from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import ModifyForm from "./pages/ReadPets/components/ModifyForm";
 import ReportForm from "./pages/Report/components/ReportForm/ReportForm";
+
+// Importation authentification
+import Auth from "./Auth";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
+
+// Importation animaux
+import AdoptForm from "./pages/AdoptForm/AdoptForm";
+import ConditionAdoption from "./pages/ConditionAdoption/ConditionAdoption";
+import Adoption from "./pages/Adoption/Adoption";
 import AddFormAnimals from "./pages/AddFormAnimals/AddFormAnimals";
+import Report from "./pages/Report/Report";
+
+import Home from "./pages/Home/Home";
+import FunctionNavigation from "./dev_tool/FunctionNavigation";
+import Crashtestapi from "./dev_tool/CrashTestApi";
 
 function App() {
   const routesWithoutNavbarAndFooter = [
@@ -70,7 +81,7 @@ function App() {
           {/* Partie signalement */}
           <Route path="/signalement" element={<Report />} />
           <Route
-            path="/signalement/formulaire-report"
+            path="/signalement/formulaire-signalement"
             element={<ReportForm />}
           />
         </Routes>

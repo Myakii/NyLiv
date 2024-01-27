@@ -1,0 +1,98 @@
+.ReportFormAnimals {
+  padding: 1.25rem 3.125rem;
+  width: 100dvw;
+  height: 100%;
+}
+
+.ReportFormAnimals header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3.125rem;
+  height: fit-content;
+}
+
+.ReportFormAnimals form {
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ReportFormAnimals form .top-part {
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+}
+
+.ReportFormAnimals form .top-part .mid-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3.125rem;
+}
+
+.ReportFormAnimals form label:not(.checkbox-label) {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.ReportFormAnimals form label h4,
+.ReportFormAnimals form label h3 {
+  color: #159dc0;
+}
+
+.ReportFormAnimals
+  form
+  label
+  input:not(.input-text, .description, .checkbox-input) {
+  width: 18.75rem;
+  padding: 0.625rem;
+  background-color: transparent;
+  border-bottom: 1px solid #f47d34;
+}
+
+.ReportFormAnimals form .description {
+  border: 1px solid #f47d34;
+  width: 50rem;
+  height: 20dvh;
+  background-color: transparent;
+  padding: 0.625rem;
+  resize: none;
+}
+
+.ReportFormAnimals form .left-part {
+  display: flex;
+  flex-direction: column;
+}
+
+.ReportFormAnimals form .left-part .animal-profile-picture {
+  width: 31.25rem;
+  height: 50dvh;
+
+  object-fit: cover;
+}
+
+.ReportFormAnimals form .btn-orange {
+  width: 15rem;
+}
+
+.ReportFormAnimals form .bottom-part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6.25rem;
+}
+
+@media only screen and (max-width: 1440px) {
+  .ReportFormAnimals form .mid-part .right-part-in-midpart .top-part {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ReportFormAnimals form .mid-part .right-part-in-midpart {
+    gap: 0;
+  }
+}

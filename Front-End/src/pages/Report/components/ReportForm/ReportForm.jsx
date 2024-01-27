@@ -78,6 +78,8 @@ export default function ReportForm() {
         }NyLiv/Back-End/API/Pets/ReportFormAnimals.php`,
         formData
       );
+      window.location.reload();
+      alert("Votre signalement a bien été enregistré");
 
       console.log("Server response:", response.data);
     } catch (error) {
@@ -178,16 +180,6 @@ export default function ReportForm() {
             ]}
             selectedOption={formData.radioButtons.choiceofvisibility}
             onChange={handleRadioChange}
-          />
-        </label>
-        <label>
-          <h4>Ajouter une image si besoin</h4>
-          <input
-            type="file"
-            accept="image/*"
-            name="img"
-            onChange={handleImageChange}
-            className="input-text"
           />
         </label>
         <button className="btn-orange btn" type="submit">

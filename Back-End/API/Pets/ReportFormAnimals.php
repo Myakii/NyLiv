@@ -31,13 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reportingaddress = $data['reportingaddress'];
     $text = $data['text'];
     $choiceofvisibility = $data['radioButtons']['choiceofvisibility'];
-    $img = $data['img'];
 
 
     // Insertion des données dans la base de données
-    $sql = "INSERT INTO reportanimals (name, firstname, email, phone, subject, date, reportingaddress, text, choiceofvisibility, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO reportanimals (name, firstname, email, phone, subject, date, reportingaddress, text, choiceofvisibility) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sssissssss', $name, $firstname, $email, $phone, $subject, $date, $reportingaddress, $text, $choiceofvisibility, $img);
+    $stmt->bind_param('sssisssss', $name, $firstname, $email, $phone, $subject, $date, $reportingaddress, $text, $choiceofvisibility);
     // Exécutez la requête
     $stmt->execute();
 
@@ -47,8 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Affichez des informations de débogage supplémentaires
     echo json_encode([
         'success' => false,
-        'message' => 'Aucun fichier image n\'a été téléchargé.',
-        'files' => $_FILES, // Ajout de cette ligne pour afficher les informations sur les fichiers
+
     ]);
     exit;
 }

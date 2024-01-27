@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ReportHeader.css";
-import ReportForm from "../ReportForm/ReportForm";
 
 export default function ReportHeader() {
   return (
@@ -23,7 +22,7 @@ export default function ReportHeader() {
         sécurité.
       </h4>
 
-      <Link to="../ReportForm">
+      <Link to="formulaire-signalement">
         <button className="btn-blue btn report-button">
           Je souhaite signaler
         </button>
